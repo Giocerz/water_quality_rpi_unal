@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>272</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: white;
+font-family: Poppins;
+font-size:20px;
+font-weight: 500;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	height: 50px;
+	border-radius: 10px;
+}</string>
+   </property>
+   <widget class="QPushButton" name="powerBtn">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>189</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid #266276;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="wifiBtn">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>100</y>
+      <width>111</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: #DDB622;
+	color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string>WiFi</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="updateBtn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>189</y>
+      <width>291</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: #266676;
+	color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string>Actualizaciones</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="helpBtn">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>10</y>
+      <width>131</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: #266676;
+	color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string>Ayuda</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="monitoringBtn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>161</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: #266676;
+	color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string>Monitoreo</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="calibrationBtn">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>10</y>
+      <width>151</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: #DDB622;
+	color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string>Calibración</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bluetoothBtn">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>100</y>
+      <width>151</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: #9B482F;
+	color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string>Bluetooth</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="dataBtn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>181</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: #8EB9AF;
+	color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string>Datos</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="settingsBtn">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>190</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid #266276;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -2,7 +2,7 @@ import os
 from PySide2.QtWidgets import QMainWindow
 from PySide2.QtCore import QSize
 from PySide2.QtGui import QIcon
-from src.views.ui_MainMenu import Ui_MainWindow
+from .ui_MainMenuLandscape import Ui_MainWindow
 from src.views.MonitoringView.MonitoringSelect import MonitoringSelectView
 from src.views.CalibrationView.CalibrationView import CalibrationView
 from src.views.FoldersView.FoldersView import FoldersView
@@ -34,15 +34,15 @@ class MainMenuView(QMainWindow):
         icon = QIcon('./src/resources/icons/power_settings.png')
         self.ui.powerBtn.setIcon(icon)
         self.ui.powerBtn.setIconSize(QSize(30, 30))
-        icon = QIcon('./src/resources/icons/wifi.png')
-        self.ui.wifiBtn.setIcon(icon)
-        self.ui.wifiBtn.setIconSize(QSize(30, 30))
-        icon = QIcon('./src/resources/icons/update.png')
-        self.ui.updateBtn.setIcon(icon)
-        self.ui.updateBtn.setIconSize(QSize(30, 30))
-        icon = QIcon('./src/resources/icons/help.png')
-        self.ui.helpBtn.setIcon(icon)
-        self.ui.helpBtn.setIconSize(QSize(30, 30))
+        #icon = QIcon('./src/resources/icons/wifi.png')
+        #self.ui.wifiBtn.setIcon(icon)
+        #self.ui.wifiBtn.setIconSize(QSize(30, 30))
+        #icon = QIcon('./src/resources/icons/update.png')
+        #self.ui.updateBtn.setIcon(icon)
+        #self.ui.updateBtn.setIconSize(QSize(30, 30))
+        #icon = QIcon('./src/resources/icons/help.png')
+        #self.ui.helpBtn.setIcon(icon)
+        #self.ui.helpBtn.setIconSize(QSize(30, 30))
 
     def on_monitoring_clicked(self):
         Navigator.push(context= self.context, view= MonitoringSelectView(context= self.context))
