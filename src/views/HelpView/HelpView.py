@@ -1,7 +1,7 @@
 from PySide2.QtWidgets import QMainWindow
 from PySide2.QtCore import QSize
 from PySide2.QtGui import QIcon, QPixmap
-from src.views.ui_HelpView import Ui_MainWindow
+from .ui_HelpViewLandscape import Ui_MainWindow
 from src.package.Navigator import Navigator
 
 class HelpView(QMainWindow):

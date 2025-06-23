@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'HelpViewPortraitewxGhU.ui'
+## Form generated from reading UI file 'HelpViewPortraitWWBJql.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -35,7 +35,7 @@ class Ui_MainWindow(object):
 "	font-size: 16px;")
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(80, 10, 181, 41))
+        self.label.setGeometry(QRect(70, 10, 181, 41))
         self.label.setStyleSheet(u"font-size: 20px;\n"
 "color: #266676;")
         self.label.setAlignment(Qt.AlignCenter)
