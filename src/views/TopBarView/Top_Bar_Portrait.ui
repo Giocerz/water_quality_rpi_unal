@@ -40,6 +40,7 @@ QWidget {
 	stop:1 rgba(38, 102, 118, 255)
 );
 border-radius: 12px;
+font-size: 14px;
 color: white;
 font-weight: bold;
 </string>
@@ -49,19 +50,6 @@ font-weight: bold;
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="chargeIndicator">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>10</y>
-     <width>26</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="border">
@@ -84,9 +72,9 @@ font-weight: bold;
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>0</y>
-     <width>61</width>
-     <height>41</height>
+     <y>11</y>
+     <width>51</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -101,8 +89,8 @@ font-size: 18px;</string>
   <widget class="QLabel" name="networkLbl">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>5</y>
+     <x>60</x>
+     <y>7</y>
      <width>31</width>
      <height>31</height>
     </rect>
@@ -112,6 +100,24 @@ font-size: 18px;</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="chargeIndicator">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>11</y>
+     <width>111</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: #266676;
+font-weight: bold;
+font-size: 18px;</string>
+   </property>
+   <property name="text">
+    <string>Cargando...</string>
    </property>
   </widget>
  </widget>

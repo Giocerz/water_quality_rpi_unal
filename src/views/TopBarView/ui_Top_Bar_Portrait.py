@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Top_Bar_PortraitvEUNtS.ui'
+## Form generated from reading UI file 'Top_Bar_PortraitETlFGF.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -36,27 +36,31 @@ class Ui_Form(object):
 "	stop:1 rgba(38, 102, 118, 255)\n"
 ");\n"
 "border-radius: 12px;\n"
+"font-size: 14px;\n"
 "color: white;\n"
 "font-weight: bold;\n"
 "")
         self.baterryLevel.setAlignment(Qt.AlignCenter)
-        self.chargeIndicator = QLabel(Form)
-        self.chargeIndicator.setObjectName(u"chargeIndicator")
-        self.chargeIndicator.setGeometry(QRect(210, 10, 26, 26))
         self.border = QLabel(Form)
         self.border.setObjectName(u"border")
         self.border.setGeometry(QRect(0, 45, 480, 3))
         self.border.setStyleSheet(u"background-color: rgb(199, 199, 199);")
         self.timeLbl = QLabel(Form)
         self.timeLbl.setObjectName(u"timeLbl")
-        self.timeLbl.setGeometry(QRect(10, 0, 61, 41))
+        self.timeLbl.setGeometry(QRect(10, 11, 51, 26))
         self.timeLbl.setStyleSheet(u"color: #266676;\n"
 "font-weight: bold;\n"
 "font-size: 18px;")
         self.networkLbl = QLabel(Form)
         self.networkLbl.setObjectName(u"networkLbl")
-        self.networkLbl.setGeometry(QRect(70, 5, 31, 31))
+        self.networkLbl.setGeometry(QRect(60, 7, 31, 31))
         self.networkLbl.setStyleSheet(u"	font-size: 14pt;")
+        self.chargeIndicator = QLabel(Form)
+        self.chargeIndicator.setObjectName(u"chargeIndicator")
+        self.chargeIndicator.setGeometry(QRect(140, 11, 111, 26))
+        self.chargeIndicator.setStyleSheet(u"color: #266676;\n"
+"font-weight: bold;\n"
+"font-size: 18px;")
 
         self.retranslateUi(Form)
 
@@ -66,9 +70,9 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         self.baterryLevel.setText(QCoreApplication.translate("Form", u"100", None))
-        self.chargeIndicator.setText("")
         self.border.setText("")
         self.timeLbl.setText(QCoreApplication.translate("Form", u"10:34", None))
         self.networkLbl.setText("")
+        self.chargeIndicator.setText(QCoreApplication.translate("Form", u"Cargando...", None))
     # retranslateUi
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'HelpViewPortraitWWBJql.ui'
+## Form generated from reading UI file 'HelpViewPortraitYSoIPz.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(320, 480)
+        MainWindow.resize(320, 432)
         MainWindow.setStyleSheet(u"background-color: white;\n"
 "font: 14px Poppins;")
         self.centralwidget = QWidget(MainWindow)

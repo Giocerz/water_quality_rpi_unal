@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>320</width>
-    <height>480</height>
+    <height>432</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,9 +30,9 @@ font-weight: 500;</string>
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>400</y>
+      <y>346</y>
       <width>71</width>
-      <height>71</height>
+      <height>74</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -46,9 +46,9 @@ font-weight: 500;</string>
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>210</y>
+      <y>178</y>
       <width>111</width>
-      <height>91</height>
+      <height>74</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -65,9 +65,9 @@ font-weight: 500;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>310</y>
+      <y>262</y>
       <width>301</width>
-      <height>81</height>
+      <height>74</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -84,9 +84,9 @@ font-weight: 500;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>400</y>
+      <y>346</y>
       <width>141</width>
-      <height>71</height>
+      <height>74</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -105,7 +105,7 @@ font-weight: 500;</string>
       <x>10</x>
       <y>10</y>
       <width>301</width>
-      <height>91</height>
+      <height>74</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -122,9 +122,9 @@ font-weight: 500;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>110</y>
+      <y>94</y>
       <width>151</width>
-      <height>91</height>
+      <height>74</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -141,9 +141,9 @@ font-weight: 500;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>210</y>
+      <y>178</y>
       <width>181</width>
-      <height>91</height>
+      <height>74</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -160,9 +160,9 @@ font-weight: 500;</string>
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>110</y>
+      <y>94</y>
       <width>141</width>
-      <height>91</height>
+      <height>74</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -179,9 +179,9 @@ font-weight: 500;</string>
     <property name="geometry">
      <rect>
       <x>240</x>
-      <y>400</y>
+      <y>346</y>
       <width>71</width>
-      <height>71</height>
+      <height>74</height>
      </rect>
     </property>
     <property name="styleSheet">
