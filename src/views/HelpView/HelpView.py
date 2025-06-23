@@ -18,8 +18,8 @@ class HelpView(QMainWindow):
         icon = QIcon('./src/resources/icons/back.png')
         self.ui.backBtn.setIcon(icon)
         self.ui.backBtn.setIconSize(QSize(30, 30))
-        pixmap = QPixmap('./src/resources/images/help_image.jpg')
-        self.ui.imageLbl.setPixmap(pixmap)
+        #pixmap = QPixmap('./src/resources/images/help_image.jpg')
+        #self.ui.imageLbl.setPixmap(pixmap)
 
     def on_back_clicked(self):
         Navigator.pop(context= self.context, view= self)

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>272</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: white;
+font: 14px Poppins;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QPushButton" name="backBtn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	height: 40px;
+	border-radius: 10px;
+	border: 2px solid #266276;
+	background-color: white;
+	color: #00007f;
+	font-weight: 500;
+	font-size: 16px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>-20</x>
+      <y>10</y>
+      <width>511</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 20px;
+color: #266676;</string>
+    </property>
+    <property name="text">
+     <string>Ayuda</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="sensorsBtn">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>70</y>
+      <width>401</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: #266676;
+	color: white;
+	font-size: 20px;
+	font-weight: 500;
+	height: 50px;
+	border-radius: 10px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Ubicación sensores</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="moreHelpBtn">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>190</y>
+      <width>401</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: #DDB622;
+	color: white;
+	font-size: 20px;
+	font-weight: 500;
+	height: 50px;
+	border-radius: 10px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Más ayuda</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="aboutBtn">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>130</y>
+      <width>401</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: #9B482F;
+	color: white;
+	font-size: 20px;
+	font-weight: 500;
+	height: 50px;
+	border-radius: 10px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Acerca</string>
+    </property>
+   </widget>
+   <zorder>label</zorder>
+   <zorder>backBtn</zorder>
+   <zorder>sensorsBtn</zorder>
+   <zorder>moreHelpBtn</zorder>
+   <zorder>aboutBtn</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
