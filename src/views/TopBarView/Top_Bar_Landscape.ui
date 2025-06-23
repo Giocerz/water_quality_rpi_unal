@@ -105,7 +105,7 @@ font-size: 18px;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="timeLbl_2">
+  <widget class="QLabel" name="chargeIndicator">
    <property name="geometry">
     <rect>
      <x>300</x>
