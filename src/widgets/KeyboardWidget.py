@@ -1,6 +1,6 @@
 from PySide2.QtWidgets import QWidget
 from PySide2.QtCore import QTimer
-from src.views.ui_Keyboard import Ui_Form as Standard_Keyboard
+from .ui.ui_KeyboardLandscape import Ui_Form as Standard_Keyboard
 from src.views.ui_NumericKeyboard import Ui_Form as Numeric_Keyboard
 
 class KeyboardWidget(QWidget):
