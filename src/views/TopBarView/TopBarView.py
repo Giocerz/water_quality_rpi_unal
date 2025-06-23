@@ -87,7 +87,7 @@ class TopBarView(QMainWindow):
     def update_battery(self):
         battery_level = self.battery_provider.getBatteryLevel()
         self.ui.baterryLevel.setText(f'{battery_level}')
-        self.ui.baterryLevel.setAlignment(QtCore.Qt.AlignLeft)
+        self.ui.baterryLevel.setAlignment(QtCore.Qt.AlignCenter)
 
         if(battery_level < 25 and battery_level >= 10):
             color = '252, 163, 17'
@@ -107,7 +107,7 @@ class TopBarView(QMainWindow):
         else:
             percent = round((-0.81633 * battery_level + 90.81633)/100.0, 2)
 
-        self.ui.baterryLevel.setStyleSheet(f'background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0,stop:0 rgba(102, 164, 181, 255),stop:{percent} rgba(102, 164, 181, 255), stop:{percent + 0.01} rgba({color}, 255), stop:1 rgba({color}, 255));border-radius: 12px;')
+        self.ui.baterryLevel.setStyleSheet(f'background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0,stop:0 rgba(102, 164, 181, 255),stop:{percent} rgba(102, 164, 181, 255), stop:{percent + 0.01} rgba({color}, 255), stop:1 rgba({color}, 255));border-radius: 12px;color: white;font-weight: bold;')
 
     def open_battery_popup(self):
         popup = PopupWidgetInfo(context=self.context,text='Batería baja, conecte el cargador')
