@@ -21,9 +21,9 @@ class TopBarView(QMainWindow):
         #pixmap = QPixmap('./src/resources/images/citizenapui111x48.jpg')
         #self.ui.label.setPixmap(pixmap)
 
-        pixmap = QPixmap('./src/resources/icons/electric_bolt_b.png')
-        scaled_pixmap = pixmap.scaled(26, 26, QtCore.Qt.IgnoreAspectRatio, QtCore.Qt.SmoothTransformation)
-        self.ui.chargeIndicator.setPixmap(scaled_pixmap)
+        #pixmap = QPixmap('./src/resources/icons/electric_bolt_b.png')
+        #scaled_pixmap = pixmap.scaled(26, 26, QtCore.Qt.IgnoreAspectRatio, QtCore.Qt.SmoothTransformation)
+        #self.ui.chargeIndicator.setPixmap(scaled_pixmap)
 
         self.ui.chargeIndicator.hide()
 
