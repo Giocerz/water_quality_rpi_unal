@@ -2,7 +2,7 @@ from PySide2 import QtCore
 from PySide2.QtWidgets import QMainWindow
 from PySide2.QtCore import QSize
 from PySide2.QtGui import QPixmap
-from src.views.ui_Top_Bar import Ui_Form
+from .ui_Top_Bar_Landscape import Ui_Form
 from src.widgets.PopupWidget import PopupWidgetInfo
 from src.logic.INA219 import INA219
 from datetime import datetime
@@ -18,8 +18,8 @@ class TopBarView(QMainWindow):
         self.ui.setupUi(self)
         self.low_battery_flag = False
 
-        pixmap = QPixmap('./src/resources/images/citizenapui111x48.jpg')
-        self.ui.label.setPixmap(pixmap)
+        #pixmap = QPixmap('./src/resources/images/citizenapui111x48.jpg')
+        #self.ui.label.setPixmap(pixmap)
 
         pixmap = QPixmap('./src/resources/icons/electric_bolt_b.png')
         scaled_pixmap = pixmap.scaled(26, 26, QtCore.Qt.IgnoreAspectRatio, QtCore.Qt.SmoothTransformation)
@@ -86,8 +86,8 @@ class TopBarView(QMainWindow):
 
     def update_battery(self):
         battery_level = self.battery_provider.getBatteryLevel()
-        self.ui.batteryLbl.setText(f'{battery_level}%')
-        self.ui.batteryLbl.setAlignment(QtCore.Qt.AlignLeft)
+        self.ui.baterryLevel.setText(f'{battery_level}')
+        self.ui.baterryLevel.setAlignment(QtCore.Qt.AlignLeft)
 
         if(battery_level < 25 and battery_level >= 10):
             color = '252, 163, 17'
