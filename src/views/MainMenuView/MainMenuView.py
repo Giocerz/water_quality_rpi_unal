@@ -33,10 +33,10 @@ class MainMenuView(QMainWindow):
     def ui_components(self):
         icon = QIcon('./src/resources/icons/power_settings.png')
         self.ui.powerBtn.setIcon(icon)
-        self.ui.powerBtn.setIconSize(QSize(60, 60))
+        self.ui.powerBtn.setIconSize(QSize(45, 45))
         icon = QIcon('./src/resources/icons/settings.png')
         self.ui.settingsBtn.setIcon(icon)
-        self.ui.settingsBtn.setIconSize(QSize(60, 60))
+        self.ui.settingsBtn.setIconSize(QSize(45, 45))
         #icon = QIcon('./src/resources/icons/wifi.png')
         #self.ui.wifiBtn.setIcon(icon)
         #self.ui.wifiBtn.setIconSize(QSize(30, 30))
