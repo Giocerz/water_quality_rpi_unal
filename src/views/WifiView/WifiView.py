@@ -2,7 +2,7 @@ from PySide2.QtWidgets import QMainWindow
 from PySide2.QtCore import QSize, Qt, QThread, Signal, QTimer
 from PySide2.QtGui import QIcon, QStandardItemModel, QStandardItem
 from src.views.ui_WifiList import Ui_MainWindow
-from src.widgets.PopupWidget import LoadingPopupWidget, PopupWidgetInfo
+from src.widgets.PopupWidget import LoadingPopupWidget, PopupWidgetInfo, FullpageLoadingPopup
 from src.widgets.ConnectWifiWidget import ConnectWifiWidget, SavedWifiWidget, ConnectPublicWifiWidget
 from src.services.wifiService import WifiService, WifiScanner
 from src.package.Navigator import Navigator
@@ -52,7 +52,7 @@ class WifiView(QMainWindow):
         self.scan_networks()
     
     def scan_networks(self):
-        self.loading_popup = LoadingPopupWidget(
+        self.loading_popup = FullpageLoadingPopup(
             context=self.context, text='Buscando redes...')
         self.loading_popup.show()
         WifiService.scan()
@@ -175,7 +175,7 @@ class WifiView(QMainWindow):
                 popup.show()
 
     def connect_network(self, ssid:str, psk:str = None):
-        self.loading_popup = LoadingPopupWidget(context=self.context, text="Conectando")
+        self.loading_popup = FullpageLoadingPopup(context=self.context, text="Conectando")
         self.loading_popup.show()
         if psk != None:
             self.try_connect_id = WifiService.add_network(ssid, psk)
@@ -208,7 +208,7 @@ class WifiView(QMainWindow):
         result = WifiService.delete_network(ssid, is_connected)
         if result:
             if is_connected:
-                self.loading_popup = LoadingPopupWidget(context=self.context, text="Procesando")
+                self.loading_popup = FullpageLoadingPopup(context=self.context, text="Procesando")
                 self.loading_popup.show()
                 self.timer = Timer(duration=10000, callback= self.forget_network_result)
                 self.timer.start()
@@ -221,7 +221,7 @@ class WifiView(QMainWindow):
         
     
     def disconnect_network(self, ssid:str):
-        self.loading_popup = LoadingPopupWidget(context=self.context, text="Desconectando")
+        self.loading_popup = FullpageLoadingPopup(context=self.context, text="Desconectando")
         self.loading_popup.show()
         result = WifiService.disconnect_network(ssid)
         if result:
@@ -243,7 +243,7 @@ class WifiView(QMainWindow):
         popup.show()
 
     def connect_saved_network(self, ssid:str):
-        self.loading_popup = LoadingPopupWidget(context=self.context, text="Conectando")
+        self.loading_popup = FullpageLoadingPopup(context=self.context, text="Conectando")
         self.loading_popup.show()
         result = WifiService.connect_network(ssid)
         if result:

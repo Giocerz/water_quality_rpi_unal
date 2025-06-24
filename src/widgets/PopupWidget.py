@@ -1,9 +1,11 @@
 from PySide2.QtWidgets import QGraphicsOpacityEffect, QWidget
 from PySide2.QtGui import QPixmap
 from PySide2 import QtCore
+from PySide2.QtCore import QPropertyAnimation, QSequentialAnimationGroup
 from src.views.ui_PopupWidget import Ui_Form as Ui_Popup
 from src.views.ui_LoadingPopupWidget import Ui_Form as Ui_Loading
 from src.views.ui_ProgressPopupWidget import Ui_Form as Ui_Progress
+from .ui.ui_LoadingPopupFullpageLandscape import Ui_Form as Ui_FullpageLoadingLandS
 from src.package.Timer import Timer
 
 
@@ -136,6 +138,57 @@ class LoadingPopupWidget(QWidget):
         self.setParent(None)
         self.deleteLater()
 
+class FullpageLoadingPopup(QWidget):
+    def __init__(self, context, text):
+        super().__init__()
+        self.context = context
+        self.ui = Ui_FullpageLoadingLandS()
+        self.ui.setupUi(self)
+
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        self.ui.LabelInfo.setText(text)
+        self.setParent(self.context)
+
+        # Guardar los círculos en una lista
+        self.circles = [
+            self.ui.firstCircle,
+            self.ui.secondCircle,
+            self.ui.thirdCircle
+        ]
+
+        # Guardar sus posiciones originales
+        self.original_positions = [circle.pos() for circle in self.circles]
+
+        # Crear la animación
+        self.create_animation()
+
+    def create_animation(self):
+        self.anim_group = QSequentialAnimationGroup()
+        self.anim_group.setLoopCount(-1)  # Infinita
+
+        for circle, pos in zip(self.circles, self.original_positions):
+            up = QPropertyAnimation(circle, b"pos")
+            up.setDuration(300)
+            up.setStartValue(pos)
+            up.setEndValue(pos - QtCore.QPoint(0, 15))  # Subir 15px
+
+            down = QPropertyAnimation(circle, b"pos")
+            down.setDuration(300)
+            down.setStartValue(pos - QtCore.QPoint(0, 15))
+            down.setEndValue(pos)
+
+            bounce = QSequentialAnimationGroup()
+            bounce.addAnimation(up)
+            bounce.addAnimation(down)
+
+            self.anim_group.addAnimation(bounce)
+
+        self.anim_group.start()
+
+    def close_and_delete(self):
+        self.anim_group.stop()
+        self.setParent(None)
+        self.deleteLater()
 
 class ProgressPopupWidget(QWidget):
     def __init__(self, context, text):
