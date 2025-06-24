@@ -60,7 +60,7 @@ class ParametersMeasuredWorker(QThread):
     
 
 class MonitoringView(QMainWindow):
-    def __init__(self, context, tds_check:bool, ph_check:bool, oxygen_check:bool, turbidity_check:bool):
+    def __init__(self, context, tds_check:bool, ph_check:bool, oxygen_check:bool, turbidity_check:bool = False):
         QMainWindow.__init__(self)
         self.context = context
         self.tds_check:bool = tds_check

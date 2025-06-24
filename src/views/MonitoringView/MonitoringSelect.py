@@ -35,7 +35,7 @@ class MonitoringSelectView(QMainWindow):
         tds_check = self.ui.tdsCheckBox.checkState() == QtCore.Qt.Checked
         ph_check = self.ui.phCheckBox.checkState() == QtCore.Qt.Checked
         oxygen_check = self.ui.oxygenCheckBox.checkState() == QtCore.Qt.Checked
-        turbidity_check = self.ui.turbidityCheckBox.checkState() == QtCore.Qt.Checked
+        #turbidity_check = self.ui.turbidityCheckBox.checkState() == QtCore.Qt.Checked
 
         Navigator.pushReplacement(
             context=self.context,
@@ -44,7 +44,7 @@ class MonitoringSelectView(QMainWindow):
                 tds_check=tds_check,
                 ph_check=ph_check,
                 oxygen_check=oxygen_check,
-                turbidity_check=turbidity_check
+                #turbidity_check=turbidity_check
             )
         )
 
@@ -60,4 +60,4 @@ class MonitoringSelectView(QMainWindow):
         self.ui.tdsCheckBox.setCheckState(qt_check_state)
         self.ui.phCheckBox.setCheckState(qt_check_state)
         self.ui.oxygenCheckBox.setCheckState(qt_check_state)
-        self.ui.turbidityCheckBox.setCheckState(qt_check_state)
+        #self.ui.turbidityCheckBox.setCheckState(qt_check_state)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MonitoringSelectLandscapeoiYquv.ui'
+## Form generated from reading UI file 'MonitoringSelectLandscapeGaqlfN.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -44,7 +44,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setStyleSheet(u"")
         self.initBtn = QPushButton(self.centralwidget)
         self.initBtn.setObjectName(u"initBtn")
-        self.initBtn.setGeometry(QRect(140, 220, 171, 41))
+        self.initBtn.setGeometry(QRect(154, 220, 171, 41))
         self.initBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: #266676;\n"
 "	color: white;\n"
@@ -65,7 +65,7 @@ class Ui_MainWindow(object):
 "	font-size: 16px;")
         self.tdsCheckBox = QCheckBox(self.centralwidget)
         self.tdsCheckBox.setObjectName(u"tdsCheckBox")
-        self.tdsCheckBox.setGeometry(QRect(140, 50, 151, 31))
+        self.tdsCheckBox.setGeometry(QRect(170, 50, 151, 31))
         self.tdsCheckBox.setLayoutDirection(Qt.RightToLeft)
         self.tdsCheckBox.setStyleSheet(u"QCheckBox {\n"
 "	background-color: transparent;\n"
@@ -89,7 +89,7 @@ class Ui_MainWindow(object):
 "}")
         self.phCheckBox = QCheckBox(self.centralwidget)
         self.phCheckBox.setObjectName(u"phCheckBox")
-        self.phCheckBox.setGeometry(QRect(150, 80, 141, 31))
+        self.phCheckBox.setGeometry(QRect(180, 80, 141, 31))
         self.phCheckBox.setLayoutDirection(Qt.RightToLeft)
         self.phCheckBox.setStyleSheet(u"QCheckBox {\n"
 "	background-color: transparent;\n"
@@ -113,33 +113,9 @@ class Ui_MainWindow(object):
 "}")
         self.oxygenCheckBox = QCheckBox(self.centralwidget)
         self.oxygenCheckBox.setObjectName(u"oxygenCheckBox")
-        self.oxygenCheckBox.setGeometry(QRect(120, 110, 171, 31))
+        self.oxygenCheckBox.setGeometry(QRect(150, 110, 171, 31))
         self.oxygenCheckBox.setLayoutDirection(Qt.RightToLeft)
         self.oxygenCheckBox.setStyleSheet(u"QCheckBox {\n"
-"	background-color: transparent;\n"
-"	height: 10px;\n"
-"	font: 14px \"Poppins\";\n"
-"}\n"
-"\n"
-"QCheckBox::indicator {\n"
-"    width: 20px; /* Ancho del indicador */\n"
-"    height: 20px; /* Alto del indicador */\n"
-"    border-radius: 4px; /* Bordes redondeados */\n"
-"    border: 2px solid #666; /* Borde del indicador */\n"
-"}\n"
-"\n"
-"QCheckBox::indicator:checked {\n"
-"    background-color: #00007f; /* Color de fondo cuando est\u00e1 marcado */\n"
-"}\n"
-"\n"
-"QCheckBox::indicator:unchecked {\n"
-"    background-color: transparent;\n"
-"}")
-        self.turbidityCheckBox = QCheckBox(self.centralwidget)
-        self.turbidityCheckBox.setObjectName(u"turbidityCheckBox")
-        self.turbidityCheckBox.setGeometry(QRect(150, 140, 141, 31))
-        self.turbidityCheckBox.setLayoutDirection(Qt.RightToLeft)
-        self.turbidityCheckBox.setStyleSheet(u"QCheckBox {\n"
 "	background-color: transparent;\n"
 "	height: 10px;\n"
 "	font: 14px \"Poppins\";\n"
@@ -164,7 +140,7 @@ class Ui_MainWindow(object):
         self.label.setGeometry(QRect(80, 10, 361, 41))
         self.allCheckBox = QCheckBox(self.centralwidget)
         self.allCheckBox.setObjectName(u"allCheckBox")
-        self.allCheckBox.setGeometry(QRect(110, 170, 181, 31))
+        self.allCheckBox.setGeometry(QRect(159, 140, 161, 31))
         self.allCheckBox.setLayoutDirection(Qt.RightToLeft)
         self.allCheckBox.setStyleSheet(u"QCheckBox {\n"
 "	background-color: transparent;\n"
@@ -189,6 +165,13 @@ class Ui_MainWindow(object):
         self.imageLbl = QLabel(self.centralwidget)
         self.imageLbl.setObjectName(u"imageLbl")
         self.imageLbl.setGeometry(QRect(360, 150, 121, 121))
+        self.label_2 = QLabel(self.centralwidget)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setGeometry(QRect(-10, 180, 501, 31))
+        self.label_2.setStyleSheet(u"font-size: 14px;\n"
+"border: 2px solid #266676;\n"
+"background: transparent;")
+        self.label_2.setAlignment(Qt.AlignCenter)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -203,9 +186,9 @@ class Ui_MainWindow(object):
         self.tdsCheckBox.setText(QCoreApplication.translate("MainWindow", u"CE/TDS/Salinidad", None))
         self.phCheckBox.setText(QCoreApplication.translate("MainWindow", u"pH", None))
         self.oxygenCheckBox.setText(QCoreApplication.translate("MainWindow", u"Ox\u00edgeno Disuelto", None))
-        self.turbidityCheckBox.setText(QCoreApplication.translate("MainWindow", u"Turbidez", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Escoja los par\u00e1metros que desea monitorear</p></body></html>", None))
         self.allCheckBox.setText(QCoreApplication.translate("MainWindow", u"Seleccionar todos", None))
         self.imageLbl.setText("")
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>La temperatura  es\u00e1 activa por defecto</p></body></html>", None))
     # retranslateUi
 
