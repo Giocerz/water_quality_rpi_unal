@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MonitoringSelectPortraitMrvOgE.ui'
+## Form generated from reading UI file 'MonitoringSelectPortraitvRtxyU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -171,19 +171,19 @@ class Ui_MainWindow(object):
         self.label_2.setGeometry(QRect(-20, 300, 361, 31))
         self.label_2.setStyleSheet(u"font-size: 14px;\n"
 "border: 2px solid #266676;\n"
-"background: transparent;")
+"")
         self.label_2.setAlignment(Qt.AlignCenter)
         self.label_3 = QLabel(self.centralwidget)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(70, 35, 201, 21))
         self.label_3.setAlignment(Qt.AlignCenter)
         MainWindow.setCentralWidget(self.centralwidget)
+        self.imageLbl.raise_()
         self.backBtn.raise_()
         self.tdsCheckBox.raise_()
         self.phCheckBox.raise_()
         self.oxygenCheckBox.raise_()
         self.allCheckBox.raise_()
-        self.imageLbl.raise_()
         self.initBtn.raise_()
         self.label.raise_()
         self.label_2.raise_()

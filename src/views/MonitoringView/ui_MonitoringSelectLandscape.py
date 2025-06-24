@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MonitoringSelectLandscapeGaqlfN.ui'
+## Form generated from reading UI file 'MonitoringSelectLandscapeGRTbBU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -167,10 +167,10 @@ class Ui_MainWindow(object):
         self.imageLbl.setGeometry(QRect(360, 150, 121, 121))
         self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(-10, 180, 501, 31))
+        self.label_2.setGeometry(QRect(100, 180, 281, 31))
         self.label_2.setStyleSheet(u"font-size: 14px;\n"
 "border: 2px solid #266676;\n"
-"background: transparent;")
+"")
         self.label_2.setAlignment(Qt.AlignCenter)
         MainWindow.setCentralWidget(self.centralwidget)
 

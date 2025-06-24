@@ -266,16 +266,16 @@ QCheckBox::indicator:unchecked {
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>-10</x>
+      <x>100</x>
       <y>180</y>
-      <width>501</width>
+      <width>281</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">font-size: 14px;
 border: 2px solid #266676;
-background: transparent;</string>
+</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La temperatura  esá activa por defecto&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>

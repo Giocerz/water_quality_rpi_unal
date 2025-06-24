@@ -278,7 +278,7 @@ QCheckBox::indicator:unchecked {
     <property name="styleSheet">
      <string notr="true">font-size: 14px;
 border: 2px solid #266676;
-background: transparent;</string>
+</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La temperatura  esá activa por defecto&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -303,12 +303,12 @@ background: transparent;</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <zorder>imageLbl</zorder>
    <zorder>backBtn</zorder>
    <zorder>tdsCheckBox</zorder>
    <zorder>phCheckBox</zorder>
    <zorder>oxygenCheckBox</zorder>
    <zorder>allCheckBox</zorder>
-   <zorder>imageLbl</zorder>
    <zorder>initBtn</zorder>
    <zorder>label</zorder>
    <zorder>label_2</zorder>
