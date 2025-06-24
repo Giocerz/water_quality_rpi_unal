@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MonitoringSelectPortraitvRtxyU.ui'
+## Form generated from reading UI file 'MonitoringSelectPortraitCJULrr.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -204,7 +204,7 @@ class Ui_MainWindow(object):
         self.allCheckBox.setText(QCoreApplication.translate("MainWindow", u"Seleccionar todos", None))
         self.imageLbl.setText("")
         self.label.setText(QCoreApplication.translate("MainWindow", u"Escoja los par\u00e1metros", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>La temperatura  es\u00e1 activa por defecto</p></body></html>", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>La temperatura est\u00e1 activada por defecto</p></body></html>", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"que desea monitorear", None))
     # retranslateUi
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MonitoringSelectLandscapeGRTbBU.ui'
+## Form generated from reading UI file 'MonitoringSelectLandscapeXmEEwS.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -167,7 +167,7 @@ class Ui_MainWindow(object):
         self.imageLbl.setGeometry(QRect(360, 150, 121, 121))
         self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(100, 180, 281, 31))
+        self.label_2.setGeometry(QRect(89, 180, 301, 31))
         self.label_2.setStyleSheet(u"font-size: 14px;\n"
 "border: 2px solid #266676;\n"
 "")
@@ -189,6 +189,6 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Escoja los par\u00e1metros que desea monitorear</p></body></html>", None))
         self.allCheckBox.setText(QCoreApplication.translate("MainWindow", u"Seleccionar todos", None))
         self.imageLbl.setText("")
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>La temperatura  es\u00e1 activa por defecto</p></body></html>", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>La temperatura est\u00e1 activada por defecto</p></body></html>", None))
     # retranslateUi
 
