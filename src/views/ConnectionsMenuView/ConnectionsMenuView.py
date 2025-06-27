@@ -20,7 +20,7 @@ class ConnectionsMenuView(QMainWindow):
         self.ui.backBtn.clicked.connect(self.on_back_clicked)
 
     def ui_components(self):
-        icon = QIcon('./src/resources/icons/wifi_W.png')
+        icon = QIcon('./src/resources/icons/wifi_w.png')
         self.ui.wifiBtn.setIcon(icon)
         self.ui.wifiBtn.setIconSize(QSize(40, 40))
         icon = QIcon('./src/resources/icons/bluetooth_w.png')
