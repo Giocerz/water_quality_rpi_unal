@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainMenuVyVWSU.ui'
+## Form generated from reading UI file 'MainMenuyjbIPj.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -61,8 +61,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.settingBtn.setText(QCoreApplication.translate("MainWindow", u"Actualizaciones", None))
-        self.monitoringBtn.setText(QCoreApplication.translate("MainWindow", u"Monitoreo", None))
-        self.connectionsBtn.setText(QCoreApplication.translate("MainWindow", u"Bluetooth", None))
+        self.settingBtn.setText(QCoreApplication.translate("MainWindow", u"Ajustes", None))
+        self.monitoringBtn.setText(QCoreApplication.translate("MainWindow", u"Mediciones", None))
+        self.connectionsBtn.setText(QCoreApplication.translate("MainWindow", u"Conexiones", None))
     # retranslateUi
 

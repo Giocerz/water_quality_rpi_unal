@@ -42,7 +42,7 @@ font-weight: 500;</string>
 }</string>
     </property>
     <property name="text">
-     <string>Actualizaciones</string>
+     <string>Ajustes</string>
     </property>
     <property name="iconSize">
      <size>
@@ -67,7 +67,7 @@ font-weight: 500;</string>
 }</string>
     </property>
     <property name="text">
-     <string>Monitoreo</string>
+     <string>Mediciones</string>
     </property>
     <property name="iconSize">
      <size>
@@ -92,7 +92,7 @@ font-weight: 500;</string>
 }</string>
     </property>
     <property name="text">
-     <string>Bluetooth</string>
+     <string>Conexiones</string>
     </property>
     <property name="iconSize">
      <size>

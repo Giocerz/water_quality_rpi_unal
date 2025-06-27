@@ -2,7 +2,7 @@ from PySide2 import QtCore
 from PySide2.QtWidgets import QMainWindow
 from PySide2.QtCore import QSize, Qt
 from PySide2.QtGui import QIcon, QPixmap
-from .ui_MonitoringSelectLandscape import Ui_MainWindow
+from .ui_MonitoringSelect import Ui_MainWindow
 from src.package.Navigator import Navigator
 from src.views.MonitoringView.MonitoringView import MonitoringView
 
