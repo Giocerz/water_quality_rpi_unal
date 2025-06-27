@@ -147,10 +147,6 @@ class LoadingPopupGPS(QWidget):
         self.ui.setupUi(self)
 
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
-
-        self.opacity = QGraphicsOpacityEffect()
-        self.opacity.setOpacity(0.2)
-        self.ui.lblOpacity.setGraphicsEffect(self.opacity)
         self.ui.LabelInfo.setText(text)
 
         self.toggle = True
