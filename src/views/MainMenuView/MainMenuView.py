@@ -1,6 +1,6 @@
 import os
 from PySide2.QtWidgets import QMainWindow
-from PySide2.QtCore import QSize, Qt
+from PySide2.QtCore import QSize
 from PySide2.QtGui import QIcon
 from .ui_MainMenu import Ui_MainWindow
 from src.views.MonitoringView.MonitoringSelect import MonitoringSelectView
@@ -34,15 +34,12 @@ class MainMenuView(QMainWindow):
         icon = QIcon('./src/resources/icons/sensors_w.png')
         self.ui.monitoringBtn.setIcon(icon)
         self.ui.monitoringBtn.setIconSize(QSize(45, 45))
-        self.ui.monitoringBtn.setLayoutDirection(Qt.LeftToRight)
         icon = QIcon('./src/resources/icons/network_manage_w.png')
         self.ui.connectionsBtn.setIcon(icon)
-        self.ui.connectionsBtn.setIconSize(QSize(45, 45))
-        self.ui.connectionsBtn.setLayoutDirection(Qt.LeftToRight)
+        self.ui.connectionsBtn.setIconSize(QSize(40, 40))
         icon = QIcon('./src/resources/icons/settings_w.png')
         self.ui.settingBtn.setIcon(icon)
-        self.ui.settingBtn.setIconSize(QSize(45, 45))
-        self.ui.settingBtn.setLayoutDirection(Qt.LeftToRight)
+        self.ui.settingBtn.setIconSize(QSize(40, 40))
         #icon = QIcon('./src/resources/icons/settings.png')
         #self.ui.settingsBtn.setIcon(icon)
         #self.ui.settingsBtn.setIconSize(QSize(45, 45))
