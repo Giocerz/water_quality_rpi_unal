@@ -19,17 +19,21 @@ class MeasureMenuView(QMainWindow):
         self.ui.monitoringBtn.clicked.connect(self.on_monitoring_clicked)
         self.ui.historyBtn.clicked.connect(self.on_datos_clicked)
         self.ui.calibrationBtn.clicked.connect(self.on_calibration_clicked)
+        self.ui.backBtn.clicked.connect(self.on_back_clicked)
 
     def ui_components(self):
         icon = QIcon('./src/resources/icons/water_w.png')
         self.ui.monitoringBtn.setIcon(icon)
-        self.ui.monitoringBtn.setIconSize(QSize(45, 45))
-        icon = QIcon('./src/resources/icons/analytics_W.png')
+        self.ui.monitoringBtn.setIconSize(QSize(40, 40))
+        icon = QIcon('./src/resources/icons/analytics_w.png')
         self.ui.historyBtn.setIcon(icon)
         self.ui.historyBtn.setIconSize(QSize(40, 40))
         icon = QIcon('./src/resources/icons/stacked_line_w.png')
         self.ui.calibrationBtn.setIcon(icon)
         self.ui.calibrationBtn.setIconSize(QSize(40, 40))
+        icon = QIcon('./src/resources/icons/back.png')
+        self.ui.backBtn.setIcon(icon)
+        self.ui.backBtn.setIconSize(QSize(40, 40))
 
     def on_monitoring_clicked(self):
         Navigator.push(context= self.context, view= MonitoringSelectView(context= self.context))
@@ -39,3 +43,6 @@ class MeasureMenuView(QMainWindow):
 
     def on_datos_clicked(self):
         Navigator.push(context= self.context, view= FoldersView(context= self.context))
+    
+    def on_back_clicked(self):
+        Navigator.pop(context=self.context, view=self)

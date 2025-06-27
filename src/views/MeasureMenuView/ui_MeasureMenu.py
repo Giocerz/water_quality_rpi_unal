@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MeasureMenuOqltXz.ui'
+## Form generated from reading UI file 'MeasureMenuDTffmE.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -30,7 +30,7 @@ class Ui_MainWindow(object):
 "}")
         self.calibrationBtn = QPushButton(self.centralwidget)
         self.calibrationBtn.setObjectName(u"calibrationBtn")
-        self.calibrationBtn.setGeometry(QRect(0, 182, 481, 90))
+        self.calibrationBtn.setGeometry(QRect(0, 142, 481, 71))
         self.calibrationBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: #266676;\n"
 "	color: white;\n"
@@ -38,7 +38,7 @@ class Ui_MainWindow(object):
         self.calibrationBtn.setIconSize(QSize(50, 50))
         self.monitoringBtn = QPushButton(self.centralwidget)
         self.monitoringBtn.setObjectName(u"monitoringBtn")
-        self.monitoringBtn.setGeometry(QRect(0, 0, 481, 91))
+        self.monitoringBtn.setGeometry(QRect(0, 0, 481, 71))
         self.monitoringBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: #22577a;\n"
 "	color: white;\n"
@@ -46,12 +46,20 @@ class Ui_MainWindow(object):
         self.monitoringBtn.setIconSize(QSize(50, 50))
         self.historyBtn = QPushButton(self.centralwidget)
         self.historyBtn.setObjectName(u"historyBtn")
-        self.historyBtn.setGeometry(QRect(0, 91, 481, 91))
+        self.historyBtn.setGeometry(QRect(0, 71, 481, 71))
         self.historyBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: #1a759f;\n"
 "	color: white;\n"
 "}")
         self.historyBtn.setIconSize(QSize(50, 50))
+        self.backBtn = QPushButton(self.centralwidget)
+        self.backBtn.setObjectName(u"backBtn")
+        self.backBtn.setGeometry(QRect(0, 213, 481, 59))
+        self.backBtn.setStyleSheet(u"QPushButton {\n"
+"	background-color: white;\n"
+"	color: #22577a;\n"
+"}")
+        self.backBtn.setIconSize(QSize(50, 50))
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -64,5 +72,6 @@ class Ui_MainWindow(object):
         self.calibrationBtn.setText(QCoreApplication.translate("MainWindow", u"Calibraci\u00f3n", None))
         self.monitoringBtn.setText(QCoreApplication.translate("MainWindow", u"Medir", None))
         self.historyBtn.setText(QCoreApplication.translate("MainWindow", u"Historial", None))
+        self.backBtn.setText(QCoreApplication.translate("MainWindow", u"Atr\u00e1s", None))
     # retranslateUi
 
