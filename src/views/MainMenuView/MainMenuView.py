@@ -3,7 +3,7 @@ from PySide2.QtWidgets import QMainWindow
 from PySide2.QtCore import QSize
 from PySide2.QtGui import QIcon
 from .ui_MainMenu import Ui_MainWindow
-from src.views.MeasureMenuView import MeasureMenuView
+from src.views.MeasureMenuView.MeasureMenuView import MeasureMenuView
 from src.views.CalibrationView.CalibrationView import CalibrationView
 from src.views.FoldersView.FoldersView import FoldersView
 from src.views.BluetoothView.BluetoothView import BluetoothView

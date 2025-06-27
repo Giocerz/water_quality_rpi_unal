@@ -8,7 +8,7 @@ from src.views.CalibrationView.CalibrationView import CalibrationView
 from src.views.FoldersView.FoldersView import FoldersView
 from src.package.Navigator import Navigator
 
-class MainMenuView(QMainWindow):
+class MeasureMenuView(QMainWindow):
     def __init__(self, context):
         QMainWindow.__init__(self)
         self.context = context
