@@ -6,6 +6,7 @@ from src.views.ui_PopupWidget import Ui_Form as Ui_Popup
 from src.views.ui_LoadingPopupWidget import Ui_Form as Ui_Loading
 from src.views.ui_ProgressPopupWidget import Ui_Form as Ui_Progress
 from .ui.ui_LoadingPopupFullpageLandscape import Ui_Form as Ui_FullpageLoadingLandS
+from .ui.ui_LoadingPopupGPS import Ui_Form as Ui_LoadingGPS
 from src.package.Timer import Timer
 
 
@@ -131,6 +132,47 @@ class LoadingPopupWidget(QWidget):
                 {current_border}
         """)
         self.rotation_step += 1
+        
+
+    def close_and_delete(self):
+        self.timer.cancel()
+        self.setParent(None)
+        self.deleteLater()
+
+class LoadingPopupGPS(QWidget):
+    def __init__(self, context, text):
+        super().__init__()
+        self.context = context
+        self.ui = Ui_LoadingGPS()
+        self.ui.setupUi(self)
+
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+
+        self.opacity = QGraphicsOpacityEffect()
+        self.opacity.setOpacity(0.2)
+        self.ui.lblOpacity.setGraphicsEffect(self.opacity)
+        self.ui.LabelInfo.setText(text)
+
+        self.toggle = True
+        pixmap = QPixmap('./src/resources/icons/satellite_w.png')
+        pixmap = pixmap.scaled(81,81)
+        self.ui.satelliteLbl.setPixmap(pixmap)
+        self.timer = Timer.periodic(duration= 300, callback= self.update_border_style)
+        self.timer.start()
+
+        self.setParent(self.context)
+    
+    def update_toggle(self):
+        if self.toggle:
+            pixmap = QPixmap('./src/resources/icons/satellite_w_nosignal.png')
+            pixmap = pixmap.scaled(81,81)
+            self.ui.satelliteLbl.setPixmap(pixmap)
+            self.toggle = False
+        else:
+            pixmap = QPixmap('./src/resources/icons/satellite_w.png')
+            pixmap = pixmap.scaled(81,81)
+            self.ui.satelliteLbl.setPixmap(pixmap)
+            self.toggle = True
         
 
     def close_and_delete(self):
