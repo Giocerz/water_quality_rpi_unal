@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Top_Bar_LandscapeKQDlkQ.ui'
+## Form generated from reading UI file 'Top_Bar_LandscapeovGydz.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -29,7 +29,7 @@ class Ui_Form(object):
         self.baterryLevel.setObjectName(u"baterryLevel")
         self.baterryLevel.setGeometry(QRect(410, 11, 60, 26))
         self.baterryLevel.setStyleSheet(u"background: qlineargradient(\n"
-"    x1: 0, y1: 0, x2: 1, y2: 0,\n"
+"    x1: 1, y1: 0, x2: 0, y2: 0,\n"
 "    stop:0 rgba(102, 164, 181, 255),\n"
 "	stop:0.5 rgba(102, 164, 181, 255), \n"
 "	stop:0.51 rgba(38, 102, 118, 255), \n"
