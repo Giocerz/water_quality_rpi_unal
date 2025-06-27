@@ -153,7 +153,7 @@ class LoadingPopupGPS(QWidget):
         pixmap = QPixmap('./src/resources/icons/satellite_w.png')
         pixmap = pixmap.scaled(81,81)
         self.ui.satelliteLbl.setPixmap(pixmap)
-        self.timer = Timer.periodic(duration= 300, callback= self.update_border_style)
+        self.timer = Timer.periodic(duration= 300, callback= self.update_toggle)
         self.timer.start()
 
         self.setParent(self.context)
