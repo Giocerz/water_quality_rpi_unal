@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'KeyboardLandscapexwQorj.ui'
+## Form generated from reading UI file 'KeyboardLandscapecCTACO.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -22,7 +22,7 @@ class Ui_Form(object):
         Form.setStyleSheet(u"QPushButton {\n"
 "	border-radius: 5px;\n"
 "	font: 16px \"Poppins\";\n"
-"	background-color: #66A4B5;\n"
+"	background-color: #1a759f;\n"
 "	color: white;\n"
 "	font-weight: bold;\n"
 "}")

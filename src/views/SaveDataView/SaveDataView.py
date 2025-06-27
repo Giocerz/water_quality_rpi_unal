@@ -105,9 +105,12 @@ class SaveDataView(QMainWindow):
             self.handle_location_result)
 
     def ui_components(self):
-        icon = QIcon('./src/resources/icons/back.png')
+        icon = QIcon('./src/resources/icons/arrow_back_w.png')
         self.ui.backBtn.setIcon(icon)
-        self.ui.backBtn.setIconSize(QSize(30, 30))
+        self.ui.backBtn.setIconSize(QSize(50, 50))
+        icon = QIcon('./src/resources/icons/arrow_forward_w.png')
+        self.ui.nextBtn.setIcon(icon)
+        self.ui.nextBtn.setIconSize(QSize(50, 50))
         self.ui.stackedWidget.setCurrentIndex(0)
 
         self.keyboard = KeyboardWidget(self.ui.inputPlace)

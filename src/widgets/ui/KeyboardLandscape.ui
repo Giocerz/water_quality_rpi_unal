@@ -20,7 +20,7 @@
    <string notr="true">QPushButton {
 	border-radius: 5px;
 	font: 16px &quot;Poppins&quot;;
-	background-color: #66A4B5;
+	background-color: #1a759f;
 	color: white;
 	font-weight: bold;
 }</string>
