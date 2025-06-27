@@ -4,7 +4,7 @@ from PySide2.QtGui import QIcon
 from PySide2 import QtCore
 from src.views.ui_Save import Ui_MainWindow
 from src.widgets.KeyboardWidget import KeyboardWidget
-from src.widgets.PopupWidget import PopupWidgetInfo, LoadingPopupWidget, PopupWidget
+from src.widgets.PopupWidget import PopupWidgetInfo, LoadingPopupWidget, PopupWidget, LoadingPopupGPS
 from src.widgets.FolderWidget import FolderWidget
 from .ManualGPSPopup import SetManualLocationWidget
 from .ItRainedSelectPopup import ItRainedSelectPopup
@@ -127,7 +127,7 @@ class SaveDataView(QMainWindow):
         self.ui.verticalSlider.hide()
 
     def on_gps_clicked(self):
-        self.loading_popup = LoadingPopupWidget(
+        self.loading_popup = LoadingPopupGPS(
             context=self.context, text='Localizando...')
         self.loading_popup.show()
         if not self.location_worker.isRunning():

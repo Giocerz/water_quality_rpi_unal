@@ -174,7 +174,6 @@ class LoadingPopupGPS(QWidget):
             self.ui.satelliteLbl.setPixmap(pixmap)
             self.toggle = True
         
-
     def close_and_delete(self):
         self.timer.cancel()
         self.setParent(None)
