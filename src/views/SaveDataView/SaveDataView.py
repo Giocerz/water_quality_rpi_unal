@@ -2,7 +2,7 @@ from PySide2.QtWidgets import QMainWindow, QStackedLayout, QVBoxLayout, QWidget,
 from PySide2.QtCore import QSize, QThread, Signal, Qt
 from PySide2.QtGui import QIcon
 from PySide2 import QtCore
-from src.views.ui_Save import Ui_MainWindow
+from .ui_Save import Ui_MainWindow
 from src.widgets.KeyboardWidget import KeyboardWidget
 from src.widgets.PopupWidget import PopupWidgetInfo, LoadingPopupWidget, PopupWidget, LoadingPopupGPS
 from src.widgets.FolderWidget import FolderWidget
