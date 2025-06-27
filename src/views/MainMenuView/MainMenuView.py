@@ -4,6 +4,7 @@ from PySide2.QtCore import QSize
 from PySide2.QtGui import QIcon
 from .ui_MainMenu import Ui_MainWindow
 from src.views.MeasureMenuView.MeasureMenuView import MeasureMenuView
+from src.views.ConnectionsMenuView.ConnectionsMenuView import ConnectionsMenuView
 from src.views.CalibrationView.CalibrationView import CalibrationView
 from src.views.FoldersView.FoldersView import FoldersView
 from src.views.BluetoothView.BluetoothView import BluetoothView
@@ -22,6 +23,7 @@ class MainMenuView(QMainWindow):
         self.ui_components()
 
         self.ui.monitoringBtn.clicked.connect(self.on_monitoring_clicked)
+        self.ui.connectionsBtn.clicked.connect(self.on_connections_clicked)
 
     def ui_components(self):
         icon = QIcon('./src/resources/icons/sensors_w.png')
@@ -36,6 +38,9 @@ class MainMenuView(QMainWindow):
 
     def on_monitoring_clicked(self):
         Navigator.push(context= self.context, view= MeasureMenuView(context= self.context))
+
+    def on_connections_clicked(self):
+        Navigator.push(context= self.context, view= ConnectionsMenuView(context= self.context))
 
     def on_calibration_clicked(self):
         Navigator.push(context= self.context, view= CalibrationView(context= self.context))
