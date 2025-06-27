@@ -2,7 +2,7 @@ import os
 from PySide2.QtWidgets import QMainWindow
 from PySide2.QtCore import QSize
 from PySide2.QtGui import QIcon
-from .ui_MainMenuLandscape import Ui_MainWindow
+from .ui_MainMenu import Ui_MainWindow
 from src.views.MonitoringView.MonitoringSelect import MonitoringSelectView
 from src.views.CalibrationView.CalibrationView import CalibrationView
 from src.views.FoldersView.FoldersView import FoldersView
@@ -22,21 +22,27 @@ class MainMenuView(QMainWindow):
         self.ui_components()
 
         self.ui.monitoringBtn.clicked.connect(self.on_monitoring_clicked)
-        self.ui.calibrationBtn.clicked.connect(self.on_calibration_clicked)
-        self.ui.dataBtn.clicked.connect(self.on_datos_clicked)
-        self.ui.bluetoothBtn.clicked.connect(self.on_bluetooth_clicked)
-        self.ui.helpBtn.clicked.connect(self.on_help_clicked)
-        self.ui.updateBtn.clicked.connect(self.on_update_clicked)
-        self.ui.wifiBtn.clicked.connect(self.on_wifi_clicked)
-        self.ui.powerBtn.clicked.connect(self.on_power_clicked)
+        #self.ui.calibrationBtn.clicked.connect(self.on_calibration_clicked)
+        #self.ui.dataBtn.clicked.connect(self.on_datos_clicked)
+        #self.ui.bluetoothBtn.clicked.connect(self.on_bluetooth_clicked)
+        #self.ui.helpBtn.clicked.connect(self.on_help_clicked)
+        #self.ui.updateBtn.clicked.connect(self.on_update_clicked)
+        #self.ui.wifiBtn.clicked.connect(self.on_wifi_clicked)
+        #self.ui.powerBtn.clicked.connect(self.on_power_clicked)
 
     def ui_components(self):
-        icon = QIcon('./src/resources/icons/power_settings.png')
-        self.ui.powerBtn.setIcon(icon)
-        self.ui.powerBtn.setIconSize(QSize(45, 45))
-        icon = QIcon('./src/resources/icons/settings.png')
-        self.ui.settingsBtn.setIcon(icon)
-        self.ui.settingsBtn.setIconSize(QSize(45, 45))
+        icon = QIcon('./src/resources/icons/sensors_w.png')
+        self.ui.monitoringBtn.setIcon(icon)
+        self.ui.monitoringBtn.setIconSize(QSize(45, 45))
+        icon = QIcon('./src/resources/icons/network_manage_w.png')
+        self.ui.connectionsBtn.setIcon(icon)
+        self.ui.connectionsBtn.setIconSize(QSize(45, 45))
+        icon = QIcon('./src/resources/icons/settings_w.png')
+        self.ui.settingBtn.setIcon(icon)
+        self.ui.settingBtn.setIconSize(QSize(45, 45))
+        #icon = QIcon('./src/resources/icons/settings.png')
+        #self.ui.settingsBtn.setIcon(icon)
+        #self.ui.settingsBtn.setIconSize(QSize(45, 45))
         #icon = QIcon('./src/resources/icons/wifi.png')
         #self.ui.wifiBtn.setIcon(icon)
         #self.ui.wifiBtn.setIconSize(QSize(30, 30))

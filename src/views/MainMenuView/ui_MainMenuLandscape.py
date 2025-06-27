@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainMenuLandscapekuylQc.ui'
+## Form generated from reading UI file 'MainMenuLandscapefbWQBa.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
         MainWindow.resize(480, 272)
         MainWindow.setStyleSheet(u"background-color: white;\n"
 "font-family: Poppins;\n"
-"font-size: 20px;\n"
+"font-size:20px;\n"
 "font-weight: 500;")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -41,7 +41,7 @@ class Ui_MainWindow(object):
 "}")
         self.updateBtn = QPushButton(self.centralwidget)
         self.updateBtn.setObjectName(u"updateBtn")
-        self.updateBtn.setGeometry(QRect(10, 189, 301, 71))
+        self.updateBtn.setGeometry(QRect(10, 189, 291, 71))
         self.updateBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: #266676;\n"
 "	color: white;\n"
@@ -71,14 +71,14 @@ class Ui_MainWindow(object):
         self.bluetoothBtn.setObjectName(u"bluetoothBtn")
         self.bluetoothBtn.setGeometry(QRect(200, 100, 151, 81))
         self.bluetoothBtn.setStyleSheet(u"QPushButton {\n"
-"	background-color: #9B482F;\n"
+"	background-color: #266676;\n"
 "	color: white;\n"
 "}")
         self.dataBtn = QPushButton(self.centralwidget)
         self.dataBtn.setObjectName(u"dataBtn")
         self.dataBtn.setGeometry(QRect(10, 100, 181, 81))
         self.dataBtn.setStyleSheet(u"QPushButton {\n"
-"	background-color: #8EB9AF;\n"
+"	background-color: #DDB622;\n"
 "	color: white;\n"
 "}")
         self.settingsBtn = QPushButton(self.centralwidget)

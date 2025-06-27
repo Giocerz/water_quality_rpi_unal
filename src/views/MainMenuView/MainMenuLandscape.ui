@@ -148,7 +148,7 @@ font-weight: 500;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-	background-color: #9B482F;
+	background-color: #266676;
 	color: white;
 }</string>
     </property>
@@ -167,7 +167,7 @@ font-weight: 500;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-	background-color: #8EB9AF;
+	background-color: #DDB622;
 	color: white;
 }</string>
     </property>
