@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'SaveSdJfdg.ui'
+## Form generated from reading UI file 'SaveeuJQpT.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -56,10 +56,10 @@ class Ui_MainWindow(object):
         self.itRainedBtn.setStyleSheet(u"border-radius: 20px;\n"
 "border: 2px solid grey;\n"
 "border-radius: 6px;")
-        self.nextBtn_2 = QPushButton(self.page)
-        self.nextBtn_2.setObjectName(u"nextBtn_2")
-        self.nextBtn_2.setGeometry(QRect(0, 0, 61, 141))
-        self.nextBtn_2.setStyleSheet(u"background-color: #22577a;\n"
+        self.backBtn = QPushButton(self.page)
+        self.backBtn.setObjectName(u"backBtn")
+        self.backBtn.setGeometry(QRect(0, 0, 61, 141))
+        self.backBtn.setStyleSheet(u"background-color: #22577a;\n"
 "color: white;\n"
 "border: none;")
         self.stackedWidget.addWidget(self.page)
@@ -238,7 +238,7 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Nombre de la muestra</p></body></html>", None))
         self.nextBtn.setText("")
         self.itRainedBtn.setText(QCoreApplication.translate("MainWindow", u"\u00bfLlovi\u00f3 recientemente?", None))
-        self.nextBtn_2.setText("")
+        self.backBtn.setText("")
         self.prevBtn.setText(QCoreApplication.translate("MainWindow", u"Anterior", None))
         self.gpsBtn.setText(QCoreApplication.translate("MainWindow", u"Localizar con GPS", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Latitud, longitud</p></body></html>", None))
