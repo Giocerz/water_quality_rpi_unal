@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'SaveBBRylk.ui'
+## Form generated from reading UI file 'SaveJhOxyw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -115,7 +115,7 @@ class Ui_MainWindow(object):
 "border: none;")
         self.saveBtn = QPushButton(self.page_2)
         self.saveBtn.setObjectName(u"saveBtn")
-        self.saveBtn.setGeometry(QRect(420, 0, 61, 271))
+        self.saveBtn.setGeometry(QRect(419, 0, 61, 271))
         self.saveBtn.setStyleSheet(u"background-color: #22577a;\n"
 "color: white;\n"
 "border: none;")

@@ -27,7 +27,10 @@ class TopBarView(QMainWindow):
 
         self.ui.chargeIndicator.hide()
 
-        self.ina219 = INA219(addr=0x42)
+        try:
+            self.ina219 = INA219(addr=0x42)
+        except:
+            self.ina219 = None # INA219 not available, handle this case in the future
 
         self.battery_provider = BatteryProvider()
 
@@ -66,6 +69,11 @@ class TopBarView(QMainWindow):
         self.ui.timeLbl.setText(hour)
 
     def get_battery_level(self):
+        if self.ina219 is None:
+            self.battery_provider.setBatteryLevel(0)
+            self.update_battery()
+            self.charge_indicator(current= 0)
+            return
         bus_voltage = self.ina219.getBusVoltage_V()
         current = self.ina219.getCurrent_mA()
         p = int((bus_voltage - 6)/2.4*100)

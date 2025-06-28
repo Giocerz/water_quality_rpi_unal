@@ -280,7 +280,7 @@ border: none;</string>
      <widget class="QPushButton" name="saveBtn">
       <property name="geometry">
        <rect>
-        <x>420</x>
+        <x>419</x>
         <y>0</y>
         <width>61</width>
         <height>271</height>
