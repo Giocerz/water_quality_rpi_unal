@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'WifiListdtzMqe.ui'
+## Form generated from reading UI file 'WifiListYJrFsA.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -75,7 +75,7 @@ class Ui_MainWindow(object):
         self.refreshBtn.setObjectName(u"refreshBtn")
         self.refreshBtn.setGeometry(QRect(240, 220, 240, 51))
         self.refreshBtn.setStyleSheet(u"QPushButton {\n"
-"	background-color: #22577a;\n"
+"	background-color: #266676;\n"
 "	color: white;\n"
 "}")
         self.backBtn = QPushButton(self.centralwidget)

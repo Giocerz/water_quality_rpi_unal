@@ -126,7 +126,7 @@ font-size: 24px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-	background-color: #22577a;
+	background-color: #266676;
 	color: white;
 }</string>
     </property>
