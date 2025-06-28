@@ -37,7 +37,7 @@ class WifiView(QMainWindow):
         icon = QIcon('./src/resources/icons/back.png')
         self.ui.backBtn.setIcon(icon)
         self.ui.backBtn.setIconSize(QSize(30, 30))
-        icon = QIcon('./src/resources/icons/refresh.png')
+        icon = QIcon('./src/resources/icons/refresh_w.png')
         self.ui.refreshBtn.setIcon(icon)
         self.ui.refreshBtn.setIconSize(QSize(30, 30))
         self.scrollBar = self.ui.networkList.verticalScrollBar()
