@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MeasureMenuVqeJkJ.ui'
+## Form generated from reading UI file 'SettingsMenutRPVje.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -28,33 +28,25 @@ class Ui_MainWindow(object):
 "	height: 50px;\n"
 "	border: none;\n"
 "}")
-        self.calibrationBtn = QPushButton(self.centralwidget)
-        self.calibrationBtn.setObjectName(u"calibrationBtn")
-        self.calibrationBtn.setGeometry(QRect(0, 142, 481, 71))
-        self.calibrationBtn.setStyleSheet(u"QPushButton {\n"
-"	background-color: #266676;\n"
-"	color: white;\n"
-"}")
-        self.calibrationBtn.setIconSize(QSize(50, 50))
-        self.monitoringBtn = QPushButton(self.centralwidget)
-        self.monitoringBtn.setObjectName(u"monitoringBtn")
-        self.monitoringBtn.setGeometry(QRect(0, 0, 481, 71))
-        self.monitoringBtn.setStyleSheet(u"QPushButton {\n"
+        self.wifiBtn = QPushButton(self.centralwidget)
+        self.wifiBtn.setObjectName(u"wifiBtn")
+        self.wifiBtn.setGeometry(QRect(0, 0, 481, 106))
+        self.wifiBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: #22577a;\n"
 "	color: white;\n"
 "}")
-        self.monitoringBtn.setIconSize(QSize(50, 50))
-        self.historyBtn = QPushButton(self.centralwidget)
-        self.historyBtn.setObjectName(u"historyBtn")
-        self.historyBtn.setGeometry(QRect(0, 71, 481, 71))
-        self.historyBtn.setStyleSheet(u"QPushButton {\n"
+        self.wifiBtn.setIconSize(QSize(50, 50))
+        self.bluetoothBtn = QPushButton(self.centralwidget)
+        self.bluetoothBtn.setObjectName(u"bluetoothBtn")
+        self.bluetoothBtn.setGeometry(QRect(0, 106, 481, 106))
+        self.bluetoothBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: #1a759f;\n"
 "	color: white;\n"
 "}")
-        self.historyBtn.setIconSize(QSize(50, 50))
+        self.bluetoothBtn.setIconSize(QSize(50, 50))
         self.backBtn = QPushButton(self.centralwidget)
         self.backBtn.setObjectName(u"backBtn")
-        self.backBtn.setGeometry(QRect(0, 213, 481, 59))
+        self.backBtn.setGeometry(QRect(0, 212, 481, 60))
         self.backBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: white;\n"
 "	color: #266676;\n"
@@ -69,9 +61,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.calibrationBtn.setText(QCoreApplication.translate("MainWindow", u"Calibraci\u00f3n", None))
-        self.monitoringBtn.setText(QCoreApplication.translate("MainWindow", u"Medir", None))
-        self.historyBtn.setText(QCoreApplication.translate("MainWindow", u"Historial", None))
+        self.wifiBtn.setText(QCoreApplication.translate("MainWindow", u"WiFi", None))
+        self.bluetoothBtn.setText(QCoreApplication.translate("MainWindow", u"Bluetooth", None))
         self.backBtn.setText(QCoreApplication.translate("MainWindow", u"Atr\u00e1s", None))
     # retranslateUi
 
