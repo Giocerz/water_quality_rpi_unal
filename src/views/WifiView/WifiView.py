@@ -1,10 +1,10 @@
 from PySide2.QtWidgets import QMainWindow
-from PySide2.QtCore import QSize, Qt, QThread, Signal, QTimer
+from PySide2.QtCore import QSize, Qt
 from PySide2.QtGui import QIcon, QStandardItemModel, QStandardItem
-from src.views.ui_WifiList import Ui_MainWindow
-from src.widgets.PopupWidget import LoadingPopupWidget, PopupWidgetInfo, FullpageLoadingPopup
+from .ui_WifiList import Ui_MainWindow
+from src.widgets.PopupWidget import PopupWidgetInfo, FullpageLoadingPopup
 from src.widgets.ConnectWifiWidget import ConnectWifiWidget, SavedWifiWidget, ConnectPublicWifiWidget
-from src.services.wifiService import WifiService, WifiScanner
+from src.services.wifiService import WifiService
 from src.package.Navigator import Navigator
 from src.package.Timer import Timer
 
