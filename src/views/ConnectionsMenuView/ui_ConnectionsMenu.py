@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ConnectionsMenuFPkTja.ui'
+## Form generated from reading UI file 'ConnectionsMenueFJxTJ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -49,7 +49,7 @@ class Ui_MainWindow(object):
         self.backBtn.setGeometry(QRect(0, 212, 481, 60))
         self.backBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: white;\n"
-"	color: #22577a;\n"
+"	color: #266676;\n"
 "}")
         self.backBtn.setIconSize(QSize(50, 50))
         MainWindow.setCentralWidget(self.centralwidget)
