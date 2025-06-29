@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MonitoringSelectDVRDNy.ui'
+## Form generated from reading UI file 'MonitoringSelectBqckno.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -64,12 +64,13 @@ class Ui_MainWindow(object):
 "}")
         self.tdsCheckBox = QCheckBox(self.centralwidget)
         self.tdsCheckBox.setObjectName(u"tdsCheckBox")
-        self.tdsCheckBox.setGeometry(QRect(0, 40, 441, 35))
+        self.tdsCheckBox.setGeometry(QRect(30, 40, 411, 35))
         self.tdsCheckBox.setLayoutDirection(Qt.RightToLeft)
         self.tdsCheckBox.setStyleSheet(u"QCheckBox {\n"
 "	background-color: transparent;\n"
 "	height: 10px;\n"
-"	font: 14px \"Poppins\";\n"
+"	font: 16px \"Poppins\";\n"
+"	color: white;\n"
 "}\n"
 "\n"
 "QCheckBox::indicator {\n"
@@ -105,12 +106,13 @@ class Ui_MainWindow(object):
         self.label_4.setStyleSheet(u"background-color: #1a759f;")
         self.phCheckBox = QCheckBox(self.centralwidget)
         self.phCheckBox.setObjectName(u"phCheckBox")
-        self.phCheckBox.setGeometry(QRect(0, 76, 441, 35))
+        self.phCheckBox.setGeometry(QRect(30, 76, 411, 35))
         self.phCheckBox.setLayoutDirection(Qt.RightToLeft)
         self.phCheckBox.setStyleSheet(u"QCheckBox {\n"
 "	background-color: transparent;\n"
 "	height: 10px;\n"
-"	font: 14px \"Poppins\";\n"
+"	font: 16px \"Poppins\";\n"
+"	color: white;\n"
 "}\n"
 "\n"
 "QCheckBox::indicator {\n"
@@ -132,12 +134,13 @@ class Ui_MainWindow(object):
         self.label_5.setStyleSheet(u"background-color: #22577a;")
         self.oxygenCheckBox = QCheckBox(self.centralwidget)
         self.oxygenCheckBox.setObjectName(u"oxygenCheckBox")
-        self.oxygenCheckBox.setGeometry(QRect(0, 111, 441, 35))
+        self.oxygenCheckBox.setGeometry(QRect(30, 111, 411, 35))
         self.oxygenCheckBox.setLayoutDirection(Qt.RightToLeft)
         self.oxygenCheckBox.setStyleSheet(u"QCheckBox {\n"
 "	background-color: transparent;\n"
 "	height: 10px;\n"
-"	font: 14px \"Poppins\";\n"
+"	font: 16px \"Poppins\";\n"
+"	color: white;\n"
 "}\n"
 "\n"
 "QCheckBox::indicator {\n"
@@ -159,12 +162,13 @@ class Ui_MainWindow(object):
         self.label_6.setStyleSheet(u"background-color: #1a759f;")
         self.allCheckBox = QCheckBox(self.centralwidget)
         self.allCheckBox.setObjectName(u"allCheckBox")
-        self.allCheckBox.setGeometry(QRect(0, 146, 441, 35))
+        self.allCheckBox.setGeometry(QRect(30, 146, 411, 35))
         self.allCheckBox.setLayoutDirection(Qt.RightToLeft)
         self.allCheckBox.setStyleSheet(u"QCheckBox {\n"
 "	background-color: transparent;\n"
 "	height: 10px;\n"
-"	font: 14px \"Poppins\";\n"
+"	font: 16px \"Poppins\";\n"
+"	color: white;\n"
 "}\n"
 "\n"
 "QCheckBox::indicator {\n"
@@ -180,31 +184,9 @@ class Ui_MainWindow(object):
 "QCheckBox::indicator:unchecked {\n"
 "    background-color: transparent;\n"
 "}")
-        self.label_7 = QLabel(self.centralwidget)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setGeometry(QRect(40, 41, 361, 35))
-        self.label_7.setStyleSheet(u"background-color: transparent;\n"
-"color: white;")
-        self.label_8 = QLabel(self.centralwidget)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setGeometry(QRect(40, 76, 361, 35))
-        self.label_8.setStyleSheet(u"background-color: transparent;\n"
-"color: white;")
-        self.label_9 = QLabel(self.centralwidget)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setGeometry(QRect(40, 111, 361, 35))
-        self.label_9.setStyleSheet(u"background-color: transparent;\n"
-"color: white;")
-        self.label_10 = QLabel(self.centralwidget)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setGeometry(QRect(40, 146, 361, 35))
-        self.label_10.setStyleSheet(u"background-color: transparent;\n"
-"color: white;")
         MainWindow.setCentralWidget(self.centralwidget)
         self.label_4.raise_()
-        self.label_8.raise_()
         self.label_3.raise_()
-        self.label_7.raise_()
         self.label_6.raise_()
         self.label_5.raise_()
         self.initBtn.raise_()
@@ -213,8 +195,6 @@ class Ui_MainWindow(object):
         self.label.raise_()
         self.label_2.raise_()
         self.phCheckBox.raise_()
-        self.label_9.raise_()
-        self.label_10.raise_()
         self.oxygenCheckBox.raise_()
         self.allCheckBox.raise_()
 
@@ -227,19 +207,15 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.initBtn.setText(QCoreApplication.translate("MainWindow", u"Iniciar", None))
         self.backBtn.setText(QCoreApplication.translate("MainWindow", u"Atr\u00e1s", None))
-        self.tdsCheckBox.setText("")
+        self.tdsCheckBox.setText(QCoreApplication.translate("MainWindow", u"Conductividad El\u00e9ctrica/TDS                                     ", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Escoja los par\u00e1metros que desea monitorear</p></body></html>", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>La temperatura est\u00e1 activada por defecto</p></body></html>", None))
         self.label_3.setText("")
         self.label_4.setText("")
-        self.phCheckBox.setText("")
+        self.phCheckBox.setText(QCoreApplication.translate("MainWindow", u"pH                                                                                         ", None))
         self.label_5.setText("")
-        self.oxygenCheckBox.setText("")
+        self.oxygenCheckBox.setText(QCoreApplication.translate("MainWindow", u"Ox\u00edgeno Disuelto                                                             ", None))
         self.label_6.setText("")
-        self.allCheckBox.setText("")
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Conductividad El\u00e9ctrica/TDS", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"pH", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Ox\u00edgeno Disuelto", None))
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"Seleccionar todos", None))
+        self.allCheckBox.setText(QCoreApplication.translate("MainWindow", u"Seleccionar todos                                                           ", None))
     # retranslateUi
 

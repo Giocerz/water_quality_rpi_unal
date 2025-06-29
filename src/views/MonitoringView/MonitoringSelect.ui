@@ -87,9 +87,9 @@ QLabel {
    <widget class="QCheckBox" name="tdsCheckBox">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>30</x>
       <y>40</y>
-      <width>441</width>
+      <width>411</width>
       <height>35</height>
      </rect>
     </property>
@@ -100,7 +100,8 @@ QLabel {
      <string notr="true">QCheckBox {
 	background-color: transparent;
 	height: 10px;
-	font: 14px &quot;Poppins&quot;;
+	font: 16px &quot;Poppins&quot;;
+	color: white;
 }
 
 QCheckBox::indicator {
@@ -118,7 +119,7 @@ QCheckBox::indicator:unchecked {
 }</string>
     </property>
     <property name="text">
-     <string>                                                                                                                                      </string>
+     <string>Conductividad Eléctrica/TDS                                     </string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -190,9 +191,9 @@ border: 2px solid #266676;
    <widget class="QCheckBox" name="phCheckBox">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>30</x>
       <y>76</y>
-      <width>441</width>
+      <width>411</width>
       <height>35</height>
      </rect>
     </property>
@@ -203,7 +204,8 @@ border: 2px solid #266676;
      <string notr="true">QCheckBox {
 	background-color: transparent;
 	height: 10px;
-	font: 14px &quot;Poppins&quot;;
+	font: 16px &quot;Poppins&quot;;
+	color: white;
 }
 
 QCheckBox::indicator {
@@ -221,7 +223,7 @@ QCheckBox::indicator:unchecked {
 }</string>
     </property>
     <property name="text">
-     <string>                                                                                                                                                        </string>
+     <string>pH                                                                                         </string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -243,9 +245,9 @@ QCheckBox::indicator:unchecked {
    <widget class="QCheckBox" name="oxygenCheckBox">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>30</x>
       <y>111</y>
-      <width>441</width>
+      <width>411</width>
       <height>35</height>
      </rect>
     </property>
@@ -256,7 +258,8 @@ QCheckBox::indicator:unchecked {
      <string notr="true">QCheckBox {
 	background-color: transparent;
 	height: 10px;
-	font: 14px &quot;Poppins&quot;;
+	font: 16px &quot;Poppins&quot;;
+	color: white;
 }
 
 QCheckBox::indicator {
@@ -274,7 +277,7 @@ QCheckBox::indicator:unchecked {
 }</string>
     </property>
     <property name="text">
-     <string>                                                                                                                                                        </string>
+     <string>Oxígeno Disuelto                                                             </string>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
@@ -296,9 +299,9 @@ QCheckBox::indicator:unchecked {
    <widget class="QCheckBox" name="allCheckBox">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>30</x>
       <y>146</y>
-      <width>441</width>
+      <width>411</width>
       <height>35</height>
      </rect>
     </property>
@@ -309,7 +312,8 @@ QCheckBox::indicator:unchecked {
      <string notr="true">QCheckBox {
 	background-color: transparent;
 	height: 10px;
-	font: 14px &quot;Poppins&quot;;
+	font: 16px &quot;Poppins&quot;;
+	color: white;
 }
 
 QCheckBox::indicator {
@@ -327,81 +331,11 @@ QCheckBox::indicator:unchecked {
 }</string>
     </property>
     <property name="text">
-     <string>                                                                                                                                           </string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>41</y>
-      <width>361</width>
-      <height>35</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>Conductividad Eléctrica/TDS</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_8">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>76</y>
-      <width>361</width>
-      <height>35</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>pH</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_9">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>111</y>
-      <width>361</width>
-      <height>35</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>Oxígeno Disuelto</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_10">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>146</y>
-      <width>361</width>
-      <height>35</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>Seleccionar todos</string>
+     <string>Seleccionar todos                                                           </string>
     </property>
    </widget>
    <zorder>label_4</zorder>
-   <zorder>label_8</zorder>
    <zorder>label_3</zorder>
-   <zorder>label_7</zorder>
    <zorder>label_6</zorder>
    <zorder>label_5</zorder>
    <zorder>initBtn</zorder>
@@ -410,8 +344,6 @@ color: white;</string>
    <zorder>label</zorder>
    <zorder>label_2</zorder>
    <zorder>phCheckBox</zorder>
-   <zorder>label_9</zorder>
-   <zorder>label_10</zorder>
    <zorder>oxygenCheckBox</zorder>
    <zorder>allCheckBox</zorder>
   </widget>
