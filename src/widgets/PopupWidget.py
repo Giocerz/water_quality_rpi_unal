@@ -2,7 +2,7 @@ from PySide2.QtWidgets import QGraphicsOpacityEffect, QWidget
 from PySide2.QtGui import QPixmap
 from PySide2 import QtCore
 from PySide2.QtCore import QPropertyAnimation, QSequentialAnimationGroup
-from src.views.ui_PopupWidget import Ui_Form as Ui_Popup
+from .ui.ui_PopupWidget import Ui_Form as Ui_Popup
 from src.views.ui_LoadingPopupWidget import Ui_Form as Ui_Loading
 from src.views.ui_ProgressPopupWidget import Ui_Form as Ui_Progress
 from .ui.ui_LoadingPopupFullpageLandscape import Ui_Form as Ui_FullpageLoadingLandS
