@@ -110,7 +110,7 @@ QCheckBox::indicator {
 }
 
 QCheckBox::indicator:checked {
-    background-color: #00007f; /* Color de fondo cuando está marcado */
+    background-color: white; /* Color de fondo cuando está marcado */
 }
 
 QCheckBox::indicator:unchecked {
@@ -118,7 +118,7 @@ QCheckBox::indicator:unchecked {
 }</string>
     </property>
     <property name="text">
-     <string/>
+     <string>                                                                                                                                      </string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -213,7 +213,7 @@ QCheckBox::indicator {
 }
 
 QCheckBox::indicator:checked {
-    background-color: #00007f; /* Color de fondo cuando está marcado */
+    background-color: white; /* Color de fondo cuando está marcado */
 }
 
 QCheckBox::indicator:unchecked {
@@ -221,7 +221,7 @@ QCheckBox::indicator:unchecked {
 }</string>
     </property>
     <property name="text">
-     <string/>
+     <string>                                                                                                                                                        </string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -266,7 +266,7 @@ QCheckBox::indicator {
 }
 
 QCheckBox::indicator:checked {
-    background-color: #00007f; /* Color de fondo cuando está marcado */
+    background-color: white; /* Color de fondo cuando está marcado */
 }
 
 QCheckBox::indicator:unchecked {
@@ -274,7 +274,7 @@ QCheckBox::indicator:unchecked {
 }</string>
     </property>
     <property name="text">
-     <string/>
+     <string>                                                                                                                                                        </string>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
@@ -319,7 +319,7 @@ QCheckBox::indicator {
 }
 
 QCheckBox::indicator:checked {
-    background-color: #00007f; /* Color de fondo cuando está marcado */
+    background-color: white; /* Color de fondo cuando está marcado */
 }
 
 QCheckBox::indicator:unchecked {
@@ -327,7 +327,7 @@ QCheckBox::indicator:unchecked {
 }</string>
     </property>
     <property name="text">
-     <string/>
+     <string>                                                                                                                                           </string>
     </property>
    </widget>
    <widget class="QLabel" name="label_7">

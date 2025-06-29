@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MonitoringSelectVrTUoR.ui'
+## Form generated from reading UI file 'MonitoringSelectDVRDNy.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -79,7 +79,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QCheckBox::indicator:checked {\n"
-"    background-color: #00007f; /* Color de fondo cuando est\u00e1 marcado */\n"
+"    background-color: white; /* Color de fondo cuando est\u00e1 marcado */\n"
 "}\n"
 "\n"
 "QCheckBox::indicator:unchecked {\n"
@@ -120,7 +120,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QCheckBox::indicator:checked {\n"
-"    background-color: #00007f; /* Color de fondo cuando est\u00e1 marcado */\n"
+"    background-color: white; /* Color de fondo cuando est\u00e1 marcado */\n"
 "}\n"
 "\n"
 "QCheckBox::indicator:unchecked {\n"
@@ -147,7 +147,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QCheckBox::indicator:checked {\n"
-"    background-color: #00007f; /* Color de fondo cuando est\u00e1 marcado */\n"
+"    background-color: white; /* Color de fondo cuando est\u00e1 marcado */\n"
 "}\n"
 "\n"
 "QCheckBox::indicator:unchecked {\n"
@@ -174,7 +174,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QCheckBox::indicator:checked {\n"
-"    background-color: #00007f; /* Color de fondo cuando est\u00e1 marcado */\n"
+"    background-color: white; /* Color de fondo cuando est\u00e1 marcado */\n"
 "}\n"
 "\n"
 "QCheckBox::indicator:unchecked {\n"
