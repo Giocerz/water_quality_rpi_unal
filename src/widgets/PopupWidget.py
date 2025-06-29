@@ -21,7 +21,7 @@ class PopupWidget(QWidget):
         self.no_callback = no_callback
 
         self.opacity = QGraphicsOpacityEffect()
-        self.opacity.setOpacity(0.2)
+        self.opacity.setOpacity(0.5)
         self.ui.lblOpacity.setGraphicsEffect(self.opacity)
         self.ui.LabelInfo.setText(text)
         pixmap = QPixmap('./src/resources/icons/warning.png')
