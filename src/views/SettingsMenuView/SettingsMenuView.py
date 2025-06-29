@@ -18,12 +18,21 @@ class SettingsMenuView(QMainWindow):
         self.ui.powerBtn.clicked.connect(self.on_power_clicked)
 
     def ui_components(self):
-        icon = QIcon('./src/resources/icons/arrow_back_w.png')
+        icon = QIcon('./src/resources/icons/back.png')
         self.ui.backBtn.setIcon(icon)
         self.ui.backBtn.setIconSize(QSize(40, 40))
         icon = QIcon('./src/resources/icons/mode_off_on_w.png')
         self.ui.powerBtn.setIcon(icon)
         self.ui.powerBtn.setIconSize(QSize(40, 40))
+        icon = QIcon('./src/resources/icons/question_mark_w.png')
+        self.ui.helpBtn.setIcon(icon)
+        self.ui.helpBtn.setIconSize(QSize(40, 40))
+        icon = QIcon('./src/resources/icons/description_w.png')
+        self.ui.aboutBtn.setIcon(icon)
+        self.ui.aboutBtn.setIconSize(QSize(40, 40))
+        icon = QIcon('./src/resources/icons/settings_w.png')
+        self.ui.settingsBtn.setIcon(icon)
+        self.ui.settingsBtn.setIconSize(QSize(40, 40))
 
     def on_back_clicked(self):
         Navigator.pop(context=self.context)
