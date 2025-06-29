@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MonitoringSelectBqckno.ui'
+## Form generated from reading UI file 'MonitoringSelectrtYKvl.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -93,7 +93,8 @@ class Ui_MainWindow(object):
         self.label_2.setObjectName(u"label_2")
         self.label_2.setGeometry(QRect(0, 180, 481, 40))
         self.label_2.setStyleSheet(u"font-size: 14px;\n"
-"border: 2px solid #266676;\n"
+"background-color: #e76f51;\n"
+"color: white;\n"
 "")
         self.label_2.setAlignment(Qt.AlignCenter)
         self.label_3 = QLabel(self.centralwidget)
