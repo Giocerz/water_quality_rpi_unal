@@ -1,17 +1,10 @@
-import os
 from PySide2.QtWidgets import QMainWindow
 from PySide2.QtCore import QSize
 from PySide2.QtGui import QIcon
 from .ui_MainMenu import Ui_MainWindow
 from src.views.MeasureMenuView.MeasureMenuView import MeasureMenuView
 from src.views.ConnectionsMenuView.ConnectionsMenuView import ConnectionsMenuView
-from src.views.CalibrationView.CalibrationView import CalibrationView
-from src.views.FoldersView.FoldersView import FoldersView
-from src.views.BluetoothView.BluetoothView import BluetoothView
-from src.views.HelpView.HelpView import HelpView
-from src.views.WifiView.WifiView import WifiView
-from src.views.UpdateView.UpdateView import UpdateView
-from src.widgets.PopupWidget import PopupWidget
+from src.views.SettingsMenuView.SettingsMenuView import SettingsMenuView
 from src.package.Navigator import Navigator
 
 class MainMenuView(QMainWindow):
@@ -24,6 +17,7 @@ class MainMenuView(QMainWindow):
 
         self.ui.monitoringBtn.clicked.connect(self.on_monitoring_clicked)
         self.ui.connectionsBtn.clicked.connect(self.on_connections_clicked)
+        self.ui.settingBtn.clicked.connect(self.on_settings_clicked)
 
     def ui_components(self):
         icon = QIcon('./src/resources/icons/sensors_w.png')
@@ -42,28 +36,5 @@ class MainMenuView(QMainWindow):
     def on_connections_clicked(self):
         Navigator.push(context= self.context, view= ConnectionsMenuView(context= self.context))
 
-    def on_calibration_clicked(self):
-        Navigator.push(context= self.context, view= CalibrationView(context= self.context))
-
-    def on_datos_clicked(self):
-        Navigator.push(context= self.context, view= FoldersView(context= self.context))
-
-    def on_bluetooth_clicked(self):
-        Navigator.push(context= self.context, view= BluetoothView(context= self.context))
-    
-    def on_wifi_clicked(self):
-        Navigator.push(context= self.context, view= WifiView(context= self.context))
-    
-    def on_help_clicked(self):
-        Navigator.push(context= self.context, view= HelpView(context= self.context))
-
-    def on_update_clicked(self):
-        Navigator.push(context= self.context, view= UpdateView(context= self.context))
-
-    def on_power_clicked(self):
-        def yes_callback():
-            os.system("sudo poweroff")
-        def no_callback():
-            pass
-        popup = PopupWidget(context=self.context, text="¿Quieres apagar el dispositivo?", yes_callback=yes_callback, no_callback=no_callback)
-        popup.show()
+    def on_settings_clicked(self):
+        Navigator.push(context= self.context, view= SettingsMenuView(context= self.context))

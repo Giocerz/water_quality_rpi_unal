@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'SettingsMenutRPVje.ui'
+## Form generated from reading UI file 'SettingsMenucCDFbk.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -28,30 +28,46 @@ class Ui_MainWindow(object):
 "	height: 50px;\n"
 "	border: none;\n"
 "}")
-        self.wifiBtn = QPushButton(self.centralwidget)
-        self.wifiBtn.setObjectName(u"wifiBtn")
-        self.wifiBtn.setGeometry(QRect(0, 0, 481, 106))
-        self.wifiBtn.setStyleSheet(u"QPushButton {\n"
+        self.helpBtn = QPushButton(self.centralwidget)
+        self.helpBtn.setObjectName(u"helpBtn")
+        self.helpBtn.setGeometry(QRect(0, 0, 481, 70))
+        self.helpBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: #22577a;\n"
 "	color: white;\n"
 "}")
-        self.wifiBtn.setIconSize(QSize(50, 50))
-        self.bluetoothBtn = QPushButton(self.centralwidget)
-        self.bluetoothBtn.setObjectName(u"bluetoothBtn")
-        self.bluetoothBtn.setGeometry(QRect(0, 106, 481, 106))
-        self.bluetoothBtn.setStyleSheet(u"QPushButton {\n"
+        self.helpBtn.setIconSize(QSize(50, 50))
+        self.aboutBtn = QPushButton(self.centralwidget)
+        self.aboutBtn.setObjectName(u"aboutBtn")
+        self.aboutBtn.setGeometry(QRect(0, 70, 481, 70))
+        self.aboutBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: #1a759f;\n"
 "	color: white;\n"
 "}")
-        self.bluetoothBtn.setIconSize(QSize(50, 50))
+        self.aboutBtn.setIconSize(QSize(50, 50))
         self.backBtn = QPushButton(self.centralwidget)
         self.backBtn.setObjectName(u"backBtn")
-        self.backBtn.setGeometry(QRect(0, 212, 481, 60))
+        self.backBtn.setGeometry(QRect(0, 210, 240, 62))
         self.backBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: white;\n"
 "	color: #266676;\n"
 "}")
         self.backBtn.setIconSize(QSize(50, 50))
+        self.settingsBtn = QPushButton(self.centralwidget)
+        self.settingsBtn.setObjectName(u"settingsBtn")
+        self.settingsBtn.setGeometry(QRect(0, 140, 481, 70))
+        self.settingsBtn.setStyleSheet(u"QPushButton {\n"
+"	background-color: #266676;\n"
+"	color: white;\n"
+"}")
+        self.settingsBtn.setIconSize(QSize(50, 50))
+        self.powerBtn = QPushButton(self.centralwidget)
+        self.powerBtn.setObjectName(u"powerBtn")
+        self.powerBtn.setGeometry(QRect(240, 210, 240, 62))
+        self.powerBtn.setStyleSheet(u"QPushButton {\n"
+"	background-color: #ee4b6a;\n"
+"	color: white;\n"
+"}")
+        self.powerBtn.setIconSize(QSize(50, 50))
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -61,8 +77,10 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.wifiBtn.setText(QCoreApplication.translate("MainWindow", u"WiFi", None))
-        self.bluetoothBtn.setText(QCoreApplication.translate("MainWindow", u"Bluetooth", None))
+        self.helpBtn.setText(QCoreApplication.translate("MainWindow", u"Ayuda", None))
+        self.aboutBtn.setText(QCoreApplication.translate("MainWindow", u"Acerca del dispositivo", None))
         self.backBtn.setText(QCoreApplication.translate("MainWindow", u"Atr\u00e1s", None))
+        self.settingsBtn.setText(QCoreApplication.translate("MainWindow", u"Configuraci\u00f3n", None))
+        self.powerBtn.setText(QCoreApplication.translate("MainWindow", u"Apagar", None))
     # retranslateUi
 
