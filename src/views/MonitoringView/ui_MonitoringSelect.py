@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MonitoringSelectJHLrgO.ui'
+## Form generated from reading UI file 'MonitoringSelectssUVLF.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -64,7 +64,7 @@ class Ui_MainWindow(object):
 "}")
         self.tdsCheckBox = QCheckBox(self.centralwidget)
         self.tdsCheckBox.setObjectName(u"tdsCheckBox")
-        self.tdsCheckBox.setGeometry(QRect(30, 40, 411, 35))
+        self.tdsCheckBox.setGeometry(QRect(110, 40, 261, 35))
         self.tdsCheckBox.setLayoutDirection(Qt.RightToLeft)
         self.tdsCheckBox.setStyleSheet(u"QCheckBox {\n"
 "	background-color: transparent;\n"
@@ -108,7 +108,7 @@ class Ui_MainWindow(object):
         self.label_4.setStyleSheet(u"background-color: #1a759f;")
         self.phCheckBox = QCheckBox(self.centralwidget)
         self.phCheckBox.setObjectName(u"phCheckBox")
-        self.phCheckBox.setGeometry(QRect(30, 76, 411, 35))
+        self.phCheckBox.setGeometry(QRect(110, 76, 261, 35))
         self.phCheckBox.setLayoutDirection(Qt.RightToLeft)
         self.phCheckBox.setStyleSheet(u"QCheckBox {\n"
 "	background-color: transparent;\n"
@@ -136,7 +136,7 @@ class Ui_MainWindow(object):
         self.label_5.setStyleSheet(u"background-color: #22577a;")
         self.oxygenCheckBox = QCheckBox(self.centralwidget)
         self.oxygenCheckBox.setObjectName(u"oxygenCheckBox")
-        self.oxygenCheckBox.setGeometry(QRect(30, 111, 411, 35))
+        self.oxygenCheckBox.setGeometry(QRect(110, 111, 261, 35))
         self.oxygenCheckBox.setLayoutDirection(Qt.RightToLeft)
         self.oxygenCheckBox.setStyleSheet(u"QCheckBox {\n"
 "	background-color: transparent;\n"
@@ -164,7 +164,7 @@ class Ui_MainWindow(object):
         self.label_6.setStyleSheet(u"background-color: #1a759f;")
         self.allCheckBox = QCheckBox(self.centralwidget)
         self.allCheckBox.setObjectName(u"allCheckBox")
-        self.allCheckBox.setGeometry(QRect(30, 146, 411, 35))
+        self.allCheckBox.setGeometry(QRect(110, 146, 261, 35))
         self.allCheckBox.setLayoutDirection(Qt.RightToLeft)
         self.allCheckBox.setStyleSheet(u"QCheckBox {\n"
 "	background-color: transparent;\n"

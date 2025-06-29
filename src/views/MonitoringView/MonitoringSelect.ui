@@ -87,9 +87,9 @@ QLabel {
    <widget class="QCheckBox" name="tdsCheckBox">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>110</x>
       <y>40</y>
-      <width>411</width>
+      <width>261</width>
       <height>35</height>
      </rect>
     </property>
@@ -195,9 +195,9 @@ color: white;
    <widget class="QCheckBox" name="phCheckBox">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>110</x>
       <y>76</y>
-      <width>411</width>
+      <width>261</width>
       <height>35</height>
      </rect>
     </property>
@@ -249,9 +249,9 @@ QCheckBox::indicator:unchecked {
    <widget class="QCheckBox" name="oxygenCheckBox">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>110</x>
       <y>111</y>
-      <width>411</width>
+      <width>261</width>
       <height>35</height>
      </rect>
     </property>
@@ -303,9 +303,9 @@ QCheckBox::indicator:unchecked {
    <widget class="QCheckBox" name="allCheckBox">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>110</x>
       <y>146</y>
-      <width>411</width>
+      <width>261</width>
       <height>35</height>
      </rect>
     </property>
