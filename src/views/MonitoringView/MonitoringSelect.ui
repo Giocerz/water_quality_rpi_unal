@@ -119,20 +119,23 @@ QCheckBox::indicator:unchecked {
 }</string>
     </property>
     <property name="text">
-     <string>Conductividad Eléctrica/TDS                                     </string>
+     <string>Conductividad Eléctrica/TDS</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>0</x>
       <y>0</y>
-      <width>361</width>
+      <width>480</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Escoja los parámetros que desea monitorear&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -224,7 +227,7 @@ QCheckBox::indicator:unchecked {
 }</string>
     </property>
     <property name="text">
-     <string>pH                                                                                         </string>
+     <string>pH</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -278,7 +281,7 @@ QCheckBox::indicator:unchecked {
 }</string>
     </property>
     <property name="text">
-     <string>Oxígeno Disuelto                                                             </string>
+     <string>Oxígeno Disuelto</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
@@ -332,7 +335,7 @@ QCheckBox::indicator:unchecked {
 }</string>
     </property>
     <property name="text">
-     <string>Seleccionar todos                                                           </string>
+     <string>Seleccionar todos</string>
     </property>
    </widget>
    <zorder>label_4</zorder>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MonitoringSelectrtYKvl.ui'
+## Form generated from reading UI file 'MonitoringSelectJHLrgO.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -88,7 +88,8 @@ class Ui_MainWindow(object):
 "}")
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(80, 0, 361, 41))
+        self.label.setGeometry(QRect(0, 0, 480, 41))
+        self.label.setAlignment(Qt.AlignCenter)
         self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setGeometry(QRect(0, 180, 481, 40))
@@ -208,15 +209,15 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.initBtn.setText(QCoreApplication.translate("MainWindow", u"Iniciar", None))
         self.backBtn.setText(QCoreApplication.translate("MainWindow", u"Atr\u00e1s", None))
-        self.tdsCheckBox.setText(QCoreApplication.translate("MainWindow", u"Conductividad El\u00e9ctrica/TDS                                     ", None))
+        self.tdsCheckBox.setText(QCoreApplication.translate("MainWindow", u"Conductividad El\u00e9ctrica/TDS", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Escoja los par\u00e1metros que desea monitorear</p></body></html>", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>La temperatura est\u00e1 activada por defecto</p></body></html>", None))
         self.label_3.setText("")
         self.label_4.setText("")
-        self.phCheckBox.setText(QCoreApplication.translate("MainWindow", u"pH                                                                                         ", None))
+        self.phCheckBox.setText(QCoreApplication.translate("MainWindow", u"pH", None))
         self.label_5.setText("")
-        self.oxygenCheckBox.setText(QCoreApplication.translate("MainWindow", u"Ox\u00edgeno Disuelto                                                             ", None))
+        self.oxygenCheckBox.setText(QCoreApplication.translate("MainWindow", u"Ox\u00edgeno Disuelto", None))
         self.label_6.setText("")
-        self.allCheckBox.setText(QCoreApplication.translate("MainWindow", u"Seleccionar todos                                                           ", None))
+        self.allCheckBox.setText(QCoreApplication.translate("MainWindow", u"Seleccionar todos", None))
     # retranslateUi
 
