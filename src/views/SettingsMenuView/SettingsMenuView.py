@@ -35,7 +35,7 @@ class SettingsMenuView(QMainWindow):
         self.ui.settingsBtn.setIconSize(QSize(40, 40))
 
     def on_back_clicked(self):
-        Navigator.pop(context=self.context)
+        Navigator.pop(context=self.context, view=self)
 
     def on_power_clicked(self):
         def yes_callback():
