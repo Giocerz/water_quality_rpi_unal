@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'SaveJhOxyw.ui'
+## Form generated from reading UI file 'SavealeZAf.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -45,7 +45,7 @@ class Ui_MainWindow(object):
         self.label.setGeometry(QRect(80, 8, 181, 21))
         self.nextBtn = QPushButton(self.page)
         self.nextBtn.setObjectName(u"nextBtn")
-        self.nextBtn.setGeometry(QRect(420, 0, 61, 141))
+        self.nextBtn.setGeometry(QRect(419, 0, 61, 141))
         self.nextBtn.setStyleSheet(u"background-color: #22577a;\n"
 "color: white;\n"
 "border: none;")
@@ -140,7 +140,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 431, 231))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 429, 229))
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.verticalSlider = QSlider(self.page_3)
         self.verticalSlider.setObjectName(u"verticalSlider")
@@ -218,7 +218,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

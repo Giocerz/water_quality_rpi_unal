@@ -24,9 +24,8 @@ QWidget {
 }
 
 QPushButton {
-	border: 1px solid #00007f;
+	border: none;
 	background-color: white;
-	color: #00007f;
 	font-size: 14px;
 	font-family: Poppins;
 	font-weight: 500;
@@ -110,6 +109,29 @@ QPushButton {
     </property>
     <property name="text">
      <string>Guardar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="optionsBtn">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>19</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: #1a759f;
+	color: white;
+	font-size: 16px;
+	font-weight: 500;
+	height: 50px;
+	border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

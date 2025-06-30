@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MonitoringPHxgZN.ui'
+## Form generated from reading UI file 'MonitoringkrLjqa.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -28,9 +28,8 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QPushButton {\n"
-"	border: 1px solid #00007f;\n"
+"	border: none;\n"
 "	background-color: white;\n"
-"	color: #00007f;\n"
 "	font-size: 14px;\n"
 "	font-family: Poppins;\n"
 "	font-weight: 500;\n"
@@ -73,6 +72,17 @@ class Ui_MainWindow(object):
 "	height: 50px;\n"
 "	border: none;\n"
 "}")
+        self.optionsBtn = QPushButton(self.centralwidget)
+        self.optionsBtn.setObjectName(u"optionsBtn")
+        self.optionsBtn.setGeometry(QRect(0, 0, 19, 231))
+        self.optionsBtn.setStyleSheet(u"QPushButton {\n"
+"	background-color: #1a759f;\n"
+"	color: white;\n"
+"	font-size: 16px;\n"
+"	font-weight: 500;\n"
+"	height: 50px;\n"
+"	border: none;\n"
+"}")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -85,5 +95,6 @@ class Ui_MainWindow(object):
         self.backBtn.setText(QCoreApplication.translate("MainWindow", u"Atr\u00e1s", None))
         self.pauseBtn.setText(QCoreApplication.translate("MainWindow", u"Pausar", None))
         self.saveBtn.setText(QCoreApplication.translate("MainWindow", u"Guardar", None))
+        self.optionsBtn.setText("")
     # retranslateUi
 
