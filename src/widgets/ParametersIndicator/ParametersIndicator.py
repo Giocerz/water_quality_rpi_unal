@@ -65,7 +65,7 @@ class ParametersIndicator(QWidget):
         else:
             rounded_value = round(value, self.significant_figures)
         self.ui.valueLbl.setText(f'{rounded_value} {self.unit}',)
-        self.ui.valueLbl.setAlignment(Qt.AlignRight)
+        self.ui.valueLbl.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
         self.ui.progressBar.setValue(self.__acond_value(value))
         #self.__verify_limits(value)
 
