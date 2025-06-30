@@ -28,7 +28,7 @@ class MonitoringView(QMainWindow):
         self.ui.setupUi(self)
         self.ui_components()
         self.setup_grid()
-        self.init_animation()
+        #self.init_animation()
         self.init_stabilizers()
 
         self.oxygen = AppConstants.MEASURE_OFF_VALUE
