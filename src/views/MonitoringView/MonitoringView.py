@@ -52,8 +52,8 @@ class MonitoringView(QMainWindow):
         if not self.parameters_worker.isRunning():
             self.parameters_worker.start()
 
-        self.ui.captureBtn.clicked.connect(self.on_capture_clicked)
-        self.ui.optionsBtn.clicked.connect(self.on_options_clicked)
+        #self.ui.captureBtn.clicked.connect(self.on_capture_clicked)
+        #self.ui.optionsBtn.clicked.connect(self.on_options_clicked)
         self.ui.backBtn.clicked.connect(self.on_back_clicked)
         self.ui.saveBtn.clicked.connect(self.on_save_clicked)
         self.ui.pauseBtn.clicked.connect(self.on_pause_clicked)
@@ -66,10 +66,10 @@ class MonitoringView(QMainWindow):
         self.ui.backBtn.setIcon(icon)
         self.ui.backBtn.setIconSize(QSize(30, 30))
         icon = QIcon('./src/resources/icons/more.png')
-        self.ui.optionsBtn.setIcon(icon)
-        self.ui.optionsBtn.setIconSize(QSize(30, 30))
-        self.ui.captureCountLbl.setText('')
-        self.ui.captureCountLbl.hide()
+        #self.ui.optionsBtn.setIcon(icon)
+        #self.ui.optionsBtn.setIconSize(QSize(30, 30))
+        #self.ui.captureCountLbl.setText('')
+        #self.ui.captureCountLbl.hide()
 
     def init_stabilizers(self):
         self.tds_stabilization:SensorStabilizer = SensorStabilizer(
@@ -141,7 +141,7 @@ class MonitoringView(QMainWindow):
                     battery=self.battery)
             view = SaveDataView(context=self.context, capture_samples=[sample], close_monitoring_callback=self.on_back_clicked)
         Navigator.push(context=self.context, view=view)
-    
+    """
     def init_animation(self):
         self.original_rect = self.ui.captureCountLbl.geometry()
         self.up_rect = QRect(self.original_rect.x(), self.original_rect.y() - 50, 
@@ -164,6 +164,7 @@ class MonitoringView(QMainWindow):
         self.animation_group = QSequentialAnimationGroup()
         self.animation_group.addAnimation(self.up_animation)
         self.animation_group.addAnimation(self.down_animation)
+    """
 
     def on_capture_clicked(self):
         if not self.receive_parameters:
@@ -188,12 +189,13 @@ class MonitoringView(QMainWindow):
             turbidity=self.turbidity,
             battery=self.battery
         ))
-        self.ui.captureCountLbl.setText(f'+{len(self.capture_samples)}')
-        self.ui.captureCountLbl.show()
+        #self.ui.captureCountLbl.setText(f'+{len(self.capture_samples)}')
+        #self.ui.captureCountLbl.show()
 
     def start_animation(self):
         """Inicia la animación completa al presionar el botón."""
-        self.animation_group.start()
+        #self.animation_group.start()
+        pass
 
     def setup_grid(self):
         # Layout principal del widget
