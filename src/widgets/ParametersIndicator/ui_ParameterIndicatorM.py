@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ParameterIndicatorMhNKrRh.ui'
+## Form generated from reading UI file 'ParameterIndicatorMWjInGU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -21,6 +21,7 @@ class Ui_Form(object):
         Form.setStyleSheet(u"QLabel {\n"
 "	font-family: Poppins;\n"
 "	font-size: 16px;\n"
+"	background-color: transparent;\n"
 "}\n"
 "")
         self.progressBar = QProgressBar(Form)
@@ -45,7 +46,8 @@ class Ui_Form(object):
         self.valueLbl = QLabel(Form)
         self.valueLbl.setObjectName(u"valueLbl")
         self.valueLbl.setGeometry(QRect(290, 0, 101, 71))
-        self.valueLbl.setStyleSheet(u"color: white;")
+        self.valueLbl.setStyleSheet(u"color: white;\n"
+"")
         self.stableLbl = QLabel(Form)
         self.stableLbl.setObjectName(u"stableLbl")
         self.stableLbl.setGeometry(QRect(400, 15, 40, 40))
