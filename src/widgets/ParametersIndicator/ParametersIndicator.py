@@ -33,6 +33,7 @@ class ParametersIndicator(QWidget):
         self.ui.stableLbl.hide()
         self.ui.nameLbl.setText(self.name)
         self.ui.valueLbl.setText(f'---- {self.unit}',)
+        self.ui.valueLbl.setAlignment(Qt.AlignVCenter)
         stable_pixmap = QPixmap('./src/resources/icons/balance_w.png')
         stable_pixmap = stable_pixmap.scaled(40, 40)
         self.ui.stableLbl.setPixmap(stable_pixmap)
