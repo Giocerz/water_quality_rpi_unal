@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MonitoringbLWgQs.ui'
+## Form generated from reading UI file 'MonitoringPVcrvG.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -43,16 +43,16 @@ class Ui_MainWindow(object):
         self.indicatorsWidget.setGeometry(QRect(20, 0, 461, 230))
         self.backBtn = QPushButton(self.centralwidget)
         self.backBtn.setObjectName(u"backBtn")
-        self.backBtn.setGeometry(QRect(0, 229, 160, 42))
+        self.backBtn.setGeometry(QRect(0, 230, 160, 42))
         self.backBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: white;\n"
 "	color: #266676;\n"
 "	font-size: 16px;\n"
-"	border: none;\n"
+"	border: 1px solid #266676;\n"
 "}")
         self.pauseBtn = QPushButton(self.centralwidget)
         self.pauseBtn.setObjectName(u"pauseBtn")
-        self.pauseBtn.setGeometry(QRect(160, 229, 160, 43))
+        self.pauseBtn.setGeometry(QRect(160, 230, 160, 42))
         self.pauseBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: #266676;\n"
 "	color: white;\n"
@@ -63,7 +63,7 @@ class Ui_MainWindow(object):
 "}")
         self.saveBtn = QPushButton(self.centralwidget)
         self.saveBtn.setObjectName(u"saveBtn")
-        self.saveBtn.setGeometry(QRect(320, 229, 160, 43))
+        self.saveBtn.setGeometry(QRect(320, 230, 160, 42))
         self.saveBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: #1a759f;\n"
 "	color: white;\n"
