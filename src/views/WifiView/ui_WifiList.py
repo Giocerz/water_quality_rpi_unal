@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'WifiListYJrFsA.ui'
+## Form generated from reading UI file 'WifiListYMHjZs.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -84,6 +84,7 @@ class Ui_MainWindow(object):
         self.backBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: white;\n"
 "	color: #266676;\n"
+"	border: 1px solid #266676;\n"
 "}")
         self.backBtn.setIconSize(QSize(50, 50))
         MainWindow.setCentralWidget(self.centralwidget)

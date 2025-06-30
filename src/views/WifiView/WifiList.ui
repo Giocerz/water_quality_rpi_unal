@@ -147,6 +147,7 @@ font-size: 24px;</string>
      <string notr="true">QPushButton {
 	background-color: white;
 	color: #266676;
+	border: 1px solid #266676;
 }</string>
     </property>
     <property name="text">
