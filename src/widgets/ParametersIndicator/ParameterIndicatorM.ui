@@ -38,7 +38,7 @@
 
 QProgressBar::chunk {
     background-color: #266676;
-    border-radius: 20px;
+    border-radius: 0px;
 }
 </string>
    </property>

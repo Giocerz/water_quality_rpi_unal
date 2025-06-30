@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ParameterIndicatorMWjInGU.ui'
+## Form generated from reading UI file 'ParameterIndicatorMJnOvVa.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -34,7 +34,7 @@ class Ui_Form(object):
 "\n"
 "QProgressBar::chunk {\n"
 "    background-color: #266676;\n"
-"    border-radius: 20px;\n"
+"    border-radius: 0px;\n"
 "}\n"
 "")
         self.progressBar.setValue(24)
