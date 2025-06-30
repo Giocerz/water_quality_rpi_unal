@@ -44,7 +44,7 @@ QLabel {
     <property name="geometry">
      <rect>
       <x>149</x>
-      <y>220</y>
+      <y>221</y>
       <width>331</width>
       <height>51</height>
      </rect>
@@ -67,7 +67,7 @@ QLabel {
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>220</y>
+      <y>221</y>
       <width>151</width>
       <height>51</height>
      </rect>
@@ -143,8 +143,8 @@ QCheckBox::indicator:unchecked {
      <rect>
       <x>0</x>
       <y>180</y>
-      <width>481</width>
-      <height>40</height>
+      <width>480</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">

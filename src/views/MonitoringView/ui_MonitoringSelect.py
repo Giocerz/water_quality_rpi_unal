@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MonitoringSelectssUVLF.ui'
+## Form generated from reading UI file 'MonitoringSelectbxLEhG.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -44,7 +44,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setStyleSheet(u"")
         self.initBtn = QPushButton(self.centralwidget)
         self.initBtn.setObjectName(u"initBtn")
-        self.initBtn.setGeometry(QRect(149, 220, 331, 51))
+        self.initBtn.setGeometry(QRect(149, 221, 331, 51))
         self.initBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: #266676;\n"
 "	color: white;\n"
@@ -55,7 +55,7 @@ class Ui_MainWindow(object):
 "}")
         self.backBtn = QPushButton(self.centralwidget)
         self.backBtn.setObjectName(u"backBtn")
-        self.backBtn.setGeometry(QRect(0, 220, 151, 51))
+        self.backBtn.setGeometry(QRect(0, 221, 151, 51))
         self.backBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: white;\n"
 "	color: #266676;\n"
@@ -92,7 +92,7 @@ class Ui_MainWindow(object):
         self.label.setAlignment(Qt.AlignCenter)
         self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(0, 180, 481, 40))
+        self.label_2.setGeometry(QRect(0, 180, 480, 41))
         self.label_2.setStyleSheet(u"font-size: 14px;\n"
 "background-color: #e76f51;\n"
 "color: white;\n"

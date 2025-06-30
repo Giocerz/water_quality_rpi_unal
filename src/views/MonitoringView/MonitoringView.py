@@ -1,63 +1,20 @@
 from PySide2 import QtCore
-from PySide2.QtWidgets import QMainWindow, QVBoxLayout, QGridLayout, QSizePolicy
-from PySide2.QtCore import QSize, QThread, Signal, QPropertyAnimation, QSequentialAnimationGroup, QEasingCurve, QRect
+from PySide2.QtWidgets import QMainWindow, QVBoxLayout, QSizePolicy
+from PySide2.QtCore import QSize, QPropertyAnimation, QSequentialAnimationGroup, QEasingCurve, QRect
 from PySide2.QtGui import QIcon
-from src.views.ui_Monitoring import Ui_MainWindow
-from src.widgets.ParametersIndicator import ParametersIndicator
+from .ui_Monitoring import Ui_MainWindow
+from src.widgets.ParametersIndicator.ParametersIndicator import ParametersIndicator
 from src.logic.AppConstans import AppConstants
-import time
-from w1thermsensor import W1ThermSensor
-from src.logic.adcModule import ParametersVoltages
-from src.logic.parametersCalc import *
 from src.views.SaveDataView.SaveDataView import SaveDataView
 from src.views.SaveDataView.SaveSelectView import SaveSelectView
 from src.package.Navigator import Navigator
-from src.logic.batteryLevel import BatteryProvider
-from src.logic.filters import MovingAverageFilter
 from src.widgets.PopupWidget import PopupWidgetInfo
 from src.views.MonitoringView.AutomaticMonitoringPopup import AutomaticMonitoringPopup
 from src.views.MonitoringView.MonitoringOptionsPopup import MonitoringOptionsPopup
 from src.model.SensorData import SensorData
 from src.logic.sensorStabilizer import SensorStabilizer
+from .FakeParameterWorker import FakeParametersMeasuredWorker
 
-class ParametersMeasuredWorker(QThread):
-    parameters_result = Signal(list)
-
-    def __init__(self):
-        super(ParametersMeasuredWorker, self).__init__()
-
-    def run(self):
-        self.running_state = True
-
-        temperature_sensor = W1ThermSensor()
-        parameters = ParametersVoltages()
-        parameters_calc = ParametersCalculate()
-        battery_provider = BatteryProvider()
-        turb_filter = MovingAverageFilter(10)
-
-        while self.running_state:
-            try:
-                temp = round(temperature_sensor.get_temperature(), 2)
-                ph = round(parameters_calc.calculatePh(
-                    parameters.ph_volt()), 2)
-                do = round(parameters_calc.calculateDo(
-                    parameters.oxygen_volt(), temp), 2)
-                tds = round(parameters_calc.calculateTds(
-                    temp, parameters.tds_volt()), 2)
-                turb_voltage = turb_filter.add_value(parameters.turbidity_volt())
-                turb = round(parameters_calc.calculateTurb(turb_voltage), 2)
-                battery = battery_provider.getBatteryLevel()
-                
-
-                self.parameters_result.emit([temp, do, tds, ph, turb, battery])
-                time.sleep(1)
-            except Exception as e:
-                print(e)
-
-    def stop(self):
-        self.running_state = False
-        self.wait()
-    
 
 class MonitoringView(QMainWindow):
     def __init__(self, context, tds_check:bool, ph_check:bool, oxygen_check:bool, turbidity_check:bool = False):
@@ -91,7 +48,7 @@ class MonitoringView(QMainWindow):
         self.isPause = False
 
 
-        self.parameters_worker = ParametersMeasuredWorker()
+        self.parameters_worker = FakeParametersMeasuredWorker()
         if not self.parameters_worker.isRunning():
             self.parameters_worker.start()
 
@@ -239,23 +196,22 @@ class MonitoringView(QMainWindow):
         self.animation_group.start()
 
     def setup_grid(self):
+        # Layout principal del widget
         main_layout = QVBoxLayout(self.ui.indicatorsWidget)
-        main_layout.setAlignment(QtCore.Qt.AlignCenter)
+        main_layout.setAlignment(QtCore.Qt.AlignTop)
         main_layout.setSpacing(0)
         main_layout.setContentsMargins(0, 0, 0, 0)
 
-        grid_layout = QGridLayout()
-        grid_layout.setSpacing(0)
-        grid_layout.setContentsMargins(0, 0, 0, 0)
+        # Layout vertical para los parámetros (una sola columna)
+        vertical_layout = QVBoxLayout()
+        vertical_layout.setSpacing(0)  # Espacio entre indicadores
+        vertical_layout.setContentsMargins(0, 0, 0, 0)
 
         num_parameters = self.tds_check * 2 + self.ph_check + self.oxygen_check + self.turbidity_check + 1
-        parameter_indicator_size = 'L' if num_parameters <= 2 else 'M' if num_parameters <= 3 else 'S'
-        num_cols = 1 if num_parameters <= 3 else 2
-        
-        pos = 0
+        parameter_indicator_size = 'M' if num_parameters <= 3 else 'S'
+
         self.indicators = {}
 
-        # Lista de parámetros activados en base a los CheckBox
         self.parameters_keys = ["temperature"]
         if self.tds_check:
             self.parameters_keys.extend(["tds", "conductivity"])
@@ -269,19 +225,16 @@ class MonitoringView(QMainWindow):
         for param_key in self.parameters_keys:
             param_info = AppConstants.PARAMS_ATTRIBUTES.get(param_key, {})
             name = param_info.get("name", "")
-
             unit = param_info.get("unit", "")
-            if isinstance(unit, list):  # Si hay varias unidades, usar la primera
+            if isinstance(unit, list):
                 unit = unit[0]
 
-            # Extraer valores de los límites
             min_value = param_info.get("minValue")
             max_value = param_info.get("maxValue")
             lower_limit = param_info.get("lowerLimit")
             upper_limit = param_info.get("upperLimit")
             significant_figures = param_info.get("significant_figures")
 
-            # Crear el widget `ParametersIndicator` con todos los valores necesarios
             self.indicators[param_key] = ParametersIndicator(
                 name=name,
                 unit=unit,
@@ -290,23 +243,19 @@ class MonitoringView(QMainWindow):
                 max_value=max_value,
                 lower_limit=lower_limit,
                 upper_limit=upper_limit,
-                significant_figures = significant_figures
+                significant_figures=significant_figures
             )
 
             recommended_size = self.indicators[param_key].sizeHint()
             self.indicators[param_key].setMinimumSize(recommended_size)
             self.indicators[param_key].setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
-            row = pos // num_cols
-            col = pos % num_cols
+            # Añadir a layout vertical
+            vertical_layout.addWidget(self.indicators[param_key])
 
-            grid_layout.setRowMinimumHeight(row, 70)
-            grid_layout.setColumnMinimumWidth(col, 240)
-            grid_layout.addWidget(self.indicators[param_key], row, col)
+        # Agregar el layout de indicadores al principal
+        main_layout.addLayout(vertical_layout)
 
-            pos += 1
-
-        main_layout.addLayout(grid_layout)
 
     def handle_parameters_result(self, parameters):
         self.receive_parameters = True
