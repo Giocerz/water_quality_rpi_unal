@@ -4,15 +4,15 @@ from PySide2.QtCore import Qt
 from .ui.ui_OriginSection import Ui_MainWindow
 from src.widgets.KeyboardWidget import KeyboardWidget
 from src.widgets.PopupWidget import PopupWidgetInfo
-from .NameSectionView import NameSectionView
 from src.model.SensorData import SensorData
 from src.package.Navigator import Navigator
 from src.logic.AppConstans import AppConstants
 
 class OriginSectionView(QMainWindow):
-    def __init__(self, context):
+    def __init__(self, context, previous_view):
         QMainWindow.__init__(self)
         self.context = context
+        self.previous_view = previous_view
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -33,7 +33,7 @@ class OriginSectionView(QMainWindow):
         self.ui.verticalSlider.hide()
     
     def on_back_clicked(self):
-        Navigator.pushReplacement(context=self.context, view=NameSectionView(context=self.context))
+        Navigator.pushReplacement(context=self.context, view=self.previous_view(context=self.context))
 
     def on_next_clicked(self):
         pass

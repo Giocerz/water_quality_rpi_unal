@@ -32,7 +32,7 @@ class NameSectionView(QMainWindow):
             return
         Navigator.pushReplacement(
             context=self.context,
-            view=OriginSectionView(context=self.context)
+            view=OriginSectionView(context=self.context, previous_view=self)
         )
 
     def show_dialog_error(self, error: str):
