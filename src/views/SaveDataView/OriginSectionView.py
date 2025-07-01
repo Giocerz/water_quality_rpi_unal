@@ -17,6 +17,7 @@ class OriginSectionView(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui_components()
+        self.set_list
 
         self.ui.backBtn.clicked.connect(self.on_back_clicked)
         self.ui.nextBtn.clicked.connect(self.on_next_clicked)
