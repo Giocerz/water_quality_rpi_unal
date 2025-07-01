@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>272</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLabel {
+	font-family: Poppins;
+	font-size: 16px;
+}
+
+QWidget {
+	background-color: white;
+}
+
+QPushButton {
+	border: none;
+	background-color: white;
+	font-size: 14px;
+	font-family: Poppins;
+	font-weight: 500;
+}
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="backBtn">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>230</y>
+      <width>240</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: white;
+	color: #266676;
+	font-size: 16px;
+	border: 1px solid #266676;
+}</string>
+    </property>
+    <property name="text">
+     <string>Atrás</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="nextBtn">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>230</y>
+      <width>240</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: #1a759f;
+	color: white;
+	font-size: 16px;
+	font-weight: 500;
+	height: 50px;
+	border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string>Siguiente</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="noCheckBox">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>110</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox {
+	background-color: transparent;
+	height: 10px;
+	font: 14px &quot;Poppins&quot;;
+}
+
+QCheckBox::indicator {
+    width: 20px; /* Ancho del indicador */
+    height: 20px; /* Alto del indicador */
+    border: 2px solid #666; /* Borde del indicador */
+}
+
+QCheckBox::indicator:checked {
+    background-color: #266676; /* Color de fondo cuando está marcado */
+}
+
+QCheckBox::indicator:unchecked {
+    background-color: transparent;
+}</string>
+    </property>
+    <property name="text">
+     <string>No</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-1</y>
+      <width>481</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>¿Llovió recientemente?</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="yesCheckBox">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>70</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox {
+	background-color: transparent;
+	height: 10px;
+	font: 14px &quot;Poppins&quot;;
+}
+
+QCheckBox::indicator {
+    width: 20px; /* Ancho del indicador */
+    height: 20px; /* Alto del indicador */
+    border: 2px solid #666; /* Borde del indicador */
+}
+
+QCheckBox::indicator:checked {
+    background-color: #266676; /* Color de fondo cuando está marcado */
+}
+
+QCheckBox::indicator:unchecked {
+    background-color: transparent;
+}</string>
+    </property>
+    <property name="text">
+     <string>Sí</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="idkCheckBox">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>150</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox {
+	background-color: transparent;
+	height: 10px;
+	font: 14px &quot;Poppins&quot;;
+}
+
+QCheckBox::indicator {
+    width: 20px; /* Ancho del indicador */
+    height: 20px; /* Alto del indicador */
+    border: 2px solid #666; /* Borde del indicador */
+}
+
+QCheckBox::indicator:checked {
+    background-color: #266676; /* Color de fondo cuando está marcado */
+}
+
+QCheckBox::indicator:unchecked {
+    background-color: transparent;
+}</string>
+    </property>
+    <property name="text">
+     <string>No lo sé</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

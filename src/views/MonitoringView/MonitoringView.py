@@ -5,7 +5,7 @@ from PySide2.QtGui import QIcon
 from .ui_Monitoring import Ui_MainWindow
 from src.widgets.ParametersIndicator.ParametersIndicator import ParametersIndicator
 from src.logic.AppConstans import AppConstants
-from src.views.SaveDataView.SaveDataView import SaveDataView
+from src.views.SaveDataView.NameSectionView import NameSectionView
 from src.views.SaveDataView.SaveSelectView import SaveSelectView
 from src.package.Navigator import Navigator
 from src.widgets.PopupWidget import PopupWidgetInfo
@@ -131,7 +131,7 @@ class MonitoringView(QMainWindow):
         if len(self.capture_samples) > 1:
             view = SaveSelectView(context=self.context, capture_samples=self.capture_samples, close_monitoring_callback=self.on_back_clicked)
         elif len(self.capture_samples) > 0:
-            view = SaveDataView(context=self.context, capture_samples=self.capture_samples, close_monitoring_callback=self.on_back_clicked)
+            view = NameSectionView(context=self.context, capture_samples=self.capture_samples, close_monitoring_callback=self.on_back_clicked)
         else:
             sample = SensorData(
                     temperature=self.temperature,
@@ -141,7 +141,7 @@ class MonitoringView(QMainWindow):
                     oxygen=self.oxygen,
                     turbidity=self.turbidity,
                     battery=self.battery)
-            view = SaveDataView(context=self.context, capture_samples=[sample], close_monitoring_callback=self.on_back_clicked)
+            view = NameSectionView(context=self.context, capture_samples=[sample], close_monitoring_callback=self.on_back_clicked)
         Navigator.push(context=self.context, view=view)
     """
     def init_animation(self):
