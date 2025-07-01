@@ -131,7 +131,7 @@ class MonitoringView(QMainWindow):
         if len(self.capture_samples) > 1:
             view = SaveSelectView(context=self.context, capture_samples=self.capture_samples, close_monitoring_callback=self.on_back_clicked)
         elif len(self.capture_samples) > 0:
-            view = NameSectionView(context=self.context, capture_samples=self.capture_samples, close_monitoring_callback=self.on_back_clicked)
+            view = NameSectionView(context=self.context)
         else:
             sample = SensorData(
                     temperature=self.temperature,
@@ -141,7 +141,7 @@ class MonitoringView(QMainWindow):
                     oxygen=self.oxygen,
                     turbidity=self.turbidity,
                     battery=self.battery)
-            view = NameSectionView(context=self.context, capture_samples=[sample], close_monitoring_callback=self.on_back_clicked)
+            view = NameSectionView(context=self.context)
         Navigator.push(context=self.context, view=view)
     """
     def init_animation(self):
