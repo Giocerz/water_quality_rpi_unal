@@ -16,7 +16,6 @@ class SetManualLocationWidget(QWidget):
 
         self.ui.closeBtn.clicked.connect(self.on_close_clicked)
         self.ui.confirmBtn.clicked.connect(self.on_confirm_clicked)
-        self.ui.lblOpacity.mousePressEvent = self.background_clicked
         self.ui.latitudeInput.mousePressEvent = self.set_latitude_focus
         self.ui.longitudeInput.mousePressEvent = self.set_longitude_focus
 
@@ -68,10 +67,6 @@ class SetManualLocationWidget(QWidget):
 
         self.set_location(latitude, longitude)
         self.close_and_delete()
-
-        
-    def background_clicked(self, event):
-        self.close_and_delete() 
 
     def on_close_clicked(self): 
         self.close_and_delete() 
