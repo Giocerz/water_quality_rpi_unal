@@ -45,119 +45,12 @@ QPushButton {
 
 </string>
    </property>
-   <widget class="QLabel" name="lbl">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>130</y>
-      <width>191</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 16px &quot;Poppins&quot;;
-background-color: transparent;
-</string>
-    </property>
-    <property name="text">
-     <string>Ingrese la ubicación</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="latitudeInput">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>160</y>
-      <width>201</width>
-      <height>26</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-color: rgb(0, 0, 0);
-border-style: solid;
-border-width: 1px;
-background-color: rgb(234, 234, 234);
-font: 14px &quot;Poppins&quot;;</string>
-    </property>
-    <property name="maxLength">
-     <number>50</number>
-    </property>
-    <property name="echoMode">
-     <enum>QLineEdit::Normal</enum>
-    </property>
-    <property name="placeholderText">
-     <string>Latitud</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="longitudeInput">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>190</y>
-      <width>201</width>
-      <height>26</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-color: rgb(0, 0, 0);
-border-style: solid;
-border-width: 1px;
-background-color: rgb(234, 234, 234);
-font: 14px &quot;Poppins&quot;;</string>
-    </property>
-    <property name="maxLength">
-     <number>50</number>
-    </property>
-    <property name="echoMode">
-     <enum>QLineEdit::Normal</enum>
-    </property>
-    <property name="placeholderText">
-     <string>Longitud</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbl_2">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>0</y>
-      <width>311</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 16px &quot;Poppins&quot;;
-background-color: transparent;
-</string>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Escanea el QR&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="QRLbl">
-    <property name="geometry">
-     <rect>
-      <x>275</x>
-      <y>30</y>
-      <width>100</width>
-      <height>100</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="widgetKeyboard" native="true">
     <property name="geometry">
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>171</width>
+      <width>174</width>
       <height>271</height>
      </rect>
     </property>
@@ -165,38 +58,138 @@ background-color: transparent;
      <string notr="true">background-color: rgb(234, 234, 234);</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="closeBtn">
+   <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>230</y>
-      <width>141</width>
-      <height>42</height>
+      <x>174</x>
+      <y>0</y>
+      <width>306</width>
+      <height>272</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
+    <widget class="QLineEdit" name="latitudeInput">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>160</y>
+       <width>201</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-color: rgb(0, 0, 0);
+border-style: solid;
+border-width: 1px;
+background-color: rgb(234, 234, 234);
+font: 14px &quot;Poppins&quot;;</string>
+     </property>
+     <property name="maxLength">
+      <number>50</number>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Normal</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Latitud</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="closeBtn">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>230</y>
+       <width>141</width>
+       <height>42</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
 	background-color: white;
 	color: #266676;
 	font-size: 16px;
 	border: 1px solid #266676;
 }</string>
-    </property>
-    <property name="text">
-     <string>Cerrar</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="confirmBtn">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>230</y>
-      <width>171</width>
-      <height>42</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
+     </property>
+     <property name="text">
+      <string>Cerrar</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>311</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 16px &quot;Poppins&quot;;
+background-color: transparent;
+</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Escanea el QR&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>130</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 16px &quot;Poppins&quot;;
+background-color: transparent;
+</string>
+     </property>
+     <property name="text">
+      <string>Ingrese la ubicación</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="longitudeInput">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>190</y>
+       <width>201</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-color: rgb(0, 0, 0);
+border-style: solid;
+border-width: 1px;
+background-color: rgb(234, 234, 234);
+font: 14px &quot;Poppins&quot;;</string>
+     </property>
+     <property name="maxLength">
+      <number>50</number>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Normal</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Longitud</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="confirmBtn">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>230</y>
+       <width>171</width>
+       <height>42</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
 	background-color: #1a759f;
 	color: white;
 	font-size: 16px;
@@ -204,10 +197,24 @@ background-color: transparent;
 	height: 50px;
 	border: none;
 }</string>
-    </property>
-    <property name="text">
-     <string>Confirmar</string>
-    </property>
+     </property>
+     <property name="text">
+      <string>Confirmar</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="QRLbl">
+     <property name="geometry">
+      <rect>
+       <x>103</x>
+       <y>30</y>
+       <width>100</width>
+       <height>100</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>
