@@ -3,7 +3,6 @@ from PySide2 import QtCore
 from .ui.ui_LocationSection import Ui_MainWindow
 from src.widgets.KeyboardWidget import KeyboardWidget
 from src.widgets.PopupWidget import PopupWidgetInfo
-from .OriginSectionView import OriginSectionView
 from src.package.Navigator import Navigator
 from .LocationWorker import LocationdWorker
 from src.widgets.PopupWidget import PopupWidgetInfo, LoadingPopupGPS
