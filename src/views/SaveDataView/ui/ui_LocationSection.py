@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'OriginSectionGDPmXW.ui'
+## Form generated from reading UI file 'LocationSectionmsLZKd.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -62,42 +62,30 @@ class Ui_MainWindow(object):
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(0, -1, 481, 61))
         self.label.setAlignment(Qt.AlignCenter)
-        self.originList = QListView(self.centralwidget)
-        self.originList.setObjectName(u"originList")
-        self.originList.setGeometry(QRect(20, 60, 401, 161))
-        self.originList.setStyleSheet(u"border: none;")
-        self.originList.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.originList.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.verticalSlider = QSlider(self.centralwidget)
-        self.verticalSlider.setObjectName(u"verticalSlider")
-        self.verticalSlider.setGeometry(QRect(430, 60, 41, 161))
-        self.verticalSlider.setStyleSheet(u"QSlider::groove:vertical{ \n"
-"	background-color: rgb(234, 234, 234);\n"
-"	height: 161px;\n"
-"	border-radius: 10px;\n"
-"}\n"
-"\n"
-"QSlider::handle:vertical { \n"
+        self.gpsBtn = QPushButton(self.centralwidget)
+        self.gpsBtn.setObjectName(u"gpsBtn")
+        self.gpsBtn.setGeometry(QRect(100, 80, 280, 42))
+        self.gpsBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: #22577a;\n"
-"    height: 50;\n"
-"    width: 20px;\n"
-"    line-height: 10px; \n"
-"	margin-top: 0px; \n"
-"	margin-bottom: 0px;\n"
-"	border-radius: 10px; \n"
-"}\n"
-"\n"
-"QSlider{\n"
-"	background-color: rgb(234, 234, 234);\n"
-"	border-radius: 20px;\n"
-"}\n"
-"\n"
-"")
-        self.verticalSlider.setPageStep(1)
-        self.verticalSlider.setValue(0)
-        self.verticalSlider.setOrientation(Qt.Vertical)
-        self.verticalSlider.setInvertedAppearance(True)
-        self.verticalSlider.setInvertedControls(False)
+"	color: white;\n"
+"	font-size: 16px;\n"
+"	font-weight: 500;\n"
+"	height: 50px;\n"
+"	border: none;\n"
+"}")
+        self.setManualLocationBtn = QPushButton(self.centralwidget)
+        self.setManualLocationBtn.setObjectName(u"setManualLocationBtn")
+        self.setManualLocationBtn.setGeometry(QRect(120, 130, 240, 21))
+        self.setManualLocationBtn.setStyleSheet(u"QPushButton {\n"
+"	color: #22577a;\n"
+"	font-size: 12px;\n"
+"	font-weight: 500;\n"
+"	height: 50px;\n"
+"	border: none;\n"
+"}")
+        self.label_4 = QLabel(self.centralwidget)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setGeometry(QRect(100, 190, 281, 31))
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -109,6 +97,9 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.backBtn.setText(QCoreApplication.translate("MainWindow", u"Atr\u00e1s", None))
         self.nextBtn.setText(QCoreApplication.translate("MainWindow", u"Siguiente", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Seleccione el origen de la muestra", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Localizaci\u00f3n de la muestra", None))
+        self.gpsBtn.setText(QCoreApplication.translate("MainWindow", u"Localizar con el GPS", None))
+        self.setManualLocationBtn.setText(QCoreApplication.translate("MainWindow", u"Ingresar manualmente", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Latitud, longitud</p></body></html>", None))
     # retranslateUi
 

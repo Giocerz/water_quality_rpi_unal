@@ -150,6 +150,7 @@ class LoadingPopupGPS(QWidget):
         self.ui.LabelInfo.setText(text)
 
         self.toggle = True
+        self.time_count = 0
         pixmap = QPixmap('./src/resources/icons/satellite_w.png')
         pixmap = pixmap.scaled(81,81)
         self.ui.satelliteLbl.setPixmap(pixmap)
@@ -159,6 +160,9 @@ class LoadingPopupGPS(QWidget):
         self.setParent(self.context)
     
     def update_toggle(self):
+        self.time_count += 1
+        if self.time_count >= 50: 
+            self.ui.LabelInfo.setText('Esto esta tomando mucho tiempo...')
         if self.toggle:
             pixmap = QPixmap('./src/resources/icons/satellite_w_nosignal.png')
             pixmap = pixmap.scaled(81,81)

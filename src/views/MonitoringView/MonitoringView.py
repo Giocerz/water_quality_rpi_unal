@@ -13,7 +13,8 @@ from src.views.MonitoringView.AutomaticMonitoringPopup import AutomaticMonitorin
 from src.views.MonitoringView.MonitoringOptionsPopup import MonitoringOptionsPopup
 from src.model.SensorData import SensorData
 from src.logic.sensorStabilizer import SensorStabilizer
-from .FakeParameterWorker import FakeParametersMeasuredWorker
+#from .FakeParameterWorker import FakeParametersMeasuredWorker
+from .ParametersWorker import ParametersMeasuredWorker
 
 
 class MonitoringView(QMainWindow):
@@ -48,7 +49,7 @@ class MonitoringView(QMainWindow):
         self.isPause = False
 
 
-        self.parameters_worker = FakeParametersMeasuredWorker()
+        self.parameters_worker = ParametersMeasuredWorker()
         if not self.parameters_worker.isRunning():
             self.parameters_worker.start()
 

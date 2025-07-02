@@ -2,11 +2,10 @@ from PySide2.QtWidgets import QMainWindow, QStackedLayout
 from PySide2.QtGui import QStandardItemModel, QStandardItem
 from PySide2.QtCore import Qt
 from .ui.ui_OriginSection import Ui_MainWindow
-from src.widgets.KeyboardWidget import KeyboardWidget
 from src.widgets.PopupWidget import PopupWidgetInfo
-from src.model.SensorData import SensorData
 from src.package.Navigator import Navigator
 from src.logic.AppConstans import AppConstants
+from .LocationSectionView import LocationSectionView
 
 class OriginSectionView(QMainWindow):
     def __init__(self, context, previous_view):
@@ -38,7 +37,8 @@ class OriginSectionView(QMainWindow):
         Navigator.pushReplacement(context=self.context, view=self.previous_view(context=self.context))
 
     def on_next_clicked(self):
-        pass
+        Navigator.pushReplacement(
+            context=self.context, view=LocationSectionView(context=self.context, previous_view=OriginSectionView))
 
     def show_dialog_error(self, error: str):
         dialog = PopupWidgetInfo(context=self.context, text=error)

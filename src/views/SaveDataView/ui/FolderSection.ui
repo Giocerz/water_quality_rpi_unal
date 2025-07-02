@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>272</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLabel {
+	font-family: Poppins;
+	font-size: 16px;
+}
+
+QWidget {
+	background-color: white;
+}
+
+QPushButton {
+	border: none;
+	background-color: white;
+	font-size: 14px;
+	font-family: Poppins;
+	font-weight: 500;
+}
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>480</width>
+      <height>272</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>431</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: opx;</string>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>431</width>
+         <height>231</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="emptyFoldersNoticeLbl">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>70</y>
+          <width>351</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: grey;
+font-size: 24px;</string>
+        </property>
+        <property name="text">
+         <string>No hay carpetas guardadas</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QSlider" name="verticalSlider">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>0</y>
+        <width>41</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSlider::groove:vertical{ 
+	background-color: rgb(234, 234, 234);
+	height: 231px;
+	border-radius: 10px;
+}
+
+QSlider::handle:vertical { 
+	background-color: #22577a;
+    height: 50px;
+    width: 20px;
+    line-height: 10px; 
+	margin-top: 0px; 
+	margin-bottom: 0px;
+	border-radius: 10px; 
+}
+
+QSlider{
+	background-color: rgb(234, 234, 234);
+	border-radius: 20px;
+}
+
+</string>
+      </property>
+      <property name="pageStep">
+       <number>1</number>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+      <property name="invertedControls">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="backBtn">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>230</y>
+        <width>160</width>
+        <height>42</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: white;
+	color: #266676;
+	font-size: 16px;
+	border: 1px solid #266676;
+}</string>
+      </property>
+      <property name="text">
+       <string>Atrás</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="nextBtn">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>230</y>
+        <width>160</width>
+        <height>42</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #1a759f;
+	color: white;
+	font-size: 16px;
+	font-weight: 500;
+	height: 50px;
+	border: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>Finalizar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveBtn">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>230</y>
+        <width>160</width>
+        <height>42</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #22577a;
+	color: white;
+	font-size: 16px;
+	font-weight: 500;
+	height: 50px;
+	border: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>Nueva Carpeta</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QWidget" name="widgetKeyboard" native="true">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>140</y>
+        <width>480</width>
+        <height>135</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(234, 234, 234);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>15</y>
+        <width>241</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nombre de la nueva carpeta&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="inputPlace">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>441</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(0, 0, 0);
+border-style: solid;
+border-width: 1px;
+background-color: rgb(234, 234, 234);
+font: 14px Poppins;</string>
+      </property>
+      <property name="maxLength">
+       <number>50</number>
+      </property>
+      <property name="placeholderText">
+       <string>Ej: Colegio de Manaure</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="backBtn_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>100</y>
+        <width>240</width>
+        <height>42</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: white;
+	color: #266676;
+	font-size: 16px;
+	border: 1px solid #266676;
+}</string>
+      </property>
+      <property name="text">
+       <string>Atrás</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveBtn_2">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>100</y>
+        <width>240</width>
+        <height>42</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #1a759f;
+	color: white;
+	font-size: 16px;
+	font-weight: 500;
+	height: 50px;
+	border: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>Finalizar</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
