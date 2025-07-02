@@ -20,7 +20,7 @@
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>150</y>
+     <y>140</y>
      <width>241</width>
      <height>91</height>
     </rect>
@@ -59,7 +59,7 @@ font-weight: 500;
    <property name="geometry">
     <rect>
      <x>200</x>
-     <y>70</y>
+     <y>60</y>
      <width>81</width>
      <height>81</height>
     </rect>
@@ -68,9 +68,32 @@ font-weight: 500;
     <string/>
    </property>
   </widget>
+  <widget class="QPushButton" name="cancelBtn">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>220</y>
+     <width>240</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color: white;
+	color: #266676;
+	font-size: 16px;
+	border: none;
+	font-family: &quot;Poppins&quot;;
+}</string>
+   </property>
+   <property name="text">
+    <string>Cancelar</string>
+   </property>
+  </widget>
   <zorder>label</zorder>
   <zorder>LabelInfo</zorder>
   <zorder>satelliteLbl</zorder>
+  <zorder>cancelBtn</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -34,6 +34,11 @@ class LocationSectionView(QMainWindow):
         dialog = PopupWidgetInfo(context=self.context, text=error)
         dialog.show()
 
+    def on_cancel_clicked(self):
+        self.location_worker.stop()
+        self.loading_popup.close_and_delete()
+        self.show_dialog_error('Localización cancelada.')
+
     def handle_location_result(self, location):
         self.location_worker.stop()
         self.loading_popup.close_and_delete()
@@ -56,7 +61,7 @@ class LocationSectionView(QMainWindow):
 
     def on_gps_clicked(self):
         self.loading_popup = LoadingPopupGPS(
-            context=self.context, text='Localizando...')
+            context=self.context, text='Localizando...', on_cancel=self.on_cancel_clicked)
         self.loading_popup.show()
         if not self.location_worker.isRunning():
             self.location_worker.start()

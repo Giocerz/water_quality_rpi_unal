@@ -140,9 +140,10 @@ class LoadingPopupWidget(QWidget):
         self.deleteLater()
 
 class LoadingPopupGPS(QWidget):
-    def __init__(self, context, text):
+    def __init__(self, context, text, on_cancel:callable = None):
         super().__init__()
         self.context = context
+        self.on_cancel:callable = on_cancel
         self.ui = Ui_LoadingGPS()
         self.ui.setupUi(self)
 
@@ -157,7 +158,14 @@ class LoadingPopupGPS(QWidget):
         self.timer = Timer.periodic(duration= 300, callback= self.update_toggle)
         self.timer.start()
 
+        self.ui.cancelBtn.clicked.connect(self.cancel_clicked)
+
         self.setParent(self.context)
+
+    def cancel_clicked(self):
+        if self.on_cancel:
+            self.on_cancel()
+        self.close_and_delete()
     
     def update_toggle(self):
         self.time_count += 1
