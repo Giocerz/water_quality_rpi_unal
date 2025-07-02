@@ -23,7 +23,6 @@ class SetManualLocationWidget(QWidget):
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.opacity = QGraphicsOpacityEffect()
         self.opacity.setOpacity(0.2)
-        self.ui.lblOpacity.setGraphicsEffect(self.opacity)
         self.keyboard = NumericKeyboardWidget(self.ui.latitudeInput)
         layout = QStackedLayout(self.ui.widgetKeyboard)
         layout.addWidget(self.keyboard)
