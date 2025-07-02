@@ -5,12 +5,12 @@ from src.widgets.PopupWidget import PopupWidgetInfo
 from .OriginSectionView import OriginSectionView
 from src.model.SensorData import SensorData
 from src.package.Navigator import Navigator
+from src.providers.SaveProvider import SaveProvider
 
 class NameSectionView(QMainWindow):
     def __init__(self, context):
         QMainWindow.__init__(self)
         self.context = context
-
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui_components()
@@ -30,9 +30,11 @@ class NameSectionView(QMainWindow):
     def on_next_clicked(self):
         if not self.validator():
             return
+        self.save_provider = SaveProvider()
+        self.save_provider.set_prev_view(NameSectionView)
         Navigator.pushReplacement(
             context=self.context,
-            view=OriginSectionView(context=self.context, previous_view=NameSectionView)
+            view=OriginSectionView(context=self.context)
         )
 
     def show_dialog_error(self, error: str):

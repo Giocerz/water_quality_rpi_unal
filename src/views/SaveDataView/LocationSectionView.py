@@ -6,12 +6,13 @@ from src.package.Navigator import Navigator
 from .LocationWorker import LocationdWorker
 from src.widgets.PopupWidget import PopupWidgetInfo, LoadingPopupGPS
 from .ManualGPSPopup import SetManualLocationWidget
+from src.providers.SaveProvider import SaveProvider
 
 class LocationSectionView(QMainWindow):
-    def __init__(self, context, previous_view):
+    def __init__(self, context):
         QMainWindow.__init__(self)
         self.context = context
-        self.previous_view = previous_view
+        self.save_provider = SaveProvider()
 
         self.location_worker = LocationdWorker()
 
@@ -26,7 +27,8 @@ class LocationSectionView(QMainWindow):
             self.handle_location_result)
     
     def on_back_clicked(self):
-        Navigator.pop(context=self.context, view=self.previous_view(context=self.context))
+        prev_view = self.save_provider.get_prev_view()
+        Navigator.pushReplacement(context=self.context, view=prev_view(context=self.context))
 
     def on_next_clicked(self):
         pass

@@ -6,12 +6,13 @@ from src.widgets.PopupWidget import PopupWidgetInfo
 from src.package.Navigator import Navigator
 from src.logic.AppConstans import AppConstants
 from .LocationSectionView import LocationSectionView
+from src.providers.SaveProvider import SaveProvider
 
 class OriginSectionView(QMainWindow):
-    def __init__(self, context, previous_view):
+    def __init__(self, context):
         QMainWindow.__init__(self)
         self.context = context
-        self.previous_view = previous_view
+        self.save_provider = SaveProvider()
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -34,11 +35,13 @@ class OriginSectionView(QMainWindow):
     def on_back_clicked(self):
         print('on_back_clicked')
         # If the previous view is a NameSectionView
-        Navigator.pushReplacement(context=self.context, view=self.previous_view(context=self.context))
+        prev_view = self.save_provider.get_prev_view()
+        Navigator.pushReplacement(context=self.context, view=prev_view(context=self.context))
 
     def on_next_clicked(self):
+        self.save_provider.set_prev_view(OriginSectionView)
         Navigator.pushReplacement(
-            context=self.context, view=LocationSectionView(context=self.context, previous_view=OriginSectionView))
+            context=self.context, view=LocationSectionView(context=self.context))
 
     def show_dialog_error(self, error: str):
         dialog = PopupWidgetInfo(context=self.context, text=error)
