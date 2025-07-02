@@ -20,6 +20,7 @@ class LocationSectionView(QMainWindow):
 
         self.ui.backBtn.clicked.connect(self.on_back_clicked)
         self.ui.nextBtn.clicked.connect(self.on_next_clicked)
+        self.ui.gpsBtn.clicked.connect(self.on_gps_clicked)
         self.location_worker.location_result.connect(
             self.handle_location_result)
     
