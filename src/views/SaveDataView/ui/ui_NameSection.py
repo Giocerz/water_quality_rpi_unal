@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'NameSectionfHJPlH.ui'
+## Form generated from reading UI file 'NameSectionTfaVvj.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -69,7 +69,7 @@ class Ui_MainWindow(object):
 "border-style: solid;\n"
 "border-width: 1px;\n"
 "background-color: rgb(234, 234, 234);\n"
-"font: 14px Poppins;")
+"font: 14px \"Poppins\";")
         self.inputPlace.setMaxLength(50)
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")

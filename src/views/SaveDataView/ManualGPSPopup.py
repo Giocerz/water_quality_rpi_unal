@@ -1,7 +1,7 @@
 from PySide2.QtWidgets import QGraphicsOpacityEffect, QStackedLayout, QWidget
 from PySide2 import QtCore
 from PySide2.QtGui import QPixmap
-from src.views.ui_ManualGPSPopup import Ui_Form
+from .ui.ui_ManualGPSPopup import Ui_Form
 from src.widgets.KeyboardWidget import NumericKeyboardWidget
 from src.widgets.PopupWidget import PopupWidgetInfo
 

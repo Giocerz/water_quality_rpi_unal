@@ -1,11 +1,11 @@
-from PySide2.QtWidgets import QMainWindow, QStackedLayout
+from PySide2.QtWidgets import QMainWindow
 from PySide2 import QtCore
 from .ui.ui_LocationSection import Ui_MainWindow
-from src.widgets.KeyboardWidget import KeyboardWidget
 from src.widgets.PopupWidget import PopupWidgetInfo
 from src.package.Navigator import Navigator
 from .LocationWorker import LocationdWorker
 from src.widgets.PopupWidget import PopupWidgetInfo, LoadingPopupGPS
+from .ManualGPSPopup import SetManualLocationWidget
 
 class LocationSectionView(QMainWindow):
     def __init__(self, context, previous_view):
@@ -21,6 +21,7 @@ class LocationSectionView(QMainWindow):
         self.ui.backBtn.clicked.connect(self.on_back_clicked)
         self.ui.nextBtn.clicked.connect(self.on_next_clicked)
         self.ui.gpsBtn.clicked.connect(self.on_gps_clicked)
+        self.ui.setManualLocationBtn.clicked.connect(self.on_set_manual_location_clicked)
         self.location_worker.location_result.connect(
             self.handle_location_result)
     
@@ -29,6 +30,13 @@ class LocationSectionView(QMainWindow):
 
     def on_next_clicked(self):
         pass
+
+    def on_set_manual_location_clicked(self):
+        manual_location_widget = SetManualLocationWidget(
+            context=self.context, set_location=self.set_location)
+        manual_location_widget.show()
+        manual_location_widget.raise_()
+        manual_location_widget.activateWindow()
     
     def show_dialog_error(self, error: str):
         dialog = PopupWidgetInfo(context=self.context, text=error)
