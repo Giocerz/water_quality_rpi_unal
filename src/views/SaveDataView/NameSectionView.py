@@ -1,7 +1,7 @@
 from PySide2.QtWidgets import QMainWindow, QStackedLayout
 from .ui.ui_NameSection import Ui_MainWindow
 from src.widgets.KeyboardWidget import KeyboardWidget
-from src.widgets.PopupWidget import PopupWidgetInfo
+from src.widgets.PopupWidget import PopupWidgetInfo, PopupWidget
 from .OriginSectionView import OriginSectionView
 from src.model.SensorData import SensorData
 from src.package.Navigator import Navigator
@@ -29,7 +29,14 @@ class NameSectionView(QMainWindow):
             self.ui.inputPlace.setText(self.save_provider.get_sample_name())
     
     def on_back_clicked(self):
-        Navigator.pop(context=self.context, view=self)
+        def on_yes():
+            Navigator.pop(context=self.context, view=self)
+
+        def on_no():
+            pass
+        dialog = PopupWidget(context=self.context, yes_callback=on_yes, no_callback=on_no,
+                             text='No se han guardado los datos<br>¿Desea salir?')
+        dialog.show()
 
     def on_next_clicked(self):
         if not self.validator():

@@ -86,4 +86,23 @@ class SaveProvider:
     def get_location(self):
         """Returns the location."""
         return self._location
+    
+    def clear(self):
+        """Clears all saved data."""
+        self._prev_view.clear()
+        self._oxygen_list.clear()
+        self._ph_list.clear()
+        self._temperature_list.clear()
+        self._tds_list.clear()
+        self._turbidity_list.clear()
+        self._battery_list.clear()
+        self._timestamp_list.clear()
+
+        self._sample_name = None
+        self._it_rained = None
+        self._origin = None
+        self._location = {
+            'latitude': None,
+            'longitude': None,
+        }
         
