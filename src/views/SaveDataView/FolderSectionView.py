@@ -92,7 +92,6 @@ class FolderSectionView(QMainWindow):
         # Ajustar el contenedor dentro del ScrollArea
         self.ui.scrollArea.setWidget(container_widget)
         self.ui.scrollArea.setWidgetResizable(True)
-        self.ui.uploadBtn.show()
 
 
     def slider_value_changed(self, value):
@@ -121,7 +120,7 @@ class FolderSectionView(QMainWindow):
         self.ui.verticalSlider.setValue(value)
     
 
-    def on_push_folder_widget(self, folder_widget: FolderWidget):
+    def on_push_folder_widget(self):
         pass
     
     
