@@ -33,6 +33,9 @@ class FolderSectionView(QMainWindow):
         
         self.ui.verticalSlider.valueChanged.connect(self.slider_value_changed)
 
+        self.scrollBar.rangeChanged.connect(self.adjust_slider_range)
+        self.scrollBar.valueChanged.connect(self.scroll_value_changed)
+
     def ui_components(self):
         self.ui.stackedWidget.setCurrentIndex(self.current_index)
         self.keyboard = KeyboardWidget(self.ui.inputPlace)
@@ -40,6 +43,7 @@ class FolderSectionView(QMainWindow):
         layout.addWidget(self.keyboard)
         self.ui.widgetKeyboard.setLayout(layout)
 
+        self.scrollBar = self.ui.scrollArea.verticalScrollBar()
         self.ui.verticalSlider.setRange(self.scrollBar.minimum(), self.scrollBar.maximum())
         self.ui.verticalSlider.hide()
     
@@ -123,11 +127,6 @@ class FolderSectionView(QMainWindow):
         self.ui.scrollArea.setWidget(container_widget)
         self.ui.scrollArea.setWidgetResizable(True)
 
-        self.scrollBar = self.ui.scrollArea.verticalScrollBar()
-        self.scrollBar.rangeChanged.connect(self.adjust_slider_range)
-        self.scrollBar.valueChanged.connect(self.scroll_value_changed)
-
-
     def slider_value_changed(self, value):
         self.scrollBar.setValue(value)
 
@@ -150,6 +149,7 @@ class FolderSectionView(QMainWindow):
             self.ui.verticalSlider.setPageStep(step_size * 2)  # Ajustar el desplazamiento por página
         else:
             self.ui.verticalSlider.hide()
+
 
     def scroll_value_changed(self, value):
         self.ui.verticalSlider.setValue(value)
