@@ -4,7 +4,6 @@ from .ui.ui_FolderSection import Ui_MainWindow
 from src.widgets.KeyboardWidget import KeyboardWidget
 from src.widgets.PopupWidget import PopupWidgetInfo, PopupWidget
 from src.widgets.FolderWidget import FolderWidget
-from .OriginSectionView import OriginSectionView
 from src.model.SensorData import SensorData
 from src.package.Navigator import Navigator
 from src.providers.SaveProvider import SaveProvider
