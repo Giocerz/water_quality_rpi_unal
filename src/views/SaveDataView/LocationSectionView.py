@@ -38,9 +38,6 @@ class LocationSectionView(QMainWindow):
         prev_view = self.save_provider.get_prev_view()
         Navigator.pushReplacement(context=self.context, view=prev_view(context=self.context))
 
-    def on_next_clicked(self):
-        pass
-
     def on_set_manual_location_clicked(self):
         manual_location_widget = SetManualLocationWidget(
             context=self.context, set_location=self.set_location)
@@ -72,8 +69,6 @@ class LocationSectionView(QMainWindow):
         self.show_dialog_error('Localización completada.')
     
     def set_location(self, latitude:float, longitude:float):
-        self.latitude = latitude
-        self.longitude = longitude
         self.ui.label_4.setText(f'{self.latitude} , {self.longitude}')
         self.ui.label_4.setAlignment(QtCore.Qt.AlignCenter)
         self.save_provider.set_location(latitude, longitude)

@@ -45,6 +45,9 @@ class OriginSectionView(QMainWindow):
         Navigator.pushReplacement(context=self.context, view=prev_view(context=self.context))
 
     def on_next_clicked(self):
+        if self.save_provider.get_origin() is None:
+            self.show_dialog_error('Seleccione un origen de muestra')
+            return
         self.save_provider.set_prev_view(OriginSectionView)
         Navigator.pushReplacement(
             context=self.context, view=LocationSectionView(context=self.context))
