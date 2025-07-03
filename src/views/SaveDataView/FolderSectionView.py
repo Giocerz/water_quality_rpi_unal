@@ -39,6 +39,7 @@ class FolderSectionView(QMainWindow):
         self.scrollBar.valueChanged.connect(self.scroll_value_changed)
 
     def ui_components(self):
+        self.ui.stackedWidget.setCurrentIndex(self.current_index)
         self.keyboard = KeyboardWidget(self.ui.inputPlace)
         layout = QStackedLayout(self.ui.widgetKeyboard)
         layout.addWidget(self.keyboard)
@@ -48,8 +49,6 @@ class FolderSectionView(QMainWindow):
         self.ui.verticalSlider.setRange(
             self.scrollBar.minimum(), self.scrollBar.maximum())
         self.ui.verticalSlider.hide()
-
-        self.ui.stackedWidget.setCurrentIndex(self.current_index)
     
     def on_back_clicked(self):
         if self.current_index == 1 and not self.folder_list_empty:
