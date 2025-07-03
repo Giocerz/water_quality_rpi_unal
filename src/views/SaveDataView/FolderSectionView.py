@@ -121,7 +121,8 @@ class FolderSectionView(QMainWindow):
         self.ui.verticalSlider.setValue(value)
     
 
-
+    def on_push_folder_widget(self, folder_widget: FolderWidget):
+        pass
     
     
     def on_back_clicked(self):
