@@ -104,6 +104,7 @@ class FoldersView(QMainWindow):
 
     def adjust_slider_range(self, minValue, maxValue): 
         if maxValue > minValue:  # Solo mostramos el slider si hay algo que desplazar
+            print('Adjusting slider range:', minValue, maxValue)
             self.ui.verticalSlider.show()
             self.ui.verticalSlider.setRange(minValue, maxValue)
             
