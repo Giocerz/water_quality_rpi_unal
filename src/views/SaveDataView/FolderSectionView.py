@@ -16,6 +16,8 @@ class FolderSectionView(QMainWindow):
     def __init__(self, context):
         QMainWindow.__init__(self)
         self.context = context
+        self.current_index = 0
+        self.folder_list_empty = False
         self.folder_name: str = None
         self.folder_id: int = None
         self.folders_list: list[LoteModel] = []
@@ -24,8 +26,6 @@ class FolderSectionView(QMainWindow):
         self.ui.setupUi(self)
         self.ui_components()
         self.setup_list()
-        self.current_index = 0
-        self.folder_list_empty = False
 
         self.ui.backBtn.clicked.connect(self.on_back_clicked)
         self.ui.backBtn_2.clicked.connect(self.on_back_clicked)
