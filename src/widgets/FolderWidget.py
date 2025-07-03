@@ -26,17 +26,17 @@ class FolderWidget(QWidget):
         self.ui.folderBtn.setIconSize(QSize(81, 81))
     
     def __on_push_handle(self):
-        icon = QIcon('./src/resources/icons/open_folder.png')
-        self.ui.folderBtn.setIcon(icon)
-        self.ui.folderBtn.setIconSize(QSize(81, 81))
-        self.timer = Timer(200, self.__on_push_finsih_anim)
-        self.timer.start()
+        if self.type == "open":
+            icon = QIcon('./src/resources/icons/open_folder.png')
+            self.ui.folderBtn.setIcon(icon)
+            self.ui.folderBtn.setIconSize(QSize(81, 81))
+            self.timer = Timer(200, self.__on_push_finsih_anim)
+            self.timer.start()
+        else:
+            self.on_push(self)
     
     def __on_push_finsih_anim(self):
-        if(self.type == "open"):
-            self.on_push(self.id, self.name)
-        else:
-            self.on_push()
+        self.on_push(self.id, self.name)
         icon = QIcon('./src/resources/icons/folder.png')
         self.ui.folderBtn.setIcon(icon)
         self.ui.folderBtn.setIconSize(QSize(81, 81))
@@ -46,3 +46,13 @@ class FolderWidget(QWidget):
             return text
         result = text[:11] + "..."
         return result
+
+    def set_selected(self, selected:bool):
+        if selected:
+            icon = QIcon('./src/resources/icons/folder_check.png')
+            self.ui.folderBtn.setIcon(icon)
+            self.ui.folderBtn.setIconSize(QSize(81, 81))
+        else:
+            icon = QIcon('./src/resources/icons/folder.png')
+            self.ui.folderBtn.setIcon(icon)
+            self.ui.folderBtn.setIconSize(QSize(81, 81))

@@ -17,6 +17,7 @@ class FolderSectionView(QMainWindow):
         QMainWindow.__init__(self)
         self.context = context
         self.current_index = 0
+        self.selected_folder_widget: FolderWidget = None
         self.folder_list_empty = False
         self.folder_name: str = None
         self.folder_id: int = None
@@ -70,9 +71,18 @@ class FolderSectionView(QMainWindow):
     def load_data(self):
         self.folders_list = WaterDataBase.get_lotes()
 
-    def on_push_folder_widget(self, id: int, name: str):
-        self.folder_id = id
-        self.folder_name = name
+    def on_push_folder_widget(self, folder_widget: FolderWidget):
+        self.folder_id = folder_widget.id
+        self.folder_name = folder_widget.name
+
+        # Oculta el "label de selección" del anterior si existe
+        if self.selected_folder_widget and self.selected_folder_widget != folder_widget:
+            self.selected_folder_widget.set_selected(False)
+
+        folder_widget.set_selected(True)
+
+        # Guardar el nuevo seleccionado
+        self.selected_folder_widget = folder_widget
 
     def setup_list(self):
         self.load_data()
@@ -162,6 +172,7 @@ class FolderSectionView(QMainWindow):
             if is_repeated:
                 break
         return is_repeated
+    
     """
     def on_save_clicked(self):        
         place = self.ui.inputPlace.text().strip()
