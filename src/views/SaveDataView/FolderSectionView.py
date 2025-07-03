@@ -33,6 +33,7 @@ class FolderSectionView(QMainWindow):
         
         self.ui.verticalSlider.valueChanged.connect(self.slider_value_changed)
 
+        self.scrollBar = self.ui.scrollArea.verticalScrollBar()
         self.scrollBar.rangeChanged.connect(self.adjust_slider_range)
         self.scrollBar.valueChanged.connect(self.scroll_value_changed)
 
@@ -42,9 +43,6 @@ class FolderSectionView(QMainWindow):
         layout = QStackedLayout(self.ui.widgetKeyboard)
         layout.addWidget(self.keyboard)
         self.ui.widgetKeyboard.setLayout(layout)
-
-        self.scrollBar = self.ui.scrollArea.verticalScrollBar()
-        self.ui.verticalSlider.setRange(self.scrollBar.minimum(), self.scrollBar.maximum())
         self.ui.verticalSlider.hide()
     
     def on_back_clicked(self):
