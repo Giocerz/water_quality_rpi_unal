@@ -109,7 +109,7 @@ class FolderSectionView(QMainWindow):
         for i, product in enumerate(self.folders_list):
             # Crear y configurar el widget
             product_widget = FolderWidget(
-                id=product.id, name=product.name, description=product.description, on_push=self.on_push_folder_widget)
+                id=product.id, name=product.name, description=product.description, on_push=self.on_push_folder_widget, type="select")
             product_widget.setFixedSize(133, 100)  # Fijar tamaño del widget
             product_widget.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
