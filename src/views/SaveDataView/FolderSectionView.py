@@ -47,7 +47,7 @@ class FolderSectionView(QMainWindow):
         self.scrollBar = self.ui.scrollArea.verticalScrollBar()
         self.ui.verticalSlider.setRange(
             self.scrollBar.minimum(), self.scrollBar.maximum())
-        #self.ui.verticalSlider.hide()
+        self.ui.verticalSlider.hide()
 
         self.ui.stackedWidget.setCurrentIndex(self.current_index)
     
@@ -137,6 +137,7 @@ class FolderSectionView(QMainWindow):
 
     def adjust_slider_range(self, minValue, maxValue): 
         if maxValue > minValue:  # Solo mostramos el slider si hay algo que desplazar
+            print('Adjusting slider range:', minValue, maxValue)
             self.ui.verticalSlider.show()
             self.ui.verticalSlider.setRange(minValue, maxValue)
             
