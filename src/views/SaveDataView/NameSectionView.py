@@ -30,6 +30,7 @@ class NameSectionView(QMainWindow):
     
     def on_back_clicked(self):
         def on_yes():
+            self.save_provider.clear()  # Clear all saved data
             Navigator.pop(context=self.context, view=self)
 
         def on_no():
