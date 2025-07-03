@@ -30,7 +30,7 @@ class FolderSectionView(QMainWindow):
         self.ui.backBtn.clicked.connect(self.on_back_clicked)
         self.ui.backBtn_2.clicked.connect(self.on_back_clicked)
 
-        self.ui.createBtn.clicked.connect()
+       # self.ui.createBtn.clicked.connect()
 
 
         self.ui.verticalSlider.valueChanged.connect(self.slider_value_changed)
