@@ -124,6 +124,9 @@ class FolderSectionView(QMainWindow):
         # Ajustar el contenedor dentro del ScrollArea
         self.ui.scrollArea.setWidget(container_widget)
         self.ui.scrollArea.setWidgetResizable(True)
+        container_widget.updateGeometry()
+        self.ui.scrollArea.updateGeometry()
+        self.updateGeometry()
 
     def slider_value_changed(self, value):
         self.scrollBar.setValue(value)
