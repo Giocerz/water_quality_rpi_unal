@@ -18,6 +18,7 @@ class LocationSectionView(QMainWindow):
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.location_state()
 
         self.ui.backBtn.clicked.connect(self.on_back_clicked)
         self.ui.nextBtn.clicked.connect(self.on_next_clicked)
