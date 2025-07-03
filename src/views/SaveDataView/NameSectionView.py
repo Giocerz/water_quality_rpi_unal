@@ -11,6 +11,7 @@ class NameSectionView(QMainWindow):
     def __init__(self, context):
         QMainWindow.__init__(self)
         self.context = context
+        self.save_provider = SaveProvider()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui_components()
@@ -23,6 +24,9 @@ class NameSectionView(QMainWindow):
         layout = QStackedLayout(self.ui.widgetKeyboard)
         layout.addWidget(self.keyboard)
         self.ui.widgetKeyboard.setLayout(layout)
+
+        if self.save_provider.get_sample_name() is not None:
+            self.ui.inputPlace.setText(self.save_provider.get_sample_name())
     
     def on_back_clicked(self):
         Navigator.pop(context=self.context, view=self)
@@ -30,7 +34,7 @@ class NameSectionView(QMainWindow):
     def on_next_clicked(self):
         if not self.validator():
             return
-        self.save_provider = SaveProvider()
+        self.save_provider.set_sample_name(self.ui.inputPlace.text().strip())
         self.save_provider.set_prev_view(NameSectionView)
         Navigator.pushReplacement(
             context=self.context,

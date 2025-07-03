@@ -26,6 +26,13 @@ class LocationSectionView(QMainWindow):
         self.location_worker.location_result.connect(
             self.handle_location_result)
     
+    def location_state(self):
+        if self.save_provider.get_location() is not None:
+            self.latitude = self.save_provider.get_location()['latitude']
+            self.longitude = self.save_provider.get_location()['longitude']
+            self.ui.label_4.setText(f'{self.latitude} , {self.longitude}')
+            self.ui.label_4.setAlignment(QtCore.Qt.AlignCenter)
+
     def on_back_clicked(self):
         prev_view = self.save_provider.get_prev_view()
         Navigator.pushReplacement(context=self.context, view=prev_view(context=self.context))
@@ -68,6 +75,7 @@ class LocationSectionView(QMainWindow):
         self.longitude = longitude
         self.ui.label_4.setText(f'{self.latitude} , {self.longitude}')
         self.ui.label_4.setAlignment(QtCore.Qt.AlignCenter)
+        self.save_provider.set_location(latitude, longitude)
 
     def on_gps_clicked(self):
         self.loading_popup = LoadingPopupGPS(

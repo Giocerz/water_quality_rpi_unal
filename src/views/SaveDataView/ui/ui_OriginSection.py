@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'OriginSectionGDPmXW.ui'
+## Form generated from reading UI file 'OriginSectionyQlWrq.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -64,7 +64,7 @@ class Ui_MainWindow(object):
         self.label.setAlignment(Qt.AlignCenter)
         self.originList = QListView(self.centralwidget)
         self.originList.setObjectName(u"originList")
-        self.originList.setGeometry(QRect(20, 60, 401, 161))
+        self.originList.setGeometry(QRect(20, 60, 401, 131))
         self.originList.setStyleSheet(u"border: none;")
         self.originList.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.originList.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
@@ -98,6 +98,11 @@ class Ui_MainWindow(object):
         self.verticalSlider.setOrientation(Qt.Vertical)
         self.verticalSlider.setInvertedAppearance(True)
         self.verticalSlider.setInvertedControls(False)
+        self.selectOriginLbl = QLabel(self.centralwidget)
+        self.selectOriginLbl.setObjectName(u"selectOriginLbl")
+        self.selectOriginLbl.setGeometry(QRect(20, 200, 401, 21))
+        self.selectOriginLbl.setStyleSheet(u"border: 1px solid black;")
+        self.selectOriginLbl.setAlignment(Qt.AlignCenter)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -110,5 +115,6 @@ class Ui_MainWindow(object):
         self.backBtn.setText(QCoreApplication.translate("MainWindow", u"Atr\u00e1s", None))
         self.nextBtn.setText(QCoreApplication.translate("MainWindow", u"Siguiente", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Seleccione el origen de la muestra", None))
+        self.selectOriginLbl.setText("")
     # retranslateUi
 

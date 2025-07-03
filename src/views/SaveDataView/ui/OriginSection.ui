@@ -100,7 +100,7 @@ QPushButton {
       <x>20</x>
       <y>60</y>
       <width>401</width>
-      <height>161</height>
+      <height>131</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -160,6 +160,25 @@ QSlider{
     </property>
     <property name="invertedControls">
      <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="selectOriginLbl">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>200</y>
+      <width>401</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid black;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>

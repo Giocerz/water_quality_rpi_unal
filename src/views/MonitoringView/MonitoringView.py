@@ -15,12 +15,13 @@ from src.model.SensorData import SensorData
 from src.logic.sensorStabilizer import SensorStabilizer
 #from .FakeParameterWorker import FakeParametersMeasuredWorker
 from .ParametersWorker import ParametersMeasuredWorker
-
+from src.providers.SaveProvider import SaveProvider
 
 class MonitoringView(QMainWindow):
     def __init__(self, context, tds_check:bool, ph_check:bool, oxygen_check:bool, turbidity_check:bool = False):
         QMainWindow.__init__(self)
         self.context = context
+        self.save_provider = SaveProvider()
         self.tds_check:bool = tds_check
         self.ph_check:bool = ph_check
         self.oxygen_check:bool = oxygen_check
@@ -42,6 +43,14 @@ class MonitoringView(QMainWindow):
         self.max_samples:int = 15
         self.capture_period:int = 3
         self.is_automatic_capture_active = False
+        self.oxygen_list: list = []
+        self.ph_list: list = []
+        self.temperature_list: list = []
+        self.tds_list: list = []
+        self.turbidity_list: list = []
+        self.battery_list: list = []
+        self.timestamp_list: list = []
+
         self.capture_samples:list[SensorData] = []
 
         self.receive_parameters = False

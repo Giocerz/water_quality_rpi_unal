@@ -31,6 +31,14 @@ class OriginSectionView(QMainWindow):
         self.ui.verticalSlider.setRange(
             self.scrollBar.minimum(), self.scrollBar.maximum())
         self.ui.verticalSlider.hide()
+        if self.save_provider.get_origin() is not None:
+            self.ui.originList.setCurrentIndex(
+                self.model.index(self.save_provider.get_origin(), 0))
+
+    def get_origin_state(self):
+        if self.save_provider.get_origin() is not None:
+            self.ui.selectOriginLbl.setText(
+                f'Origen: {self.save_provider.get_origin()}')
     
     def on_back_clicked(self):
         print('on_back_clicked')
@@ -75,8 +83,8 @@ class OriginSectionView(QMainWindow):
         index = indexes[0].row()
         origin = AppConstants.WATER_SOURCES[index]
         if origin != 'Otro':
-            self.show_dialog_error(error=origin)
-        else:
-            self.show_dialog_error(error='OTRO ORIGEN')
+            pass
+        self.save_provider.set_origin(origin)
+        self.ui.selectOriginLbl.setText(f'Origen: {origin}')
 
 
