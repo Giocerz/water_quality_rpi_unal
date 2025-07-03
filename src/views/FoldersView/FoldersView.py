@@ -10,12 +10,14 @@ from src.package.Navigator import Navigator
 from src.widgets.PopupWidget import PopupWidgetInfo, PopupWidget, LoadingPopupWidget, ProgressPopupWidget
 from src.services.internetService import InternetChecker
 from src.services.UploadDataService import UploadService
+from src.providers.SaveProvider import SaveProvider
 
 class FoldersView(QMainWindow):
     def __init__(self, context):
         QMainWindow.__init__(self)
         self.context = context
         self.folders_list: list[LoteModel] = []
+        self.save_provider = SaveProvider()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui_components()
