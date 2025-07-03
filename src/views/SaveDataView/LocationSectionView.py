@@ -74,7 +74,7 @@ class LocationSectionView(QMainWindow):
         self.show_dialog_error('Localización completada.')
     
     def set_location(self, latitude:float, longitude:float):
-        self.ui.label_4.setText(f'{self.latitude} , {self.longitude}')
+        self.ui.label_4.setText(f'{latitude} , {longitude}')
         self.ui.label_4.setAlignment(QtCore.Qt.AlignCenter)
         self.save_provider.set_location(latitude, longitude)
 
