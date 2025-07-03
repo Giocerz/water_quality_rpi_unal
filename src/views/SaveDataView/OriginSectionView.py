@@ -18,6 +18,7 @@ class OriginSectionView(QMainWindow):
         self.ui.setupUi(self)
         self.ui_components()
         self.set_list()
+        self.get_origin_state()
 
         self.ui.nextBtn.clicked.connect(self.on_next_clicked)
         self.ui.backBtn.clicked.connect(self.on_back_clicked)
@@ -31,9 +32,6 @@ class OriginSectionView(QMainWindow):
         self.ui.verticalSlider.setRange(
             self.scrollBar.minimum(), self.scrollBar.maximum())
         self.ui.verticalSlider.hide()
-        if self.save_provider.get_origin() is not None:
-            self.ui.originList.setCurrentIndex(
-                self.model.index(self.save_provider.get_origin(), 0))
 
     def get_origin_state(self):
         if self.save_provider.get_origin() is not None:
