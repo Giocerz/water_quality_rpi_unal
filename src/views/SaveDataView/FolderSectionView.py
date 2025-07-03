@@ -47,7 +47,7 @@ class FolderSectionView(QMainWindow):
         self.scrollBar = self.ui.scrollArea.verticalScrollBar()
         self.ui.verticalSlider.setRange(
             self.scrollBar.minimum(), self.scrollBar.maximum())
-        self.ui.verticalSlider.hide()
+        #self.ui.verticalSlider.hide()
 
         self.ui.stackedWidget.setCurrentIndex(self.current_index)
     
