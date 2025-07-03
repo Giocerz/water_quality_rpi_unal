@@ -26,6 +26,7 @@ class FoldersView(QMainWindow):
         self.ui.uploadBtn.clicked.connect(self.on_upload_clicked)
         self.ui.verticalSlider.valueChanged.connect(self.slider_value_changed)
 
+        self.scrollBar = self.ui.scrollArea.verticalScrollBar()
         self.scrollBar.rangeChanged.connect(self.adjust_slider_range)
         self.scrollBar.valueChanged.connect(self.scroll_value_changed)
 
@@ -37,8 +38,6 @@ class FoldersView(QMainWindow):
         self.ui.uploadBtn.setIcon(icon)
         self.ui.uploadBtn.setIconSize(QSize(30, 30))
         self.ui.uploadBtn.hide()
-        self.scrollBar = self.ui.scrollArea.verticalScrollBar()
-        self.ui.verticalSlider.setRange(self.scrollBar.minimum(), self.scrollBar.maximum())
         self.ui.emptyFoldersNoticeLbl.hide()
         self.ui.verticalSlider.hide()
 
