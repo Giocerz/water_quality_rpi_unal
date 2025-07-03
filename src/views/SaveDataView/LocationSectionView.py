@@ -28,7 +28,7 @@ class LocationSectionView(QMainWindow):
             self.handle_location_result)
     
     def location_state(self):
-        if self.save_provider.get_location() is not None:
+        if self.save_provider.get_location()['latitude'] is not None:
             self.latitude = self.save_provider.get_location()['latitude']
             self.longitude = self.save_provider.get_location()['longitude']
             self.ui.label_4.setText(f'{self.latitude} , {self.longitude}')
@@ -37,6 +37,11 @@ class LocationSectionView(QMainWindow):
     def on_back_clicked(self):
         prev_view = self.save_provider.get_prev_view()
         Navigator.pushReplacement(context=self.context, view=prev_view(context=self.context))
+
+    def on_next_clicked(self):
+        if self.save_provider.get_location()['latitude'] is None:
+            self.show_dialog_error('Realice una localización GPS o manual')
+            return
 
     def on_set_manual_location_clicked(self):
         manual_location_widget = SetManualLocationWidget(
