@@ -39,8 +39,6 @@ class OriginSectionView(QMainWindow):
                 f'Origen: {self.save_provider.get_origin()}')
     
     def on_back_clicked(self):
-        print('on_back_clicked')
-        # If the previous view is a NameSectionView
         prev_view = self.save_provider.get_prev_view()
         Navigator.pushReplacement(context=self.context, view=prev_view(context=self.context))
 

@@ -1,6 +1,7 @@
 from PySide2.QtWidgets import QMainWindow
 from PySide2 import QtCore
 from .ui.ui_LocationSection import Ui_MainWindow
+from .FolderSectionView import FolderSectionView
 from src.widgets.PopupWidget import PopupWidgetInfo
 from src.package.Navigator import Navigator
 from .LocationWorker import LocationdWorker
@@ -42,6 +43,11 @@ class LocationSectionView(QMainWindow):
         if self.save_provider.get_location()['latitude'] is None:
             self.show_dialog_error('Realice una localización GPS o manual')
             return
+        self.save_provider.set_prev_view(LocationSectionView)
+        Navigator.pushReplacement(
+            context=self.context,
+            view=FolderSectionView(context=self.context)
+        )
 
     def on_set_manual_location_clicked(self):
         manual_location_widget = SetManualLocationWidget(

@@ -77,23 +77,6 @@ QPushButton {
          <height>231</height>
         </rect>
        </property>
-       <widget class="QLabel" name="emptyFoldersNoticeLbl">
-        <property name="geometry">
-         <rect>
-          <x>50</x>
-          <y>70</y>
-          <width>351</width>
-          <height>81</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: grey;
-font-size: 24px;</string>
-        </property>
-        <property name="text">
-         <string>No hay carpetas guardadas</string>
-        </property>
-       </widget>
       </widget>
      </widget>
      <widget class="QSlider" name="verticalSlider">
@@ -166,7 +149,7 @@ QSlider{
        <string>Atrás</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="nextBtn">
+     <widget class="QPushButton" name="saveBtn">
       <property name="geometry">
        <rect>
         <x>320</x>
@@ -189,7 +172,7 @@ QSlider{
        <string>Finalizar</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="saveBtn">
+     <widget class="QPushButton" name="createBtn">
       <property name="geometry">
        <rect>
         <x>160</x>

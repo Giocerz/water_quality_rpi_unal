@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'FolderSectionGQjtwb.ui'
+## Form generated from reading UI file 'FolderSectionGlEzdd.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -53,11 +53,6 @@ class Ui_MainWindow(object):
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
         self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 431, 231))
-        self.emptyFoldersNoticeLbl = QLabel(self.scrollAreaWidgetContents)
-        self.emptyFoldersNoticeLbl.setObjectName(u"emptyFoldersNoticeLbl")
-        self.emptyFoldersNoticeLbl.setGeometry(QRect(50, 70, 351, 81))
-        self.emptyFoldersNoticeLbl.setStyleSheet(u"color: grey;\n"
-"font-size: 24px;")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.verticalSlider = QSlider(self.page)
         self.verticalSlider.setObjectName(u"verticalSlider")
@@ -98,10 +93,10 @@ class Ui_MainWindow(object):
 "	font-size: 16px;\n"
 "	border: 1px solid #266676;\n"
 "}")
-        self.nextBtn = QPushButton(self.page)
-        self.nextBtn.setObjectName(u"nextBtn")
-        self.nextBtn.setGeometry(QRect(320, 230, 160, 42))
-        self.nextBtn.setStyleSheet(u"QPushButton {\n"
+        self.saveBtn = QPushButton(self.page)
+        self.saveBtn.setObjectName(u"saveBtn")
+        self.saveBtn.setGeometry(QRect(320, 230, 160, 42))
+        self.saveBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: #1a759f;\n"
 "	color: white;\n"
 "	font-size: 16px;\n"
@@ -109,10 +104,10 @@ class Ui_MainWindow(object):
 "	height: 50px;\n"
 "	border: none;\n"
 "}")
-        self.saveBtn = QPushButton(self.page)
-        self.saveBtn.setObjectName(u"saveBtn")
-        self.saveBtn.setGeometry(QRect(160, 230, 160, 42))
-        self.saveBtn.setStyleSheet(u"QPushButton {\n"
+        self.createBtn = QPushButton(self.page)
+        self.createBtn.setObjectName(u"createBtn")
+        self.createBtn.setGeometry(QRect(160, 230, 160, 42))
+        self.createBtn.setStyleSheet(u"QPushButton {\n"
 "	background-color: #22577a;\n"
 "	color: white;\n"
 "	font-size: 16px;\n"
@@ -172,10 +167,9 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.emptyFoldersNoticeLbl.setText(QCoreApplication.translate("MainWindow", u"No hay carpetas guardadas", None))
         self.backBtn.setText(QCoreApplication.translate("MainWindow", u"Atr\u00e1s", None))
-        self.nextBtn.setText(QCoreApplication.translate("MainWindow", u"Finalizar", None))
-        self.saveBtn.setText(QCoreApplication.translate("MainWindow", u"Nueva Carpeta", None))
+        self.saveBtn.setText(QCoreApplication.translate("MainWindow", u"Finalizar", None))
+        self.createBtn.setText(QCoreApplication.translate("MainWindow", u"Nueva Carpeta", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Nombre de la nueva carpeta</p></body></html>", None))
         self.inputPlace.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ej: Colegio de Manaure", None))
         self.backBtn_2.setText(QCoreApplication.translate("MainWindow", u"Atr\u00e1s", None))
