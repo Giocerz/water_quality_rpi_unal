@@ -108,23 +108,19 @@ font-size: 18px;</string>
   <widget class="QLabel" name="chargeIndicator">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>-4</y>
-     <width>481</width>
-     <height>51</height>
+     <x>300</x>
+     <y>11</y>
+     <width>111</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: white;
-background-color: #266676;
+    <string notr="true">color: #266676;
 font-weight: bold;
 font-size: 18px;</string>
    </property>
    <property name="text">
-    <string>ALTO VOLTAJE! DESCONECTAR EL CARGADOR!</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <string>Cargando...</string>
    </property>
   </widget>
  </widget>

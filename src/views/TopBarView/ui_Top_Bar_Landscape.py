@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Top_Bar_LandscapeZJLGpJ.ui'
+## Form generated from reading UI file 'Top_Bar_LandscapeBPlPCB.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -58,12 +58,10 @@ class Ui_Form(object):
         self.networkLbl.setStyleSheet(u"	font-size: 14pt;")
         self.chargeIndicator = QLabel(Form)
         self.chargeIndicator.setObjectName(u"chargeIndicator")
-        self.chargeIndicator.setGeometry(QRect(0, -4, 481, 51))
-        self.chargeIndicator.setStyleSheet(u"color: white;\n"
-"background-color: #266676;\n"
+        self.chargeIndicator.setGeometry(QRect(300, 11, 111, 26))
+        self.chargeIndicator.setStyleSheet(u"color: #266676;\n"
 "font-weight: bold;\n"
 "font-size: 18px;")
-        self.chargeIndicator.setAlignment(Qt.AlignCenter)
 
         self.retranslateUi(Form)
 
@@ -76,6 +74,6 @@ class Ui_Form(object):
         self.border.setText("")
         self.timeLbl.setText(QCoreApplication.translate("Form", u"10:34", None))
         self.networkLbl.setText("")
-        self.chargeIndicator.setText(QCoreApplication.translate("Form", u"ALTO VOLTAJE! DESCONECTAR EL CARGADOR!", None))
+        self.chargeIndicator.setText(QCoreApplication.translate("Form", u"Cargando...", None))
     # retranslateUi
 
