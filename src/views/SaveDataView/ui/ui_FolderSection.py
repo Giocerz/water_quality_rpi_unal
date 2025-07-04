@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'FolderSectionGlEzdd.ui'
+## Form generated from reading UI file 'FolderSectionnrNdCx.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -43,47 +43,6 @@ class Ui_MainWindow(object):
         self.stackedWidget.setGeometry(QRect(0, 0, 480, 272))
         self.page = QWidget()
         self.page.setObjectName(u"page")
-        self.scrollArea = QScrollArea(self.page)
-        self.scrollArea.setObjectName(u"scrollArea")
-        self.scrollArea.setGeometry(QRect(0, 0, 431, 231))
-        self.scrollArea.setStyleSheet(u"border: opx;")
-        self.scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollAreaWidgetContents = QWidget()
-        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 431, 231))
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
-        self.verticalSlider = QSlider(self.page)
-        self.verticalSlider.setObjectName(u"verticalSlider")
-        self.verticalSlider.setGeometry(QRect(430, 0, 41, 231))
-        self.verticalSlider.setStyleSheet(u"QSlider::groove:vertical{ \n"
-"	background-color: rgb(234, 234, 234);\n"
-"	height: 231px;\n"
-"	border-radius: 10px;\n"
-"}\n"
-"\n"
-"QSlider::handle:vertical { \n"
-"	background-color: #22577a;\n"
-"    height: 50px;\n"
-"    width: 20px;\n"
-"    line-height: 10px; \n"
-"	margin-top: 0px; \n"
-"	margin-bottom: 0px;\n"
-"	border-radius: 10px; \n"
-"}\n"
-"\n"
-"QSlider{\n"
-"	background-color: rgb(234, 234, 234);\n"
-"	border-radius: 20px;\n"
-"}\n"
-"\n"
-"")
-        self.verticalSlider.setPageStep(1)
-        self.verticalSlider.setValue(0)
-        self.verticalSlider.setOrientation(Qt.Vertical)
-        self.verticalSlider.setInvertedAppearance(True)
-        self.verticalSlider.setInvertedControls(False)
         self.backBtn = QPushButton(self.page)
         self.backBtn.setObjectName(u"backBtn")
         self.backBtn.setGeometry(QRect(0, 230, 160, 42))
@@ -115,6 +74,51 @@ class Ui_MainWindow(object):
 "	height: 50px;\n"
 "	border: none;\n"
 "}")
+        self.folderList = QListView(self.page)
+        self.folderList.setObjectName(u"folderList")
+        self.folderList.setGeometry(QRect(20, 61, 401, 131))
+        self.folderList.setStyleSheet(u"border: none;")
+        self.folderList.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.folderList.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.verticalSlider = QSlider(self.page)
+        self.verticalSlider.setObjectName(u"verticalSlider")
+        self.verticalSlider.setGeometry(QRect(430, 61, 41, 161))
+        self.verticalSlider.setStyleSheet(u"QSlider::groove:vertical{ \n"
+"	background-color: rgb(234, 234, 234);\n"
+"	height: 161px;\n"
+"	border-radius: 10px;\n"
+"}\n"
+"\n"
+"QSlider::handle:vertical { \n"
+"	background-color: #22577a;\n"
+"    height: 50;\n"
+"    width: 20px;\n"
+"    line-height: 10px; \n"
+"	margin-top: 0px; \n"
+"	margin-bottom: 0px;\n"
+"	border-radius: 10px; \n"
+"}\n"
+"\n"
+"QSlider{\n"
+"	background-color: rgb(234, 234, 234);\n"
+"	border-radius: 20px;\n"
+"}\n"
+"\n"
+"")
+        self.verticalSlider.setPageStep(1)
+        self.verticalSlider.setValue(0)
+        self.verticalSlider.setOrientation(Qt.Vertical)
+        self.verticalSlider.setInvertedAppearance(True)
+        self.verticalSlider.setInvertedControls(False)
+        self.selectFolderLbl = QLabel(self.page)
+        self.selectFolderLbl.setObjectName(u"selectFolderLbl")
+        self.selectFolderLbl.setGeometry(QRect(20, 201, 401, 21))
+        self.selectFolderLbl.setStyleSheet(u"border: 1px solid black;")
+        self.selectFolderLbl.setAlignment(Qt.AlignCenter)
+        self.label_2 = QLabel(self.page)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setGeometry(QRect(0, 0, 481, 61))
+        self.label_2.setAlignment(Qt.AlignCenter)
         self.stackedWidget.addWidget(self.page)
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
@@ -170,6 +174,8 @@ class Ui_MainWindow(object):
         self.backBtn.setText(QCoreApplication.translate("MainWindow", u"Atr\u00e1s", None))
         self.saveBtn.setText(QCoreApplication.translate("MainWindow", u"Finalizar", None))
         self.createBtn.setText(QCoreApplication.translate("MainWindow", u"Nueva Carpeta", None))
+        self.selectFolderLbl.setText("")
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Seleccione la carpeta en la que guardara la muestra", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Nombre de la nueva carpeta</p></body></html>", None))
         self.inputPlace.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ej: Colegio de Manaure", None))
         self.backBtn_2.setText(QCoreApplication.translate("MainWindow", u"Atr\u00e1s", None))

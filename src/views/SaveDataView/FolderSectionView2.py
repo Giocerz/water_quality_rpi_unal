@@ -1,29 +1,35 @@
-from PySide2.QtWidgets import QMainWindow, QGridLayout, QWidget, QSizePolicy, QVBoxLayout
+from PySide2.QtWidgets import QMainWindow, QStackedLayout, QVBoxLayout, QWidget, QGridLayout, QSizePolicy
+from PySide2.QtCore import Qt, QSize
 from PySide2.QtGui import QIcon
-from PySide2.QtCore import QSize, Qt
-from src.views.ui_Folders_view import Ui_MainWindow
+from .ui.ui_FolderSection import Ui_MainWindow
+from src.widgets.KeyboardWidget import KeyboardWidget
+from src.widgets.PopupWidget import PopupWidgetInfo
 from src.widgets.FolderWidget import FolderWidget
+from src.package.Navigator import Navigator
+from src.providers.SaveProvider import SaveProvider
 from src.model.Models import LoteModel
 from src.model.WaterQualityDB import WaterDataBase
-from src.views.DatosView.DatosView import DatosView
-from src.package.Navigator import Navigator
-from src.widgets.PopupWidget import PopupWidgetInfo, PopupWidget, LoadingPopupWidget, ProgressPopupWidget
-from src.services.internetService import InternetChecker
-from src.services.UploadDataService import UploadService
 
-class FoldersView(QMainWindow):
+
+class FolderSectionView(QMainWindow):
     def __init__(self, context):
         QMainWindow.__init__(self)
         self.context = context
+        self.current_index = 0
+        self.selected_folder_widget: FolderWidget = None
+        self.folder_list_empty = False
+        self.folder_name: str = None
+        self.folder_id: int = None
         self.folders_list: list[LoteModel] = []
+        self.save_provider = SaveProvider()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui_components()
         self.setup_list()
 
-        self.init_workers()
         self.ui.backBtn.clicked.connect(self.on_back_clicked)
-        self.ui.uploadBtn.clicked.connect(self.on_upload_clicked)
+        self.ui.backBtn_2.clicked.connect(self.on_back_clicked)
+        
         self.ui.verticalSlider.valueChanged.connect(self.slider_value_changed)
 
         self.scrollBar.rangeChanged.connect(self.adjust_slider_range)
@@ -33,30 +39,20 @@ class FoldersView(QMainWindow):
         icon = QIcon('./src/resources/icons/back.png')
         self.ui.backBtn.setIcon(icon)
         self.ui.backBtn.setIconSize(QSize(30, 30))
-        icon = QIcon('./src/resources/icons/upload.png')
-        self.ui.uploadBtn.setIcon(icon)
-        self.ui.uploadBtn.setIconSize(QSize(30, 30))
-        self.ui.uploadBtn.hide()
         self.scrollBar = self.ui.scrollArea.verticalScrollBar()
         self.ui.verticalSlider.setRange(self.scrollBar.minimum(), self.scrollBar.maximum())
-        self.ui.emptyFoldersNoticeLbl.hide()
         self.ui.verticalSlider.hide()
 
     def load_data(self):
         self.folders_list = WaterDataBase.get_lotes()
-
-    def on_back_clicked(self):
-        self.stop_workers()
-        Navigator.pop(context=self.context, view= self)
-
-    def on_push_folder_widget(self, id:int, name:str):
-        Navigator.push(context= self.context, view= DatosView(context=self.context, lote_id=id, update_folder_view = self.setup_list))
     
     def setup_list(self):
         self.load_data()
 
         if len(self.folders_list) == 0:
-            self.ui.emptyFoldersNoticeLbl.show()
+            self.current_index = 1
+            self.ui.stackedWidget.setCurrentIndex(self.current_index)
+            self.folder_list_empty = True
             self.ui.verticalSlider.hide()
             self.ui.scrollArea.hide()
             return
@@ -96,7 +92,6 @@ class FoldersView(QMainWindow):
         # Ajustar el contenedor dentro del ScrollArea
         self.ui.scrollArea.setWidget(container_widget)
         self.ui.scrollArea.setWidgetResizable(True)
-        self.ui.uploadBtn.show()
 
 
     def slider_value_changed(self, value):
@@ -122,57 +117,60 @@ class FoldersView(QMainWindow):
             self.ui.verticalSlider.hide()
 
     def scroll_value_changed(self, value):
-        self.ui.verticalSlider.setValue(value) 
-
-    #Metodos de subida
-    def init_workers(self):
-        self.internet_checker = InternetChecker()
-        self.upload_service = UploadService()
-        self.internet_checker.connection_status.connect(self.internet_check_result)
-        self.upload_service.upload_finished.connect(self.upload_finished_result)
-        self.upload_service.progress.connect(self.handle_upload_progress)
-
-    def stop_workers(self):
-        if self.internet_checker.isRunning():
-            self.internet_checker.wait()
-        if self.upload_service.isRunning():
-            self.upload_service.stop()
-
-    def on_upload_clicked(self):
-        count_data_no_uploaded =  WaterDataBase.count_samples_not_updated()
-        if count_data_no_uploaded == 0:
-            popup =  PopupWidgetInfo(context=self.context, text='Todos los datos estan<br>sincronizados', is_warning=False)
-            popup.show()
-            return
-        if count_data_no_uploaded > 1:
-            text = f'Hay {count_data_no_uploaded} muestras sin<br>sincronizar ¿Desea subirlas?'
-        else:
-            text = f'Hay una muestra sin<br>sincronizar ¿Desea subirla?'
-        def yes_callback():
-            self.internet_checker.start()
-        def no_callback():
-            pass
-        popup = PopupWidget(context=self.context, text=text, yes_callback=yes_callback, no_callback=no_callback)
-        popup.show()
+        self.ui.verticalSlider.setValue(value)
     
-    def internet_check_result(self, result):
-        if not result:
-            popup = PopupWidgetInfo(context=self.context, text='No hay conexion a internet')
-            popup.show()
-            return
-        self.upload_service.start()
-        self.progress_popup = ProgressPopupWidget(context=self.context, text='Sincronizando...')
-        self.progress_popup.show()
 
-    def handle_upload_progress(self, step, total):
-        progress =  round(step/total * 100)
-        self.progress_popup.set_value(progress)
-
-    def upload_finished_result(self, result, error_msg):
-        if result:
-            text = 'Los datos se sincronizaron<br>exitosamente.'
+    def on_push_folder_widget(self):
+        pass
+    
+    
+    def on_back_clicked(self):
+        if self.current_index == 1 and not self.folder_list_empty:
+            self.current_index = 0
+            self.ui.stackedWidget.setCurrentIndex(self.current_index)
         else:
-            text = error_msg
-        self.progress_popup.close_and_delete()
-        popup =  PopupWidgetInfo(context=self.context, text=text, is_warning=False)
-        popup.show()
+            prev_view = self.save_provider.get_prev_view()
+            Navigator.pushReplacement(context=self.context, view=prev_view(context=self.context))
+        
+    def on_create_folder_clicked(self):
+        if self.current_index == 0:
+            self.current_index = 1
+            self.ui.stackedWidget.setCurrentIndex(self.current_index)
+
+    def show_dialog_error(self, error: str):
+        dialog = PopupWidgetInfo(context=self.context, text=error)
+        dialog.show()
+
+    """
+    def on_push_folder_widget(self, folder_widget: FolderWidget):
+        self.folder_id = folder_widget.id
+        self.folder_name = folder_widget.name
+
+        # Oculta el "label de selección" del anterior si existe
+        if self.selected_folder_widget and self.selected_folder_widget != folder_widget:
+            self.selected_folder_widget.set_selected(False)
+
+        folder_widget.set_selected(True)
+
+        # Guardar el nuevo seleccionado
+        self.selected_folder_widget = folder_widget
+    """
+    
+
+    """
+    def validator(self) -> bool:
+        if (not self.folder_name):
+            self.show_dialog_error(error='Seleccione una carpeta')
+            return False
+
+   
+    #Verify if a lote exist
+    def verify_repeated_lote_name(self, name:str):
+        name_lw = name.strip().lower()
+        is_repeated = False
+        for i in range(len(self.folders_list)):
+            is_repeated = name_lw == self.folders_list[i].name.lower()
+            if is_repeated:
+                break
+        return is_repeated
+    """
