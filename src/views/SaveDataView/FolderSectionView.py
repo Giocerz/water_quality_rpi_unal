@@ -141,6 +141,7 @@ class FolderSectionView(QMainWindow):
                     last_add_hour=str(hour),
                 )
             self.folder_id = WaterDataBase.insert_lote(lote)
+        self.save_data()
 
     def save_data(self):
         try:
