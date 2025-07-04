@@ -12,6 +12,7 @@ class FolderSectionView(QMainWindow):
     def __init__(self, context):
         QMainWindow.__init__(self)
         self.context = context
+        self.current_index = 0
         self.save_provider = SaveProvider()
 
         self.ui = Ui_MainWindow()
@@ -20,8 +21,9 @@ class FolderSectionView(QMainWindow):
         
         self.set_list()
 
-        #self.ui.nextBtn.clicked.connect(self.on_next_clicked)
         self.ui.backBtn.clicked.connect(self.on_back_clicked)
+        self.ui.backBtn_2.clicked.connect(self.on_back_clicked)
+        self.ui.createFolderBtn.clicked.connect(self.on_create_folder_clicked)
         self.ui.folderList.clicked.connect(self.select_folder)
         self.ui.verticalSlider.valueChanged.connect(self.slider_value_changed)
         self.scrollBar.rangeChanged.connect(self.adjust_slider_range)
@@ -34,11 +36,17 @@ class FolderSectionView(QMainWindow):
         self.ui.verticalSlider.hide()
     
     def on_back_clicked(self):
-        prev_view = self.save_provider.get_prev_view()
-        Navigator.pushReplacement(context=self.context, view=prev_view(context=self.context))
+        if self.current_index == 1 and len(self.folder_list) > 0:
+            self.current_index = 0
+            self.ui.stackedWidget.setCurrentIndex(self.current_index)
+        else:
+            prev_view = self.save_provider.get_prev_view()
+            Navigator.pushReplacement(context=self.context, view=prev_view(context=self.context))
 
-    def on_next_clicked(self):
-        pass
+    def on_create_folder_clicked(self):
+        if self.current_index == 0:
+            self.current_index = 1
+            self.ui.stackedWidget.setCurrentIndex(self.current_index)
 
     def show_dialog_error(self, error: str):
         dialog = PopupWidgetInfo(context=self.context, text=error)
