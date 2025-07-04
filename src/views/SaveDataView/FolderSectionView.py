@@ -111,7 +111,7 @@ class FolderSectionView(QMainWindow):
     
     def validator(self) -> bool:
         if self.current_index == 1:
-            if not self.ui.inputPlace.text().strip:
+            if self.ui.inputPlace.text().strip == '' or self.ui.inputPlace.text() is None:
                 self.show_dialog_error(error='Seleccione una carpeta')
                 return False
             if self.verify_repeated_lote_name(self.ui.inputPlace.text()):
