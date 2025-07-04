@@ -22,7 +22,7 @@ class FolderSectionView(QMainWindow):
 
         #self.ui.nextBtn.clicked.connect(self.on_next_clicked)
         self.ui.backBtn.clicked.connect(self.on_back_clicked)
-        self.ui.folderList.clicked.connect(self.select_origin)
+        self.ui.folderList.clicked.connect(self.select_folder)
         self.ui.verticalSlider.valueChanged.connect(self.slider_value_changed)
         self.scrollBar.rangeChanged.connect(self.adjust_slider_range)
         self.scrollBar.valueChanged.connect(self.scroll_value_changed)
