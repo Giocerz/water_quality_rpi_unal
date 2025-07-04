@@ -45,16 +45,19 @@ class ItRainedSectionView(QMainWindow):
         self.ui.yesCheckBox.setChecked(True)
         self.ui.noCheckBox.setChecked(False)
         self.ui.idkCheckBox.setChecked(False)
+        self.save_state()
 
     def _on_no_clicked(self):
         self.ui.yesCheckBox.setChecked(False)
         self.ui.noCheckBox.setChecked(True)
         self.ui.idkCheckBox.setChecked(False)
+        self.save_state()
 
     def _on_idk_clicked(self):
         self.ui.yesCheckBox.setChecked(False)
         self.ui.noCheckBox.setChecked(False)
         self.ui.idkCheckBox.setChecked(True)
+        self.save_state()
 
     def save_state(self):
         yes_state = self.ui.yesCheckBox.isChecked()
