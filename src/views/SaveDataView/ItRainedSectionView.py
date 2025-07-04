@@ -2,7 +2,7 @@ from PySide2.QtWidgets import QMainWindow
 from .ui.ui_ItRainedSection import Ui_MainWindow
 from src.widgets.PopupWidget import PopupWidgetInfo
 from src.package.Navigator import Navigator
-from .LocationSectionView import FolderSectionView
+from .FolderSectionView import FolderSectionView
 from src.providers.SaveProvider import SaveProvider
 
 class ItRainedSectionView(QMainWindow):
