@@ -9,6 +9,7 @@ class SaveProvider:
             cls._instance._ph_list = []
             cls._instance._temperature_list = []
             cls._instance._tds_list = []
+            cls._instance._conductivity_list = []
             cls._instance._turbidity_list = []
             cls._instance._battery_list = []
             cls._instance._timestamp_list = []
@@ -32,15 +33,37 @@ class SaveProvider:
         """Assigns the current previous view."""
         self._prev_view.append(view)
     
-    def set_parameters_lists(self, oxygen_list, ph_list, temperature_list, tds_list, turbidity_list, battery_list, timestamp_list):
-        """Sets the lists of parameters."""
-        self._oxygen_list = oxygen_list
-        self._ph_list = ph_list
-        self._temperature_list = temperature_list
-        self._tds_list = tds_list
-        self._turbidity_list = turbidity_list
-        self._battery_list = battery_list
-        self._timestamp_list = timestamp_list
+    def add_oxygen(self, value):
+        """Adds a value to the oxygen list."""
+        self._oxygen_list.append(value)
+    
+    def add_ph(self, value):
+        """Adds a value to the pH list."""
+        self._ph_list.append(value)
+    
+    def add_temperature(self, value):
+        """Adds a value to the temperature list."""
+        self._temperature_list.append(value)
+    
+    def add_tds(self, value):
+        """Adds a value to the TDS list."""
+        self._tds_list.append(value)
+    
+    def add_conductivity(self, value):
+        """Adds a value to the conductivity list."""
+        self._conductivity_list.append(value)
+    
+    def add_turbidity(self, value):
+        """Adds a value to the turbidity list."""
+        self._turbidity_list.append(value)
+    
+    def add_battery(self, value):
+        """Adds a value to the battery list."""
+        self._battery_list.append(value)
+    
+    def add_timestamp(self, value):
+        """Adds a value to the timestamp list."""
+        self._timestamp_list.append(value)
     
     def get_parameters_lists(self):
         """Returns the lists of parameters."""
@@ -49,6 +72,7 @@ class SaveProvider:
             'ph_list': self._ph_list,
             'temperature_list': self._temperature_list,
             'tds_list': self._tds_list,
+            'conductivity_list': self._conductivity_list,
             'turbidity_list': self._turbidity_list,
             'battery_list': self._battery_list,
             'timestamp_list': self._timestamp_list
@@ -87,6 +111,17 @@ class SaveProvider:
         """Returns the location."""
         return self._location
     
+    def clear_only_form_data(self):
+        """Clears only the form data, keeping the lists intact."""
+        self._prev_view.clear()
+        self._sample_name = None
+        self._it_rained = None
+        self._origin = None
+        self._location = {
+            'latitude': None,
+            'longitude': None,
+        }
+
     def clear(self):
         """Clears all saved data."""
         self._prev_view.clear()
@@ -94,6 +129,7 @@ class SaveProvider:
         self._ph_list.clear()
         self._temperature_list.clear()
         self._tds_list.clear()
+        self._conductivity_list.clear()
         self._turbidity_list.clear()
         self._battery_list.clear()
         self._timestamp_list.clear()

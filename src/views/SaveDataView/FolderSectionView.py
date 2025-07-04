@@ -1,4 +1,4 @@
-from PySide2.QtWidgets import QMainWindow
+from PySide2.QtWidgets import QMainWindow,QStackedLayout
 from PySide2.QtGui import QStandardItemModel, QStandardItem
 from PySide2.QtCore import Qt
 from .ui.ui_FolderSection import Ui_MainWindow
@@ -7,12 +7,14 @@ from src.package.Navigator import Navigator
 from src.providers.SaveProvider import SaveProvider
 from src.model.WaterQualityDB import WaterDataBase
 from src.model.Models import LoteModel
+from src.widgets.KeyboardWidget import KeyboardWidget
 
 class FolderSectionView(QMainWindow):
     def __init__(self, context):
         QMainWindow.__init__(self)
         self.context = context
         self.current_index = 0
+        self.selected_folder:LoteModel = None
         self.save_provider = SaveProvider()
 
         self.ui = Ui_MainWindow()
@@ -23,6 +25,8 @@ class FolderSectionView(QMainWindow):
 
         self.ui.backBtn.clicked.connect(self.on_back_clicked)
         self.ui.backBtn_2.clicked.connect(self.on_back_clicked)
+        self.ui.saveBtn.clicked.connect(self.on_push_save)
+        self.ui.saveBtn_2.clicked.connect(self.on_push_save)
         self.ui.createBtn.clicked.connect(self.on_create_folder_clicked)
         self.ui.folderList.clicked.connect(self.select_folder)
         self.ui.verticalSlider.valueChanged.connect(self.slider_value_changed)
@@ -34,6 +38,10 @@ class FolderSectionView(QMainWindow):
         self.ui.verticalSlider.setRange(
             self.scrollBar.minimum(), self.scrollBar.maximum())
         self.ui.verticalSlider.hide()
+        self.keyboard = KeyboardWidget(self.ui.inputPlace)
+        layout = QStackedLayout(self.ui.widgetKeyboard)
+        layout.addWidget(self.keyboard)
+        self.ui.widgetKeyboard.setLayout(layout)
     
     def on_back_clicked(self):
         if self.current_index == 1 and len(self.folders_list) > 0:
@@ -84,7 +92,37 @@ class FolderSectionView(QMainWindow):
         "Selects the folder from the list and updates the save provider with the selected origin."
         indexes = self.ui.folderList.selectedIndexes()
         index = indexes[0].row()
-        folder_name = self.folders_list[index].name
+        self.selected_folder = self.folders_list[index]
+        folder_name = self.selected_folder.name
         self.ui.selectFolderLbl.setText(f'Carpeta: {folder_name}')
 
-
+    #Validators
+    def verify_repeated_lote_name(self, name:str):
+        name_lw = name.strip().lower()
+        is_repeated = False
+        for i in range(len(self.folders_list)):
+            is_repeated = name_lw == self.folders_list[i].name.lower()
+            if is_repeated:
+                break
+        return is_repeated
+    
+    def validator(self) -> bool:
+        if self.current_index == 1:
+            if not self.ui.inputPlace.text().strip:
+                self.show_dialog_error(error='Seleccione una carpeta')
+                return False
+            if self.verify_repeated_lote_name(self.ui.inputPlace.text()):
+                self.show_dialog_error(error='Ya existe una carpeta con ese nombre')
+                return False
+        else:
+            if self.selected_folder is None:
+                self.show_dialog_error(error='Seleccione una carpeta')
+                return False
+        return True
+    
+    def on_push_save(self):
+        if not self.validator():
+            return
+        
+        
+    

@@ -16,6 +16,7 @@ from src.logic.sensorStabilizer import SensorStabilizer
 #from .FakeParameterWorker import FakeParametersMeasuredWorker
 from .ParametersWorker import ParametersMeasuredWorker
 from src.providers.SaveProvider import SaveProvider
+import datetime as Datetime
 
 class MonitoringView(QMainWindow):
     def __init__(self, context, tds_check:bool, ph_check:bool, oxygen_check:bool, turbidity_check:bool = False):
@@ -43,19 +44,9 @@ class MonitoringView(QMainWindow):
         self.max_samples:int = 15
         self.capture_period:int = 3
         self.is_automatic_capture_active = False
-        self.oxygen_list: list = []
-        self.ph_list: list = []
-        self.temperature_list: list = []
-        self.tds_list: list = []
-        self.turbidity_list: list = []
-        self.battery_list: list = []
-        self.timestamp_list: list = []
-
-        self.capture_samples:list[SensorData] = []
-
         self.receive_parameters = False
-        
         self.isPause = False
+        self.captured_samples = 0
 
 
         self.parameters_worker = ParametersMeasuredWorker()
@@ -138,19 +129,20 @@ class MonitoringView(QMainWindow):
 
     def on_save_clicked(self):
         self.pause_monitoring()
-        if len(self.capture_samples) > 1:
-            view = SaveSelectView(context=self.context, capture_samples=self.capture_samples, close_monitoring_callback=self.on_back_clicked)
-        elif len(self.capture_samples) > 0:
-            view = NameSectionView(context=self.context)
+        if self.captured_samples > 1:
+            view = SaveSelectView(context=self.context, capture_samples=[], close_monitoring_callback=self.on_back_clicked)
         else:
-            sample = SensorData(
-                    temperature=self.temperature,
-                    ph=self.ph,
-                    tds=self.tds,
-                    conductivity= AppConstants.MEASURE_OFF_VALUE if self.tds is AppConstants.MEASURE_OFF_VALUE else self.tds * 2,
-                    oxygen=self.oxygen,
-                    turbidity=self.turbidity,
-                    battery=self.battery)
+            self.save_provider.add_temperature(self.temperature)
+            self.save_provider.add_ph(self.ph)
+            self.save_provider.add_tds(self.tds)
+            self.save_provider.add_conductivity(AppConstants.MEASURE_OFF_VALUE if self.tds is AppConstants.MEASURE_OFF_VALUE else self.tds * 2)
+            self.save_provider.add_oxygen(self.oxygen)
+            self.save_provider.add_turbidity(self.turbidity)
+            self.save_provider.add_battery(self.battery)
+            hour = Datetime.now().strftime("%H:%M:%S")
+            date = Datetime.now().strftime("%d/%m/%Y")
+            self.save_provider.add_timestamp("{} {}".format(date, hour))
+
             view = NameSectionView(context=self.context)
         Navigator.push(context=self.context, view=view)
     """
@@ -192,15 +184,16 @@ class MonitoringView(QMainWindow):
         self.start_animation()
     
     def set_capture_samples(self):
-        self.capture_samples.append(SensorData(
-            temperature=self.temperature,
-            ph=self.ph,
-            tds=self.tds,
-            conductivity = AppConstants.MEASURE_OFF_VALUE if self.tds is AppConstants.MEASURE_OFF_VALUE else self.tds * 2,
-            oxygen=self.oxygen,
-            turbidity=self.turbidity,
-            battery=self.battery
-        ))
+        pass
+        #self.capture_samples.append(SensorData(
+         #   temperature=self.temperature,
+          #  ph=self.ph,
+           # tds=self.tds,
+            #conductivity = AppConstants.MEASURE_OFF_VALUE if self.tds is AppConstants.MEASURE_OFF_VALUE else self.tds * 2,
+            #oxygen=self.oxygen,
+            #turbidity=self.turbidity,
+            #battery=self.battery
+        #))
         #self.ui.captureCountLbl.setText(f'+{len(self.capture_samples)}')
         #self.ui.captureCountLbl.show()
 

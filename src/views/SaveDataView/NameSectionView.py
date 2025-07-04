@@ -3,7 +3,6 @@ from .ui.ui_NameSection import Ui_MainWindow
 from src.widgets.KeyboardWidget import KeyboardWidget
 from src.widgets.PopupWidget import PopupWidgetInfo, PopupWidget
 from .OriginSectionView import OriginSectionView
-from src.model.SensorData import SensorData
 from src.package.Navigator import Navigator
 from src.providers.SaveProvider import SaveProvider
 
@@ -30,7 +29,7 @@ class NameSectionView(QMainWindow):
     
     def on_back_clicked(self):
         def on_yes():
-            self.save_provider.clear()  # Clear all saved data
+            self.save_provider.clear_only_form_data()
             Navigator.pop(context=self.context, view=self)
 
         def on_no():
