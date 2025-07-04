@@ -11,7 +11,6 @@ from src.package.Navigator import Navigator
 from src.widgets.PopupWidget import PopupWidgetInfo
 from src.views.MonitoringView.AutomaticMonitoringPopup import AutomaticMonitoringPopup
 from src.views.MonitoringView.MonitoringOptionsPopup import MonitoringOptionsPopup
-from src.model.SensorData import SensorData
 from src.logic.sensorStabilizer import SensorStabilizer
 #from .FakeParameterWorker import FakeParametersMeasuredWorker
 from .ParametersWorker import ParametersMeasuredWorker
