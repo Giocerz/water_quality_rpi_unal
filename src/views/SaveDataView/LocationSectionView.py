@@ -1,7 +1,7 @@
 from PySide2.QtWidgets import QMainWindow
 from PySide2 import QtCore
 from .ui.ui_LocationSection import Ui_MainWindow
-from .FolderSectionView import FolderSectionView
+from .ItRainedSectionView import ItRainedSectionView
 from src.widgets.PopupWidget import PopupWidgetInfo
 from src.package.Navigator import Navigator
 from .LocationWorker import LocationdWorker
@@ -46,7 +46,7 @@ class LocationSectionView(QMainWindow):
         self.save_provider.set_prev_view(LocationSectionView)
         Navigator.pushReplacement(
             context=self.context,
-            view=FolderSectionView(context=self.context)
+            view=ItRainedSectionView(context=self.context)
         )
 
     def on_set_manual_location_clicked(self):

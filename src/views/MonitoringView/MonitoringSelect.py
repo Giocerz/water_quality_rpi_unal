@@ -40,7 +40,6 @@ class MonitoringSelectView(QMainWindow):
                 tds_check=tds_check,
                 ph_check=ph_check,
                 oxygen_check=oxygen_check,
-                #turbidity_check=turbidity_check
             )
         )
 

@@ -16,17 +16,16 @@ from src.logic.sensorStabilizer import SensorStabilizer
 #from .FakeParameterWorker import FakeParametersMeasuredWorker
 from .ParametersWorker import ParametersMeasuredWorker
 from src.providers.SaveProvider import SaveProvider
-import datetime as Datetime
+from datetime import datetime as Datetime
 
 class MonitoringView(QMainWindow):
-    def __init__(self, context, tds_check:bool, ph_check:bool, oxygen_check:bool, turbidity_check:bool = False):
+    def __init__(self, context, tds_check:bool, ph_check:bool, oxygen_check:bool):
         QMainWindow.__init__(self)
         self.context = context
         self.save_provider = SaveProvider()
         self.tds_check:bool = tds_check
         self.ph_check:bool = ph_check
         self.oxygen_check:bool = oxygen_check
-        self.turbidity_check:bool = turbidity_check
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui_components()
@@ -38,7 +37,6 @@ class MonitoringView(QMainWindow):
         self.ph = AppConstants.MEASURE_OFF_VALUE
         self.temperature = AppConstants.MEASURE_OFF_VALUE
         self.tds = AppConstants.MEASURE_OFF_VALUE
-        self.turbidity = AppConstants.MEASURE_OFF_VALUE
         self.battery = None
 
         self.max_samples:int = 15
@@ -93,15 +91,9 @@ class MonitoringView(QMainWindow):
             is_stable_number=AppConstants.MONITORING_STABLE_DO['repeat']
         )
 
-        self.turbidity_stabilization:SensorStabilizer = SensorStabilizer(
-            window_size=AppConstants.MONITORING_STABLE_TURBIDITY['window'],
-            threshold=AppConstants.MONITORING_STABLE_TURBIDITY['threshold'],
-            is_stable_number=AppConstants.MONITORING_STABLE_TURBIDITY['repeat']
-        )
         self.tds_is_stable:bool = False
         self.ph_is_stable:bool = False
         self.do_is_stable:bool = False
-        self.turbidity_is_stable:bool = False
 
 
     def on_back_clicked(self):
@@ -137,10 +129,10 @@ class MonitoringView(QMainWindow):
             self.save_provider.add_tds(self.tds)
             self.save_provider.add_conductivity(AppConstants.MEASURE_OFF_VALUE if self.tds is AppConstants.MEASURE_OFF_VALUE else self.tds * 2)
             self.save_provider.add_oxygen(self.oxygen)
-            self.save_provider.add_turbidity(self.turbidity)
             self.save_provider.add_battery(self.battery)
-            hour = Datetime.now().strftime("%H:%M:%S")
-            date = Datetime.now().strftime("%d/%m/%Y")
+            dtatetime_now = Datetime.now()
+            hour = dtatetime_now.strftime("%H:%M:%S")
+            date = dtatetime_now.strftime("%d/%m/%Y")
             self.save_provider.add_timestamp("{} {}".format(date, hour))
 
             view = NameSectionView(context=self.context)
@@ -214,7 +206,7 @@ class MonitoringView(QMainWindow):
         vertical_layout.setSpacing(0)  # Espacio entre indicadores
         vertical_layout.setContentsMargins(0, 0, 0, 0)
 
-        num_parameters = self.tds_check * 2 + self.ph_check + self.oxygen_check + self.turbidity_check + 1
+        num_parameters = self.tds_check * 2 + self.ph_check + self.oxygen_check + 1
         parameter_indicator_size = 'M' if num_parameters <= 3 else 'S'
 
         self.indicators = {}
@@ -226,8 +218,6 @@ class MonitoringView(QMainWindow):
             self.parameters_keys.append("ph")
         if self.oxygen_check:
             self.parameters_keys.append("oxygen")
-        if self.turbidity_check:
-            self.parameters_keys.append("turbidity")
 
         for param_key in self.parameters_keys:
             param_info = AppConstants.PARAMS_ATTRIBUTES.get(param_key, {})
@@ -290,13 +280,6 @@ class MonitoringView(QMainWindow):
             self.indicators['ph'].setValue(self.ph)
             self.indicators['ph'].setStable(self.ph_is_stable)
 
-        if self.turbidity_check:
-            self.turbidity = parameters[4]
-            self.turbidity_is_stable = self.turbidity_stabilization.value_is_stable(self.turbidity)
-            self.indicators['turbidity'].setValue(self.turbidity)
-            self.indicators['turbidity'].setStable(self.turbidity_is_stable)
-
-        
         self.battery = parameters[5]
     
     #Automatic monitoring methods

@@ -3,11 +3,14 @@ from PySide2.QtGui import QStandardItemModel, QStandardItem
 from PySide2.QtCore import Qt
 from .ui.ui_FolderSection import Ui_MainWindow
 from src.widgets.PopupWidget import PopupWidgetInfo
+from .FinishSectionView import FinishSectionView
 from src.package.Navigator import Navigator
-from src.providers.SaveProvider import SaveProvider
-from src.model.WaterQualityDB import WaterDataBase
+from src.providers.SaveProvider import SaveProvider, SaveProviderParamsModel
+from src.model.WaterQualityDB import WaterDataBase, WaterQualityParams
 from src.model.Models import LoteModel
 from src.widgets.KeyboardWidget import KeyboardWidget
+from src.config.Constants import Constants
+from datetime import datetime as Datetime
 
 class FolderSectionView(QMainWindow):
     def __init__(self, context):
@@ -123,6 +126,63 @@ class FolderSectionView(QMainWindow):
     def on_push_save(self):
         if not self.validator():
             return
-        
+        if self.current_index == 0:
+            self.folder_id = self.selected_folder.id
+        else:
+            dtatetime_now = Datetime.now()
+            format_date = dtatetime_now.strftime("%Y-%m-%d")
+            hour = dtatetime_now.strftime("%H:%M:%S")
+
+            lote = LoteModel(
+                    name=self.ui.inputPlace.text().strip(),
+                    creation_date=format_date,
+                    creation_hour=str(hour),
+                    last_add_date=format_date,
+                    last_add_hour=str(hour),
+                )
+            self.folder_id = WaterDataBase.insert_lote(lote)
+
+    def save_data(self):
+        try:
+            parameters:SaveProviderParamsModel = self.save_provider.get_parameters_lists()
+            sample_name = self.save_provider.get_sample_name()
+            origin = self.save_provider.get_origin()
+            location = self.save_provider.get_location()
+            it_rained = self.save_provider.get_it_rained()
+            latitude = location['latitude']
+            longitude = location['longitude']
+
+            for index in range(len(parameters.timestamp_list)):
+                name = sample_name if index == 0 else f"{sample_name} {index + 1}"
+                date = parameters.timestamp_list[index].split(" ")[0]
+                hour = parameters.timestamp_list[index].split(" ")[1]
+                params = WaterQualityParams(
+                    name=name,
+                    device_id=Constants.DEVICE_ID,
+                    latitude=latitude,
+                    longitude=longitude,
+                    date=date,
+                    hour=hour,
+                    sample_origin=origin,
+                    it_rained=it_rained,
+                    upload_state=0,
+                    lote_id=self.folder_id,
+                    conductivity=parameters.conductivity_list[index],
+                    oxygen=parameters.oxygen_list[index],
+                    ph=parameters.ph_list[index],
+                    temperature=parameters.temperature_list[index],
+                    tds=parameters.tds_list[index],
+                    turbidity=-1000,
+                    battery=parameters.battery_list[index],
+                )
+                WaterDataBase.insert_water_param(params)
+                counter += 1
+        except:
+            self.show_dialog_error('Error al guardar los datos')
+            return
+        Navigator.pushReplacement(
+            context=self.context,
+            view=FinishSectionView(context=self.context)
+        )
         
     

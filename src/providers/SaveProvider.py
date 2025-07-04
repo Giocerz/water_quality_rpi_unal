@@ -1,3 +1,16 @@
+from dataclasses import dataclass
+from typing import Optional
+
+@dataclass
+class SaveProviderParamsModel:
+    oxygen_list: list[float]
+    ph_list: list[float]
+    temperature_list: list[float]
+    tds_list: list[float]
+    conductivity_list: list[float]
+    battery_list: list[float]
+    timestamp_list: list[str]
+
 class SaveProvider:
     _instance = None  # Singleton
 
@@ -10,7 +23,6 @@ class SaveProvider:
             cls._instance._temperature_list = []
             cls._instance._tds_list = []
             cls._instance._conductivity_list = []
-            cls._instance._turbidity_list = []
             cls._instance._battery_list = []
             cls._instance._timestamp_list = []
 
@@ -53,10 +65,6 @@ class SaveProvider:
         """Adds a value to the conductivity list."""
         self._conductivity_list.append(value)
     
-    def add_turbidity(self, value):
-        """Adds a value to the turbidity list."""
-        self._turbidity_list.append(value)
-    
     def add_battery(self, value):
         """Adds a value to the battery list."""
         self._battery_list.append(value)
@@ -67,16 +75,15 @@ class SaveProvider:
     
     def get_parameters_lists(self):
         """Returns the lists of parameters."""
-        return {
-            'oxygen_list': self._oxygen_list,
-            'ph_list': self._ph_list,
-            'temperature_list': self._temperature_list,
-            'tds_list': self._tds_list,
-            'conductivity_list': self._conductivity_list,
-            'turbidity_list': self._turbidity_list,
-            'battery_list': self._battery_list,
-            'timestamp_list': self._timestamp_list
-        }
+        return SaveProviderParamsModel(
+            oxygen_list=self._oxygen_list,
+            ph_list=self._ph_list,
+            temperature_list=self._temperature_list,
+            tds_list=self._tds_list,
+            conductivity_list=self._conductivity_list,
+            battery_list=self._battery_list,
+            timestamp_list=self._timestamp_list
+        )
 
     def set_sample_name(self, sample_name):
         """Sets the sample name."""
@@ -130,7 +137,6 @@ class SaveProvider:
         self._temperature_list.clear()
         self._tds_list.clear()
         self._conductivity_list.clear()
-        self._turbidity_list.clear()
         self._battery_list.clear()
         self._timestamp_list.clear()
 
