@@ -23,7 +23,7 @@ class FolderSectionView(QMainWindow):
 
         self.ui.backBtn.clicked.connect(self.on_back_clicked)
         self.ui.backBtn_2.clicked.connect(self.on_back_clicked)
-        self.ui.createFolderBtn.clicked.connect(self.on_create_folder_clicked)
+        self.ui.createBtn.clicked.connect(self.on_create_folder_clicked)
         self.ui.folderList.clicked.connect(self.select_folder)
         self.ui.verticalSlider.valueChanged.connect(self.slider_value_changed)
         self.scrollBar.rangeChanged.connect(self.adjust_slider_range)
@@ -36,7 +36,7 @@ class FolderSectionView(QMainWindow):
         self.ui.verticalSlider.hide()
     
     def on_back_clicked(self):
-        if self.current_index == 1 and len(self.folder_list) > 0:
+        if self.current_index == 1 and len(self.folders_list) > 0:
             self.current_index = 0
             self.ui.stackedWidget.setCurrentIndex(self.current_index)
         else:
