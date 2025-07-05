@@ -18,7 +18,7 @@ class FinishSectionView(QMainWindow):
         self.ui.finishBtn.clicked.connect(self.on_next_clicked)
 
     def ui_components(self):
-        pixmap = QPixmap('.src/resources/icons/check_circle_w.png')
+        pixmap = QPixmap('./src/resources/icons/check_circle_w.png')
         pixmap = pixmap.scaled(120, 120)
         self.ui.iconLbl.setPixmap(pixmap)
 
