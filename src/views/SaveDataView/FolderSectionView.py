@@ -177,7 +177,6 @@ class FolderSectionView(QMainWindow):
                     battery=parameters.battery_list[index],
                 )
                 WaterDataBase.insert_water_param(params)
-                counter += 1
         except Exception as e:
             self.show_dialog_error('Error al guardar los datos')
             print(e)
